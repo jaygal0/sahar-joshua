@@ -53,7 +53,8 @@ export default {
     },
   },
   spacing: {
-    lg: '8.8rem',
+    xl: '8.8rem',
+    lg: '4.2rem',
     md: '2.4rem',
     sm: '1.6rem',
   },

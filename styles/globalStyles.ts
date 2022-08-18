@@ -6,7 +6,8 @@ body {
   font-size: 62.5%;
   padding: 0;
   margin: 0;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'DM Sans', sans-serif;
+
 }
 #__next {
   position: relative;
@@ -16,5 +17,13 @@ body {
   padding: 0;
   margin: 0;
 }
+a {
+  text-decoration: none;
+  color: #1C1C1C;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Krona One', sans-serif;
+}
+
 `
 export default GlobalStyle
