@@ -4,37 +4,51 @@ import styled from 'styled-components'
 
 const NavContainer = styled.nav`
   position: relative;
+  z-index: 1;
 `
-const Nav = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+const Logo = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   font-weight: ${({ theme }) => theme.type.weight.bold};
   color: ${({ theme }) => theme.color.text};
-  height: 100vh;
-  width: 100vw;
-  padding: ${({ theme }) => theme.spacing.md};
   position: fixed;
-  top: 0;
-  z-index: 1;
+  top: 2.4rem;
+  left: 2.4rem;
+`
+const Menu = styled.button`
+  outline: none;
+  background: none;
+  border: none;
+  font-size: ${({ theme }) => theme.type.size.title.sm};
+  font-weight: ${({ theme }) => theme.type.weight.bold};
+  color: ${({ theme }) => theme.color.text};
+  position: absolute;
+  top: 2.4rem;
+  right: 2.4rem;
 
-  &.active {
-    position: static;
+  &:hover {
+    cursor: pointer;
   }
 `
-const TopRow = styled.div`
-  display: flex;
-  justify-content: space-between;
+const Now = styled.div`
+  font-size: ${({ theme }) => theme.type.size.title.sm};
+  font-weight: ${({ theme }) => theme.type.weight.bold};
+  color: ${({ theme }) => theme.color.text};
+  position: fixed;
+  bottom: 2.4rem;
+  left: 2.4rem;
 `
-const BottomRow = styled.div`
-  display: flex;
-  justify-content: space-between;
+const UnofficeHours = styled.div`
+  font-size: ${({ theme }) => theme.type.size.title.sm};
+  font-weight: ${({ theme }) => theme.type.weight.bold};
+  color: ${({ theme }) => theme.color.text};
+  position: fixed;
+  bottom: 2.4rem;
+  right: 2.4rem;
 `
+
 interface Div {
   color?: any
 }
-
 const SlideOutMenu = styled.div<Div>`
   display: flex;
   flex-direction: column;
@@ -76,18 +90,7 @@ const Wrapper = styled.div`
   text-transform: capitalize;
   position: relative;
 `
-const Button = styled.button`
-  outline: none;
-  background: none;
-  border: none;
-  font-size: ${({ theme }) => theme.type.size.title.sm};
-  font-weight: ${({ theme }) => theme.type.weight.bold};
-  color: ${({ theme }) => theme.color.text};
 
-  &:hover {
-    cursor: pointer;
-  }
-`
 const Close = styled.button`
   outline: none;
   background: none;
@@ -110,22 +113,22 @@ export const Navigation = () => {
 
   return (
     <NavContainer>
-      <Nav className={isOffSet ? '' : ''}>
-        <TopRow>
-          <Link href="/">home</Link>
-          <Button
-            onClick={() => {
-              setIsOffSet(!isOffSet)
-            }}
-          >
-            Menu
-          </Button>
-        </TopRow>
-        <BottomRow>
-          <Link href="/now">/now</Link>
-          <Link href="/unoffice-hours">Unoffice Hours</Link>
-        </BottomRow>
-      </Nav>
+      <Logo>
+        <Link href="/">home</Link>
+      </Logo>
+      <Menu
+        onClick={() => {
+          setIsOffSet(!isOffSet)
+        }}
+      >
+        Menu
+      </Menu>
+      <Now>
+        <Link href="/now">/now</Link>
+      </Now>
+      <UnofficeHours>
+        <Link href="/unoffice-hours">Unoffice Hours</Link>
+      </UnofficeHours>
       <SlideOutMenu
         color={
           backgroundColor == 'home'

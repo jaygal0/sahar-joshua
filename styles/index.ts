@@ -4,11 +4,14 @@ export const IndexMain = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 100vw;
   align-items: center;
-  justify-content: center;
+  position: absolute;
+  padding-top: 35vh;
 
   &.home {
     background: ${({ theme }) => theme.color.home.background};
+    padding-top: 20vh;
   }
   &.projects {
     background: ${({ theme }) => theme.color.projects.background};
