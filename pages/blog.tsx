@@ -1,8 +1,14 @@
 import React from 'react'
 import { Navigation } from '../components/Navigation'
+import { IndexMain } from '../styles'
 
 const blog = () => {
-  return <Navigation />
+  return (
+    <>
+      <Navigation />
+      <IndexMain className="blog" />
+    </>
+  )
 }
 
 export default blog

@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import { Navigation } from '../components/Navigation'
+import { IndexMain } from '../styles'
 
 const Home: NextPage = () => {
   return (
@@ -12,15 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
-      <Hero />
-      <Hero />
-      <Hero />
-      <Hero />
-      <Hero />
-      <Hero />
-      <Hero />
-      <Hero />
-      <Hero />
+      <IndexMain className="home" />
     </>
   )
 }
