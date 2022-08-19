@@ -18,7 +18,7 @@ export default {
   color: {
     text: '#1C1C1C',
     home: {
-      subTitle: '#699B8F',
+      subtitle: '#699B8F',
       logo: '#5A877C',
       background: '#FFFDFB',
     },
