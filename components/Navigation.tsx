@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const Nav = styled.nav`
+const NavContainer = styled.nav`
+  position: relative;
+`
+const Nav = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,7 +15,13 @@ const Nav = styled.nav`
   height: 100vh;
   width: 100vw;
   padding: ${({ theme }) => theme.spacing.md};
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  &.active {
+    position: static;
+  }
 `
 const TopRow = styled.div`
   display: flex;
@@ -22,8 +31,7 @@ const BottomRow = styled.div`
   display: flex;
   justify-content: space-between;
 `
-const Menu = styled.div`
-  position: absolute;
+const SlideOutMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,9 +42,11 @@ const Menu = styled.div`
   width: 100vw;
   transition: transform 0.5s ease-in-out;
   transform: translateY(-200%);
+  z-index: 2;
+  position: fixed;
 
   &.active {
-    transform: translateY(-100%);
+    transform: translateY(-0);
   }
 `
 const Wrapper = styled.div`
@@ -77,16 +87,16 @@ const Close = styled.button`
 `
 
 export const Navigation = () => {
-  const [transition, setTransition] = useState<boolean>(false)
+  const [isOffSet, setIsOffSet] = useState<boolean>(false)
 
   return (
-    <>
-      <Nav>
+    <NavContainer>
+      <Nav className={isOffSet ? '' : ''}>
         <TopRow>
           <Link href="/">home</Link>
           <Button
             onClick={() => {
-              setTransition(!transition)
+              setIsOffSet(!isOffSet)
             }}
           >
             Menu
@@ -97,10 +107,10 @@ export const Navigation = () => {
           <Link href="/unoffice-hours">Unoffice Hours</Link>
         </BottomRow>
       </Nav>
-      <Menu className={transition ? 'active' : ''}>
+      <SlideOutMenu className={isOffSet ? 'active' : ''}>
         <Close
           onClick={() => {
-            setTransition(!transition)
+            setIsOffSet(!isOffSet)
           }}
         >
           Close
@@ -111,7 +121,7 @@ export const Navigation = () => {
           <Link href="/timeline">timeline</Link>
           <Link href="/blog">blog</Link>
         </Wrapper>
-      </Menu>
-    </>
+      </SlideOutMenu>
+    </NavContainer>
   )
 }
