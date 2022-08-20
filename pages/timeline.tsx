@@ -3,7 +3,11 @@ import Heading from '../components/Heading'
 import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
 
-const timeline = () => {
+const timeline = ({ dbs }: { dbs: any }) => {
+  const { data } = dbs
+
+  console.log(data)
+
   return (
     <>
       <Navigation />
@@ -18,3 +22,20 @@ const timeline = () => {
 }
 
 export default timeline
+
+export async function getServerSideProps(context: any) {
+  const site = process.env.WEB_SITE
+
+  const res = await fetch(`${site}/api/timeline`)
+  const dbs = await res.json()
+
+  if (!dbs) {
+    return {
+      notfound: true,
+    }
+  }
+
+  return {
+    props: { dbs },
+  }
+}

@@ -3,7 +3,11 @@ import Heading from '../components/Heading'
 import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
 
-const projects = () => {
+const projects = ({ dbs }: { dbs: any }) => {
+  const { data } = dbs
+
+  console.log(data[0])
+
   return (
     <>
       <Navigation />
@@ -18,3 +22,20 @@ const projects = () => {
 }
 
 export default projects
+
+export async function getServerSideProps(context: any) {
+  const site = process.env.WEB_SITE
+
+  const res = await fetch(`${site}/api/projects`)
+  const dbs = await res.json()
+
+  if (!dbs) {
+    return {
+      notfound: true,
+    }
+  }
+
+  return {
+    props: { dbs },
+  }
+}
