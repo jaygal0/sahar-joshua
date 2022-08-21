@@ -58,6 +58,7 @@ export default {
     lg: '4.2rem',
     md: '2.4rem',
     sm: '1.6rem',
+    xs: '0.8rem',
   },
   radius: {
     lg: '',

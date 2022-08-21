@@ -5,10 +5,12 @@ import Card from '../components/Card'
 import LocationStriked from '../components/LocationStriked'
 import LocationNow from '../components/LocationNow'
 import { Navigation } from '../components/Navigation'
-import { IndexMain } from '../styles'
+import { ExternalLink, IndexMain } from '../styles'
 import ProfessionStriked from '../components/ProfessionStriked'
 import ProfessionNow from '../components/ProfessionNow'
 import ReadingNow from '../components/ReadingNow'
+import Age from '../components/Age'
+import DeathCount from '../components/DeathCount'
 
 const now = ({ dbs }: { dbs: any }) => {
   const { data } = dbs
@@ -21,6 +23,20 @@ const now = ({ dbs }: { dbs: any }) => {
           title="/now"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
         />
+        <Card>
+          <Label text="age" />
+          <Age />
+        </Card>
+        <Card>
+          <Label text="est. time of death" />
+          <div>
+            A reminder of my mortality. Data taken from{' '}
+            <ExternalLink href="https://www.death-clock.org/" target="_blank">
+              The Death Clock
+            </ExternalLink>
+          </div>
+          <DeathCount />
+        </Card>
         <Card>
           <Label text="location" />
           {data.map((item: any) => {

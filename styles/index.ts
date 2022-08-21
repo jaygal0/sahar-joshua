@@ -29,3 +29,6 @@ export const IndexMain = styled.main`
     background: ${({ theme }) => theme.color.unofficeHours.background};
   }
 `
+export const ExternalLink = styled.a`
+  text-decoration: underline;
+`

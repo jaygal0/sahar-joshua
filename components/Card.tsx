@@ -11,6 +11,7 @@ const Div = styled.div`
   flex-direction: column;
   gap: 1.2rem;
   margin-bottom: 4rem;
+  font-size: ${({ theme }) => theme.type.size.body.md};
 `
 
 const CardStriked = ({ children }: { children: any }) => {
