@@ -1,5 +1,7 @@
 import React from 'react'
+import moment from 'moment'
 import styled from 'styled-components'
+import { ExternalLink } from '../styles'
 
 const Container = styled.div`
   display: flex;
@@ -25,11 +27,30 @@ const Text = styled.p`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   line-height: ${({ theme }) => theme.type.height.lg};
 `
-const Heading = ({ title, text }: { title: string; text: string }) => {
+const LastUpdated = styled.p`
+  width: 90%;
+  margin-top: ${({ theme }) => theme.spacing.xl};
+  font-size: ${({ theme }) => theme.type.size.body.md};
+`
+const Heading = ({
+  title,
+  text,
+  now,
+}: {
+  title: string
+  text: string
+  now?: string
+}) => {
   return (
     <Container>
       <Title>{title}</Title>
       <Text>{text}</Text>
+      <LastUpdated>
+        Last Updated: {moment(now).format('MMMM Do YYYY')}. Inspired by{' '}
+        <ExternalLink href="https://sive.rs/nowff" target="_blank">
+          Derek Sivers
+        </ExternalLink>
+      </LastUpdated>
     </Container>
   )
 }

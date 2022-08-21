@@ -8,6 +8,7 @@ export const IndexMain = styled.main`
   align-items: center;
   position: absolute;
   padding-top: 35vh;
+  padding-bottom: 13.6rem;
 
   &.home {
     background: ${({ theme }) => theme.color.home.background};
@@ -31,4 +32,5 @@ export const IndexMain = styled.main`
 `
 export const ExternalLink = styled.a`
   text-decoration: underline;
+  letter-spacing: 0.5px;
 `

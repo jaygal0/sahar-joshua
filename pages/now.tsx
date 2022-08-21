@@ -8,11 +8,11 @@ import { Navigation } from '../components/Navigation'
 import { ExternalLink, IndexMain } from '../styles'
 import ProfessionStriked from '../components/ProfessionStriked'
 import ProfessionNow from '../components/ProfessionNow'
-import ReadingNow from '../components/ReadingNow'
+import NowText from '../components/NowText'
 import Age from '../components/Age'
 import DeathCount from '../components/DeathCount'
 
-const now = ({ dbs }: { dbs: any }) => {
+const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
   const { data } = dbs
 
   return (
@@ -20,8 +20,9 @@ const now = ({ dbs }: { dbs: any }) => {
       <Navigation />
       <IndexMain className="now">
         <Heading
-          title="/now"
+          title="What I'm up to now"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
+          now="2022/10/12"
         />
         <Card>
           <Label text="age" />
@@ -92,14 +93,18 @@ const now = ({ dbs }: { dbs: any }) => {
           {data.map((item: any) => {
             if (item.category == 'reading') {
               return (
-                <ReadingNow
+                <NowText
                   key={item._id}
-                  title={item.title}
-                  author={item.author}
+                  main={item.title}
+                  secondary={item.author}
                 />
               )
             }
           })}
+        </Card>
+        <Card>
+          <Label text="Chess Rating" />
+          <NowText main={`Rapid: ${lichess.perfs.rapid.rating}`} chess />
         </Card>
       </IndexMain>
     </>
@@ -110,17 +115,27 @@ export default now
 
 export async function getServerSideProps(context: any) {
   const site = process.env.WEB_SITE
-
   const res = await fetch(`${site}/api/now`)
   const dbs = await res.json()
-
   if (!dbs) {
     return {
       notfound: true,
     }
   }
 
+  const resChess = await fetch(`https://lichess.org/api/account`, {
+    headers: {
+      Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+    },
+  })
+  const lichess = await resChess.json()
+  if (!lichess) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
-    props: { dbs },
+    props: { dbs, lichess },
   }
 }
