@@ -8,6 +8,8 @@ const Container = styled.div`
   height: min-content;
   align-items: center;
   justify-content: center;
+  padding-bottom: 8.8rem;
+  margin-bottom: 6.4rem;
 `
 const Title = styled.h1`
   width: 90%;

@@ -6,8 +6,6 @@ import { IndexMain } from '../styles'
 const projects = ({ dbs }: { dbs: any }) => {
   const { data } = dbs
 
-  console.log(data[0])
-
   return (
     <>
       <Navigation />
@@ -16,6 +14,14 @@ const projects = ({ dbs }: { dbs: any }) => {
           title="projects"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
         />
+        {data.map((item: any) => {
+          return (
+            <div key={item._id}>
+              <div>{item.title}</div>
+              <div>{item.subtitle}</div>
+            </div>
+          )
+        })}
       </IndexMain>
     </>
   )
