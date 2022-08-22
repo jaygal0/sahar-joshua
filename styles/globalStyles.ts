@@ -11,6 +11,7 @@ body {
 }
 #__next {
   position: relative;
+  overflow-x: clip;
 }
 * {
   box-sizing: border-box;

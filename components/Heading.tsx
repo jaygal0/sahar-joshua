@@ -12,6 +12,7 @@ const Container = styled.div`
   justify-content: center;
   padding-bottom: 8.8rem;
   margin-bottom: 6.4rem;
+  max-width: 986px;
 `
 const Title = styled.h1`
   width: 90%;
@@ -39,18 +40,20 @@ const Heading = ({
 }: {
   title: string
   text: string
-  now?: string
+  now?: Date
 }) => {
   return (
     <Container>
       <Title>{title}</Title>
       <Text>{text}</Text>
-      <LastUpdated>
-        Last Updated: {moment(now).format('MMMM Do YYYY')}. Inspired by{' '}
-        <ExternalLink href="https://sive.rs/nowff" target="_blank">
-          Derek Sivers
-        </ExternalLink>
-      </LastUpdated>
+      {now && (
+        <LastUpdated>
+          Last Updated: {moment(now).format('MMMM Do YYYY')}. Inspired by{' '}
+          <ExternalLink href="https://sive.rs/nowff" target="_blank">
+            Derek Sivers
+          </ExternalLink>
+        </LastUpdated>
+      )}
     </Container>
   )
 }

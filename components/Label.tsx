@@ -6,6 +6,7 @@ const Heading = styled.h2`
   font-size: ${({ theme }) => theme.type.size.title.md};
   font-weight: ${({ theme }) => theme.type.weight.normal};
   text-transform: capitalize;
+  width: 100%;
 `
 
 const Label = ({ text }: { text: string }) => {

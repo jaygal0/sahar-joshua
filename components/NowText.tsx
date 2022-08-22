@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  width: 100%;
 `
 const Main = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.lg};

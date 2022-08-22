@@ -19,11 +19,17 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
     <>
       <Navigation />
       <IndexMain className="now">
-        <Heading
-          title="What I'm up to now"
-          text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
-          now="2022/10/12"
-        />
+        {data.map((item: any) => {
+          if (item.category == 'now') {
+            return (
+              <Heading
+                title="What I'm up to now"
+                text={item.text}
+                now={item.dateAdded}
+              />
+            )
+          }
+        })}
         <Card>
           <Label text="age" />
           <Age />
@@ -96,7 +102,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
                 <NowText
                   key={item._id}
                   main={item.title}
-                  secondary={item.author}
+                  secondary={`By ${item.author}`}
                 />
               )
             }

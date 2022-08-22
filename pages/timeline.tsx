@@ -1,6 +1,8 @@
 import React from 'react'
+import Card from '../components/Card'
 import Heading from '../components/Heading'
 import { Navigation } from '../components/Navigation'
+import CardTimeLine from '../components/CardTimeline'
 import { IndexMain } from '../styles'
 
 const timeline = ({ dbs }: { dbs: any }) => {
@@ -16,6 +18,7 @@ const timeline = ({ dbs }: { dbs: any }) => {
           title="timeline"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
         />
+        <CardTimeLine />
       </IndexMain>
     </>
   )

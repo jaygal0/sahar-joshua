@@ -11,6 +11,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding-bottom: 10.4rem;
+  max-width: 986px;
 `
 const Title = styled.h1`
   width: 90%;

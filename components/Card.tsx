@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Div = styled.div`
   width: 65vw;
   background: white;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 8.8rem;
   border-radius: 8.8rem;
   display: flex;
@@ -12,10 +12,11 @@ const Div = styled.div`
   gap: 1.2rem;
   margin-bottom: 4rem;
   font-size: ${({ theme }) => theme.type.size.body.md};
+  max-width: 986px;
 `
 
-const CardStriked = ({ children }: { children: any }) => {
+const Card = ({ children }: { children: any }) => {
   return <Div>{children}</Div>
 }
 
-export default CardStriked
+export default Card

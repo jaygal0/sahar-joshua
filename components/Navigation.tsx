@@ -21,7 +21,7 @@ const Menu = styled.button`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   font-weight: ${({ theme }) => theme.type.weight.bold};
   color: ${({ theme }) => theme.color.text};
-  position: absolute;
+  position: fixed;
   top: 2.4rem;
   right: 2.4rem;
 
@@ -150,7 +150,11 @@ export const Navigation = () => {
         >
           Close
         </Close>
-        <Wrapper>
+        <Wrapper
+          onClick={() => {
+            setIsOffSet(!isOffSet)
+          }}
+        >
           <Link href="/">
             <ColorDiv
               onMouseEnter={() => {
