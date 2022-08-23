@@ -1,14 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+import moment from 'moment'
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.lg};
-  max-width: 45vw;
-  width: 40vw;
+  max-width: 986px;
+  width: 90vw;
+  height: min-content;
+  position: relative;
+  z-index: 1;
+`
+const Date = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background: ${({ theme }) => theme.color.timeline.background};
+`
+const DashedLine = styled.div`
+  border-left: 2px dashed black;
+  width: min-content;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 70px;
+  z-index: -1;
+
+  &.start {
+    height: 50%;
+    top: 50%;
+  }
 `
 const DateWrapper = styled.div`
   display: flex;
@@ -21,7 +46,7 @@ const DatesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xs};
-  width: min-content;
+  width: 70px;
 `
 const Month = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.lg};
@@ -41,6 +66,7 @@ const Card = styled.div`
   margin-bottom: 4rem;
   font-size: ${({ theme }) => theme.type.size.body.md};
   flex-grow: 1;
+  height: min-content;
 `
 const Heading = styled.h2`
   font-family: 'DM Sans', sans-serif;
@@ -50,19 +76,32 @@ const Desc = styled.p`
   font-size: ${({ theme }) => theme.type.size.body.lg};
 `
 
-const Timeline = () => {
+const Timeline = ({
+  start,
+  heading,
+  desc,
+  date,
+}: {
+  start?: Boolean
+  heading: string
+  desc: string
+  date: string
+}) => {
   return (
     <Container>
-      <DateWrapper>
-        <Image src="/placeholder-timeline.svg" width={32} height={32} />
-        <DatesWrapper>
-          <Month>month</Month>
-          <Year>year</Year>
-        </DatesWrapper>
-      </DateWrapper>
+      <Date>
+        <DateWrapper>
+          <Image src="/placeholder-timeline.svg" width={32} height={32} />
+          <DatesWrapper>
+            <Month>{moment(date).format('MMMM')}</Month>
+            <Year>{moment(date).format('YYYY')}</Year>
+          </DatesWrapper>
+        </DateWrapper>
+      </Date>
+      <DashedLine className={start && 'start'} />
       <Card>
-        <Heading>This is a heading</Heading>
-        <Desc>this is a subtitle</Desc>
+        <Heading>{heading}</Heading>
+        <Desc>{desc}</Desc>
       </Card>
     </Container>
   )

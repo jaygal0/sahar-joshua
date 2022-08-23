@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const NavContainer = styled.nav`
   position: relative;
-  z-index: 1;
+  z-index: 99;
 `
 const Logo = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.sm};

@@ -1,8 +1,6 @@
-import React from 'react'
-import Card from '../components/Card'
+import CardTimeLine from '../components/CardTimeline'
 import Heading from '../components/Heading'
 import { Navigation } from '../components/Navigation'
-import CardTimeLine from '../components/CardTimeline'
 import { IndexMain } from '../styles'
 
 const timeline = ({ dbs }: { dbs: any }) => {
@@ -18,7 +16,16 @@ const timeline = ({ dbs }: { dbs: any }) => {
           title="timeline"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
         />
-        <CardTimeLine />
+        {data.map((item: any) => {
+          return (
+            <CardTimeLine
+              start={item.start}
+              heading={item.title}
+              desc={item.desc}
+              date={item.date}
+            />
+          )
+        })}
       </IndexMain>
     </>
   )
