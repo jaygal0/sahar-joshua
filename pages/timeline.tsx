@@ -16,16 +16,25 @@ const timeline = ({ dbs }: { dbs: any }) => {
           title="timeline"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
         />
-        {data.map((item: any) => {
-          return (
-            <CardTimeLine
-              start={item.start}
-              heading={item.title}
-              desc={item.desc}
-              date={item.date}
-            />
-          )
-        })}
+        {data
+          .sort((a: any, b: any) => {
+            if (a.date > b.date) {
+              return 1
+            } else {
+              return -1
+            }
+          })
+          .map((item: any) => {
+            return (
+              <CardTimeLine
+                start={item.start}
+                heading={item.title}
+                desc={item.desc}
+                date={item.date}
+                category={item.category}
+              />
+            )
+          })}
       </IndexMain>
     </>
   )

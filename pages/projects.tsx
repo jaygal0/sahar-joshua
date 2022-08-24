@@ -1,8 +1,8 @@
 import React from 'react'
+import CardProject from '../components/CardProject'
 import Heading from '../components/Heading'
 import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
-
 const projects = ({ dbs }: { dbs: any }) => {
   const { data } = dbs
 
@@ -14,14 +14,8 @@ const projects = ({ dbs }: { dbs: any }) => {
           title="projects"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
         />
-        {data.map((item: any) => {
-          return (
-            <div key={item._id}>
-              <div>{item.title}</div>
-              <div>{item.subtitle}</div>
-            </div>
-          )
-        })}
+        <CardProject logo="jg" />
+        <CardProject logo="cpb" />
       </IndexMain>
     </>
   )

@@ -81,17 +81,24 @@ const Timeline = ({
   heading,
   desc,
   date,
+  category,
 }: {
   start?: Boolean
   heading: string
   desc: string
   date: string
+  category: string
 }) => {
   return (
     <Container>
       <Date>
         <DateWrapper>
-          <Image src="/placeholder-timeline.svg" width={32} height={32} />
+          <Image
+            // TODO: Need to make sure that I sort out the logic here with all the different icons that need to be used
+            src={category == '/work.svg' ? '' : '/placeholder-timeline.svg'}
+            width={32}
+            height={32}
+          />
           <DatesWrapper>
             <Month>{moment(date).format('MMMM')}</Month>
             <Year>{moment(date).format('YYYY')}</Year>
