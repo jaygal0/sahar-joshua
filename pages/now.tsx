@@ -23,6 +23,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
           if (item.category == 'now') {
             return (
               <Heading
+                key={item._id}
                 title="What I'm up to now"
                 text={item.text}
                 now={item.dateAdded}
@@ -46,17 +47,27 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
         </Card>
         <Card>
           <Label text="location" />
-          {data.map((item: any) => {
-            if (item.category == 'location' && !item.current) {
-              return (
-                <LocationStriked
-                  key={item._id}
-                  city={item.city}
-                  country={item.country}
-                />
-              )
-            }
-          })}
+          {data
+            .sort((a: any, b: any) => {
+              if (a.category == 'location' || b.category == 'location') {
+                if (a.date > b.date) {
+                  return 1
+                } else {
+                  return -1
+                }
+              }
+            })
+            .map((item: any) => {
+              if (item.category == 'location' && !item.current) {
+                return (
+                  <LocationStriked
+                    key={item._id}
+                    city={item.city}
+                    country={item.country}
+                  />
+                )
+              }
+            })}
           {data.map((item: any) => {
             if (item.category == 'location' && item.current) {
               return (
@@ -71,17 +82,27 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
         </Card>
         <Card>
           <Label text="profession" />
-          {data.map((item: any) => {
-            if (item.category == 'profession' && !item.current) {
-              return (
-                <ProfessionStriked
-                  key={item._id}
-                  job={item.job}
-                  company={item.company}
-                />
-              )
-            }
-          })}
+          {data
+            .sort((a: any, b: any) => {
+              if (a.category == 'profession' || b.category == 'profession') {
+                if (a.date > b.date) {
+                  return 1
+                } else {
+                  return -1
+                }
+              }
+            })
+            .map((item: any) => {
+              if (item.category == 'profession' && !item.current) {
+                return (
+                  <ProfessionStriked
+                    key={item._id}
+                    job={item.job}
+                    company={item.company}
+                  />
+                )
+              }
+            })}
           {data.map((item: any) => {
             if (item.category == 'profession' && item.current) {
               return (

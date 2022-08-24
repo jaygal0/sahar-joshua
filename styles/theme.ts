@@ -18,6 +18,16 @@ export default {
   color: {
     text: '#1C1C1C',
     disabled: '#cecece',
+    button: {
+      primary: {
+        background: '#555B6E',
+        text: '#FFFFFF',
+      },
+      secondary: {
+        background: '#555B6E',
+        text: '#FFFFFF',
+      },
+    },
     home: {
       subtitle: '#699B8F',
       logo: '#5A877C',
@@ -47,8 +57,6 @@ export default {
     },
     unofficeHours: {
       background: '#FFE5D9',
-      button: '#555B6E',
-      buttonText: '#FFFFFF',
       logo: '#555B6E',
       activeLink: '#555B6E',
     },

@@ -34,3 +34,10 @@ export const ExternalLink = styled.a`
   text-decoration: underline;
   letter-spacing: 0.5px;
 `
+export const BodyText = styled.p`
+  font-size: ${({ theme }) => theme.type.size.body.md};
+  color: ${({ theme }) => theme.color.text};
+`
+export const ImageContainer = styled.div`
+  width: 100%;
+`

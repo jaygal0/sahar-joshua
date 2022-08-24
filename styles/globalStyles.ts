@@ -25,6 +25,5 @@ a {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Krona One', sans-serif;
 }
-
 `
 export default GlobalStyle

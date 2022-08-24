@@ -3,9 +3,8 @@ import CardProject from '../components/CardProject'
 import Heading from '../components/Heading'
 import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
-const projects = ({ dbs }: { dbs: any }) => {
-  const { data } = dbs
 
+const projects = ({ dbs }: { dbs: any }) => {
   return (
     <>
       <Navigation />
@@ -14,8 +13,8 @@ const projects = ({ dbs }: { dbs: any }) => {
           title="projects"
           text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
         />
-        <CardProject logo="jg" />
-        <CardProject logo="cpb" />
+        <CardProject logo="jg" url="galinato" />
+        <CardProject logo="cpb" url="commonplacebook" />
       </IndexMain>
     </>
   )

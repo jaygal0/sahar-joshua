@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Container = styled.div`
   width: 65vw;
@@ -40,17 +41,21 @@ const CardProject = ({
   logo,
   background,
   category,
+  url,
 }: {
   logo: string
   background?: string
   category?: string
+  url: string
 }) => {
   return (
-    <Container color={background ? background : '#FFF5F5'}>
-      <ImageContainer>
-        <Image src={`/${logo}.svg`} layout="fill" />
-      </ImageContainer>
-    </Container>
+    <Link href={`/projects/${url}`}>
+      <Container color={background ? background : '#FFF5F5'}>
+        <ImageContainer>
+          <Image src={`/${logo}.svg`} layout="fill" />
+        </ImageContainer>
+      </Container>
+    </Link>
   )
 }
 
