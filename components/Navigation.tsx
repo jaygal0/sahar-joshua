@@ -191,7 +191,19 @@ export const Navigation = () => {
               timeline
             </ColorDiv>
           </Link>{' '}
-          <Link href="/blog">
+          <Link href="/contact">
+            <ColorDiv
+              onMouseEnter={() => {
+                IsBackgroundColor('blog')
+              }}
+              onMouseLeave={() => {
+                IsBackgroundColor('')
+              }}
+            >
+              Contact
+            </ColorDiv>
+          </Link>{' '}
+          {/* <Link href="/blog">
             <ColorDiv
               onMouseEnter={() => {
                 IsBackgroundColor('blog')
@@ -202,7 +214,7 @@ export const Navigation = () => {
             >
               blog
             </ColorDiv>
-          </Link>{' '}
+          </Link>{' '} */}
         </Wrapper>
       </SlideOutMenu>
     </NavContainer>
