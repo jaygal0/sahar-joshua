@@ -38,6 +38,10 @@ export const BodyText = styled.p`
   font-size: ${({ theme }) => theme.type.size.body.md};
   color: ${({ theme }) => theme.color.text};
 `
+export const TechStack = styled.p`
+  font-size: ${({ theme }) => theme.type.size.body.lg};
+  color: ${({ theme }) => theme.color.text};
+`
 export const ImageContainer = styled.div`
   width: 100%;
 `

@@ -8,10 +8,10 @@ import Button from '../../components/Button'
 import Image from 'next/image'
 import styled from 'styled-components'
 
-const galinato = ({ dbs }: { dbs: any }) => {
+const commonplacebook = ({ dbs }: { dbs: any }) => {
   const { data } = dbs
 
-  const project = 'galina.to'
+  const project = 'commonplacebook'
 
   return (
     <>
@@ -103,7 +103,7 @@ const galinato = ({ dbs }: { dbs: any }) => {
   )
 }
 
-export default galinato
+export default commonplacebook
 
 export async function getServerSideProps(context: any) {
   const site = process.env.WEB_SITE
