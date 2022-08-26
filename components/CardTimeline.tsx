@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import Image from 'next/image'
 import moment from 'moment'
+import Image from 'next/image'
+import { useState } from 'react'
+import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +13,12 @@ const Container = styled.div`
   height: min-content;
   position: relative;
   z-index: 1;
+
+  &.hasImage {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `
 const Date = styled.div`
   display: flex;
@@ -75,6 +81,31 @@ const Heading = styled.h2`
 const Desc = styled.p`
   font-size: ${({ theme }) => theme.type.size.body.lg};
 `
+const ImageWrapper = styled.div`
+  width: 0%;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+
+  &.isClicked {
+    width: 100%;
+    opacity: 1;
+  }
+`
+const Expand = styled.button`
+  font-size: ${({ theme }) => theme.type.size.body.md};
+  align-self: flex-start;
+  padding-top: 10%;
+  background: none;
+  border: none;
+  opacity: 0;
+  transition: opacity ease-in-out 0.3s;
+  width: 2rem;
+
+  &.hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+`
 
 const Timeline = ({
   start,
@@ -82,15 +113,31 @@ const Timeline = ({
   desc,
   date,
   category,
+  image,
 }: {
   start?: Boolean
   heading: string
   desc: string
   date: string
   category: string
+  image?: string
 }) => {
+  const [isHovered, setIsHovered] = useState<Boolean>(false)
+  const [isClicked, setIsClicked] = useState<Boolean>(false)
+
   return (
-    <Container>
+    <Container
+      onMouseEnter={() => {
+        setIsHovered(!isHovered)
+      }}
+      onMouseLeave={() => {
+        setIsHovered(!isHovered)
+      }}
+      onClick={() => {
+        setIsClicked(!isClicked)
+      }}
+      className={image && 'hasImage'}
+    >
       <Date>
         <DateWrapper>
           <Image
@@ -109,7 +156,21 @@ const Timeline = ({
       <Card>
         <Heading>{heading}</Heading>
         <Desc>{desc}</Desc>
+        {image ? (
+          <ImageWrapper className={isClicked && 'isClicked'}>
+            <Image
+              src={`/${image}`}
+              layout="responsive"
+              width={16}
+              height={9}
+              objectFit="cover"
+            />
+          </ImageWrapper>
+        ) : null}
       </Card>
+      <Expand className={isHovered && image && 'hover'}>
+        {isClicked ? 'collapse' : 'expand'}
+      </Expand>
     </Container>
   )
 }

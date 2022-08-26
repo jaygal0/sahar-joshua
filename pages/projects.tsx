@@ -5,16 +5,19 @@ import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
 
 const projects = ({ dbs }: { dbs: any }) => {
+  const { data } = dbs
+
   return (
     <>
       <Navigation />
       <IndexMain className="projects">
         <Heading
           title="projects"
-          text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
+          text="In my spare time I like to design and develop apps that interest me. Whether it's fulfilling a real need or allowing me to be creative, each project has helped me get better at my craft."
         />
-        <CardProject logo="jg" url="galinato" />
-        <CardProject logo="cpb" url="commonplacebook" />
+        {data.map((project: any) => {
+          return <CardProject logo={project.title} url={project.title} />
+        })}
       </IndexMain>
     </>
   )

@@ -14,7 +14,7 @@ const timeline = ({ dbs }: { dbs: any }) => {
       <IndexMain className="timeline">
         <Heading
           title="timeline"
-          text="This is where I play. Curabitur odio pellentesque rhoncus dignissim dolor, morbi imperdiet. Pretium lectus sed a euismod nisl a tempus amet, ipsum."
+          text="Instead of boring you with an 'About' page, here's a timeline of some of the events that has happened in my life."
         />
         {data
           .sort((a: any, b: any) => {
@@ -32,6 +32,7 @@ const timeline = ({ dbs }: { dbs: any }) => {
                 desc={item.desc}
                 date={item.date}
                 category={item.category}
+                image={item.image}
               />
             )
           })}

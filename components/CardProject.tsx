@@ -40,12 +40,10 @@ const ImageContainer = styled.div`
 const CardProject = ({
   logo,
   background,
-  category,
   url,
 }: {
   logo: string
   background?: string
-  category?: string
   url: string
 }) => {
   return (
