@@ -6,8 +6,6 @@ import { IndexMain } from '../styles'
 const timeline = ({ dbs }: { dbs: any }) => {
   const { data } = dbs
 
-  console.log(data)
-
   return (
     <>
       <Navigation />
@@ -27,6 +25,7 @@ const timeline = ({ dbs }: { dbs: any }) => {
           .map((item: any) => {
             return (
               <CardTimeLine
+                key={item._id}
                 start={item.start}
                 heading={item.title}
                 desc={item.desc}

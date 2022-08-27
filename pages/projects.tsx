@@ -16,7 +16,13 @@ const projects = ({ dbs }: { dbs: any }) => {
           text="In my spare time I like to design and develop apps that interest me. Whether it's fulfilling a real need or allowing me to be creative, each project has helped me get better at my craft."
         />
         {data.map((project: any) => {
-          return <CardProject logo={project.title} url={project.title} />
+          return (
+            <CardProject
+              key={project._id}
+              logo={project.title}
+              url={project.title}
+            />
+          )
         })}
       </IndexMain>
     </>

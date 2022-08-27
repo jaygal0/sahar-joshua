@@ -1,18 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import Logo from './Logo'
 
 const NavContainer = styled.nav`
   position: relative;
   z-index: 99;
 `
-const Logo = styled.div`
+const Breadcrumb = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   font-weight: ${({ theme }) => theme.type.weight.bold};
   color: ${({ theme }) => theme.color.text};
   position: fixed;
   top: 2.4rem;
   left: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.sm};
+`
+const Divider = styled.div`
+  font-size: ${({ theme }) => theme.type.size.body.md};
+  font-weight: ${({ theme }) => theme.type.weight.normal};
+  color: ${({ theme }) => theme.color.text};
+`
+const Breadcrumbs = styled.div`
+  font-size: ${({ theme }) => theme.type.size.body.lg};
+  font-weight: ${({ theme }) => theme.type.weight.normal};
+  color: ${({ theme }) => theme.color.text};
+  text-transform: capitalize;
 `
 const Menu = styled.button`
   outline: none;
@@ -110,12 +127,75 @@ const Close = styled.button`
 export const Navigation = () => {
   const [isOffSet, setIsOffSet] = useState<boolean>(false)
   const [backgroundColor, IsBackgroundColor] = useState<string>('')
+  const [isProjects, setIsProjects] = useState<boolean>(false)
+
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.asPath.includes('projects')) {
+      setIsProjects(!isProjects)
+    }
+  }, [])
+
+  const now = 'now'
+  const timeline = 'timeline'
+  const projects = 'projects'
+  const contact = 'contact'
+  const unofficeHours = 'unoffice-hours'
 
   return (
     <NavContainer>
-      <Logo>
-        <Link href="/">home</Link>
-      </Logo>
+      <Breadcrumb>
+        <Logo />
+        {router.asPath == `/${now}` && (
+          <>
+            <Divider>/</Divider>
+            <Breadcrumbs>
+              <Link href={`${now}`}>{now}</Link>
+            </Breadcrumbs>
+          </>
+        )}
+        {router.asPath == `/${timeline}` && (
+          <>
+            <Divider>/</Divider>
+            <Breadcrumbs>
+              <Link href={`${timeline}`}>{timeline}</Link>
+            </Breadcrumbs>
+          </>
+        )}{' '}
+        {isProjects && (
+          <>
+            <Divider>/</Divider>
+            <Breadcrumbs>
+              <Link href="/projects">{projects}</Link>
+            </Breadcrumbs>
+            <Divider>/</Divider>
+            <Breadcrumbs>
+              <Link href={`${router.asPath}`}>
+                {router.asPath
+                  .replace(/[|&;$%@"<>()+,/]/g, '')
+                  .replace('projects', '')}
+              </Link>
+            </Breadcrumbs>
+          </>
+        )}
+        {router.asPath == `/${unofficeHours}` && (
+          <>
+            <Divider>/</Divider>
+            <Breadcrumbs>
+              <Link href={`${unofficeHours}`}>{'Unoffice Hours'}</Link>
+            </Breadcrumbs>
+          </>
+        )}
+        {router.asPath == `/${contact}` && (
+          <>
+            <Divider>/</Divider>
+            <Breadcrumbs>
+              <Link href={`${contact}`}>{contact}</Link>
+            </Breadcrumbs>
+          </>
+        )}
+      </Breadcrumb>
       <Menu
         onClick={() => {
           setIsOffSet(!isOffSet)

@@ -10,7 +10,7 @@ const contact = () => {
       <IndexMain className="blog">
         <Heading
           title="contact"
-          text="For any business inquiries, you can email me at: josh[at]galina.to"
+          text="Whether you have a business inquiry or just a random question, I check all my email and try to reply at a resonable time. You can get in touch at joshua[at]galina.to"
         />
       </IndexMain>
     </>

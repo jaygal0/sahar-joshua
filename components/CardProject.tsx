@@ -28,7 +28,7 @@ const Container = styled.div`
     left: 0;
   }
 
-  &:active  {
+  &:active {
     transform: scale(0.99);
   }
 `

@@ -73,6 +73,19 @@ const Card = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.md};
   flex-grow: 1;
   height: min-content;
+  transition: all ease-in-out 0.2s;
+  box-shadow: 0px 0px 3px #c6d0e1;
+  top: 0;
+  left: 0;
+
+  &.hasImage {
+    &:hover {
+      cursor: pointer;
+      box-shadow: 15px 15px 0 -3px #c6d0e1;
+      top: -7px;
+      left: -7px;
+    }
+  }
 `
 const Heading = styled.h2`
   font-family: 'DM Sans', sans-serif;
@@ -153,7 +166,7 @@ const Timeline = ({
         </DateWrapper>
       </Date>
       <DashedLine className={start && 'start'} />
-      <Card>
+      <Card className={image && 'hasImage'}>
         <Heading>{heading}</Heading>
         <Desc>{desc}</Desc>
         {image ? (
