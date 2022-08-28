@@ -13,6 +13,8 @@ export const IndexMain = styled.main`
   &.home {
     background: ${({ theme }) => theme.color.home.background};
     padding-top: 20vh;
+    justify-content: center;
+    flex-direction: row;
   }
   &.projects {
     background: ${({ theme }) => theme.color.projects.background};

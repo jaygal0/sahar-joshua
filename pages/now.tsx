@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Age from '../components/Age'
+import Card from '../components/Card'
+import DeathCount from '../components/DeathCount'
 import Heading from '../components/Heading'
 import Label from '../components/Label'
-import Card from '../components/Card'
-import LocationStriked from '../components/LocationStriked'
 import LocationNow from '../components/LocationNow'
+import LocationStriked from '../components/LocationStriked'
 import { Navigation } from '../components/Navigation'
-import { ExternalLink, IndexMain } from '../styles'
-import ProfessionStriked from '../components/ProfessionStriked'
-import ProfessionNow from '../components/ProfessionNow'
 import NowText from '../components/NowText'
-import Age from '../components/Age'
-import DeathCount from '../components/DeathCount'
+import ProfessionNow from '../components/ProfessionNow'
+import ProfessionStriked from '../components/ProfessionStriked'
+import { ExternalLink, IndexMain } from '../styles'
 
 const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
   const { data } = dbs
@@ -19,8 +19,13 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
     <>
       <Navigation />
       <IndexMain className="now">
-        {data.map((item: any) => {
-          if (item.category == 'now') {
+        {data
+          .filter((item: any) => {
+            if (item.category == 'now') {
+              return item
+            }
+          })
+          .map((item: any) => {
             return (
               <Heading
                 key={item._id}
@@ -29,8 +34,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
                 now={item.dateAdded}
               />
             )
-          }
-        })}
+          })}
         <Card>
           <Label text="age" />
           <Age />
@@ -48,25 +52,19 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
         <Card>
           <Label text="location" />
           {data
-            .sort((a: any, b: any) => {
-              if (a.category == 'location' || b.category == 'location') {
-                if (a.date > b.date) {
-                  return 1
-                } else {
-                  return -1
-                }
+            .filter((item: any) => {
+              if (item.category == 'location' && !item.curren) {
+                return item
               }
             })
             .map((item: any) => {
-              if (item.category == 'location' && !item.current) {
-                return (
-                  <LocationStriked
-                    key={item._id}
-                    city={item.city}
-                    country={item.country}
-                  />
-                )
-              }
+              return (
+                <LocationStriked
+                  key={item._id}
+                  city={item.city}
+                  country={item.country}
+                />
+              )
             })}
           {data.map((item: any) => {
             if (item.category == 'location' && item.current) {
@@ -83,25 +81,19 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
         <Card>
           <Label text="profession" />
           {data
-            .sort((a: any, b: any) => {
-              if (a.category == 'profession' || b.category == 'profession') {
-                if (a.date > b.date) {
-                  return 1
-                } else {
-                  return -1
-                }
+            .filter((item: any) => {
+              if (item.category == 'profession' && !item.current) {
+                return item
               }
             })
             .map((item: any) => {
-              if (item.category == 'profession' && !item.current) {
-                return (
-                  <ProfessionStriked
-                    key={item._id}
-                    job={item.job}
-                    company={item.company}
-                  />
-                )
-              }
+              return (
+                <ProfessionStriked
+                  key={item._id}
+                  job={item.job}
+                  company={item.company}
+                />
+              )
             })}
           {data.map((item: any) => {
             if (item.category == 'profession' && item.current) {
@@ -117,8 +109,13 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
         </Card>
         <Card>
           <Label text="reading" />
-          {data.map((item: any) => {
-            if (item.category == 'reading') {
+          {data
+            .filter((item: any) => {
+              if (item.category == 'reading') {
+                return item
+              }
+            })
+            .map((item: any) => {
               return (
                 <NowText
                   key={item._id}
@@ -126,8 +123,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
                   secondary={`By ${item.author}`}
                 />
               )
-            }
-          })}
+            })}
         </Card>
         <Card>
           <Label text="Chess Rating" />

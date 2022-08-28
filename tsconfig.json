@@ -15,6 +15,12 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/now.js"],
+  "include": [, "components/Face.js"
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/api/now.js",
+    "components/Face.js"
+  ],
   "exclude": ["node_modules"]
 }

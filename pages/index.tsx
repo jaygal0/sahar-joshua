@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Hero from '../components/Hero'
 import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
+import IndexHero from '../components/IndexHero'
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <Navigation />
       <IndexMain className="home">
-        <Hero />
+        <IndexHero />
       </IndexMain>
     </>
   )

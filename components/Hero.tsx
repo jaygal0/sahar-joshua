@@ -8,6 +8,7 @@ const Container = styled.div`
   height: min-content;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `
 const Subtitle = styled.h2`
   width: 90%;
