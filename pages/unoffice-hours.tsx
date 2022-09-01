@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Navigation } from '../components/Navigation'
-import { IndexMain } from '../styles'
+import { ExternalLink, IndexMain } from '../styles'
+import Button from '../components/Button'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Container = styled.div`
   display: flex;
@@ -28,6 +31,16 @@ const Text = styled.p`
   line-height: ${({ theme }) => theme.type.height.lg};
   margin-bottom: 3.2rem;
   font-weight: ${({ theme }) => theme.type.weight.normal};
+
+  &.margin-bottom {
+    margin-bottom: 1.6rem;
+  }
+
+  &.bold {
+    text-transform: capitalize;
+    font-weight: ${({ theme }) => theme.type.weight.bold};
+    margin-bottom: 0.8rem;
+  }
 `
 const ListWrapper = styled.ul`
   width: 85%;
@@ -37,6 +50,18 @@ const List = styled.li`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   margin-left: 2.4rem;
   line-height: ${({ theme }) => theme.type.height.lg};
+  width: max-content;
+
+  &.link {
+    :hover {
+      cursor: pointer;
+    }
+  }
+`
+const Secondary = styled.div`
+  width: 90%;
+  font-size: ${({ theme }) => theme.type.size.body.md};
+  margin: 3.2rem 0;
 `
 
 const unofficeHours = () => {
@@ -48,21 +73,43 @@ const unofficeHours = () => {
           <Title>Unoffice Hours</Title>
           <Text>
             Every Wednesday afternoon, I’m opening up my calendar so anyone can
-            book a 30 minute call.
+            book a 30 minute call and chat about anything you want.
           </Text>
-          <Text>
-            Unoffice Hours are informal chats where we could chat about anything
-            you fancy.
-          </Text>
-          <Text>Some possible topics include:</Text>
+          <Text className="margin-bottom">Some possible topics include:</Text>
           <ListWrapper>
-            <List>list</List>
-            <List>list</List>
-            <List>list</List>
-            <List>list</List>
-            <List>list</List>
+            <List>Design and/or Technology</List>
+            <List>Ways we can work together</List>
+            <List>A general catchup</List>
           </ListWrapper>
-          <Text>Inspired by Dave Smyth.</Text>
+          <Button flex link="#" cta="book a 30 minute call" />
+          <Secondary>
+            Inspired by{' '}
+            <ExternalLink href="https://davesmyth.com/" target="_blank">
+              Dave Smyth
+            </ExternalLink>
+          </Secondary>
+          <Text className="bold">webring</Text>
+          <Text className="margin-bottom">
+            There are other people offering Unoffice Hours:
+          </Text>
+          <ListWrapper>
+            <Link href="">
+              <List className="link">
+                Previous{' '}
+                <Image src="/external-link.svg" height={16} width={16} />
+              </List>
+            </Link>
+            <List className="link">
+              Next <Image src="/external-link.svg" height={16} width={16} />
+            </List>
+            <List className="link">
+              Random <Image src="/external-link.svg" height={16} width={16} />
+            </List>
+            <List className="link">
+              All sites{' '}
+              <Image src="/external-link.svg" height={16} width={16} />
+            </List>
+          </ListWrapper>
         </Container>
       </IndexMain>
     </>

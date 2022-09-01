@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
+import moment from 'moment'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -23,126 +24,58 @@ const Label = styled.div`
 `
 
 const DeathCount = () => {
-  // Death Clock Countdown
-  const [timerYears, setTimerYears] = useState<number>(0)
-  const [timerMonths, setTimerMonths] = useState<number>(0)
-  const [timerDays, setTimerDays] = useState<number>(0)
-  const [timerHours, setTimerHours] = useState<number>(0)
-  const [timerMinutes, setTimerMinutes] = useState<number>(0)
-  const [timerSeconds, setTimerSeconds] = useState<number>(0)
+  const a = moment([2081, 10, 8])
+  const b: Date = new Date()
 
-  let interval: any = useRef()
+  var diffDuration = moment.duration(a.diff(b))
 
-  const startTimer = () => {
-    const countdownDate = new Date('October 8, 2080 00:00:00').getTime()
-
-    interval = setInterval(() => {
-      const now = new Date().getTime()
-      const distance = countdownDate - now
-
-      const yearsCount: number = Math.floor(
-        distance / (1000 * 60 * 60 * 24 * 365)
-      )
-      const monthsCount: number = Math.floor(
-        distance / (1000 * 60 * 60 * 24 * 30)
-      )
-      const daysCount: number = Math.floor(distance / (1000 * 60 * 60 * 24))
-      const hoursCount: number = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      )
-      const minutesCount = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      )
-      const secondsCount = Math.floor((distance % (1000 * 60)) / 1000)
-
-      if (distance < 0) {
-        clearInterval(interval.current)
-      } else {
-        setTimerYears(yearsCount)
-        setTimerMonths(monthsCount)
-        setTimerDays(daysCount)
-        setTimerHours(hoursCount)
-        setTimerMinutes(minutesCount)
-        setTimerSeconds(secondsCount)
-      }
-    }, 1000)
-  }
+  const [years, setYears] = useState<number>(0)
+  const [months, setMonths] = useState<number>(0)
+  const [days, setDays] = useState<number>(0)
+  const [hours, setHours] = useState<number>(0)
+  const [minutes, setMinutes] = useState<number>(0)
+  const [seconds, setSeconds] = useState<number>(0)
 
   useEffect(() => {
-    startTimer()
-    return () => {
-      clearInterval(interval.current)
-    }
+    const countdown = setInterval(() => {
+      setYears(diffDuration.years())
+      setMonths(diffDuration.months())
+      setDays(diffDuration.days())
+      setHours(diffDuration.hours())
+      setMinutes(diffDuration.minutes())
+      setSeconds(diffDuration.seconds())
+    }, 1000)
+    return () => clearInterval(countdown)
   })
+
+  function addLeadingZeros(num: number, totalLength: number) {
+    return String(num).padStart(totalLength, '0')
+  }
 
   return (
     <Container>
       <NumAndLabel>
-        <Num>
-          {timerYears === 0
-            ? `00`
-            : timerYears < 10
-            ? `0${timerYears}`
-            : `${timerYears}`}
-        </Num>
+        <Num>{addLeadingZeros(years, 2)}</Num>
         <Label>years</Label>
       </NumAndLabel>
       <NumAndLabel>
-        <Num>
-          {timerMonths === 0
-            ? `00`
-            : timerMonths > 12
-            ? `00`
-            : timerMonths < 10
-            ? `0${timerMonths}`
-            : `${timerMonths}`}
-        </Num>
+        <Num>{addLeadingZeros(months, 2)}</Num>
         <Label>months</Label>
       </NumAndLabel>{' '}
       <NumAndLabel>
-        <Num>
-          {timerDays === 0
-            ? `00`
-            : timerDays > 31
-            ? `00`
-            : timerDays < 10
-            ? `0${timerDays}`
-            : `${timerDays}`}
-        </Num>
+        <Num>{addLeadingZeros(days, 2)}</Num>
         <Label>days</Label>
       </NumAndLabel>{' '}
       <NumAndLabel>
-        <Num>
-          {timerHours === 0
-            ? `00`
-            : timerHours > 24
-            ? `00`
-            : timerHours < 10
-            ? `0${timerHours}`
-            : `${timerHours}`}
-        </Num>
+        <Num>{addLeadingZeros(hours, 2)}</Num>
         <Label>hours</Label>
       </NumAndLabel>{' '}
       <NumAndLabel>
-        <Num>
-          {timerMinutes === 0
-            ? `00`
-            : timerMinutes > 60
-            ? `00`
-            : timerMinutes < 10
-            ? `0${timerMinutes}`
-            : `${timerMinutes}`}
-        </Num>
+        <Num>{addLeadingZeros(minutes, 2)}</Num>
         <Label>minutes</Label>
       </NumAndLabel>{' '}
       <NumAndLabel>
-        <Num>
-          {timerSeconds === 0
-            ? `00`
-            : timerSeconds < 10
-            ? `0${timerSeconds}`
-            : `${timerSeconds}`}
-        </Num>
+        <Num>{addLeadingZeros(seconds, 2)}</Num>
         <Label>seconds</Label>
       </NumAndLabel>
     </Container>

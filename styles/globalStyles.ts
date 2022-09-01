@@ -7,7 +7,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'DM Sans', sans-serif;
-
+  cursor: url('/cursor.svg'),auto;
 }
 #__next {
   position: relative;

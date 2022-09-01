@@ -23,15 +23,6 @@ const Title = styled.h1`
   text-transform: capitalize;
   letter-spacing: 0.5px;
 `
-const Subtitle = styled.h2`
-  width: 90%;
-  font-size: ${({ theme }) => theme.type.size.title.sm};
-  font-family: 'DM Sans', sans-serif;
-  line-height: ${({ theme }) => theme.type.height.md};
-  margin-bottom: 0.8rem;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-`
 const Text = styled.p`
   width: 90%;
   font-size: ${({ theme }) => theme.type.size.title.sm};

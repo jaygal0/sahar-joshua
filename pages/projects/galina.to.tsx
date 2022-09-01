@@ -52,9 +52,14 @@ const galinato = ({ dbs }: { dbs: any }) => {
             objectFit="cover"
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            In previous versions of this website, the data, text and images
+            derived from the source files itself. This meant that whenever I
+            wanted to make a small change in text, I had to open up VS Code and
+            push my latest commit to Github for the changes to take effect.
+            Since I was updating my site regularly you could see how tidious
+            this could get. I needed a better way of working.
+            <br />
           </BodyText>
-          <Button cta="CTA" link="" />
         </Card>
         <Card>
           <Label text="getting to work" />
@@ -66,9 +71,14 @@ const galinato = ({ dbs }: { dbs: any }) => {
             objectFit="cover"
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            Once I sorted out the logic and how I was going to connect this site
+            to a database, it was a matter of redesigning the website to work
+            effectively with the different technologies involved.
           </BodyText>
-          <Button cta="CTA" link="" />
+          <Button
+            cta="View Figma File"
+            link="https://www.figma.com/file/EI5KVwwDI858pVO578ZX7N/galina.to-v2.0?node-id=2409%3A5758"
+          />
         </Card>
         <Card>
           <Label text="laying out the system" />
@@ -80,9 +90,15 @@ const galinato = ({ dbs }: { dbs: any }) => {
             objectFit="cover"
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            Creating a level of consistency in design requires attention to
+            detail as well as a strong design language. Just with every project
+            I work on, I try to build on good foundations by making sure a good
+            design system is in place.
           </BodyText>
-          <Button cta="CTA" link="" />
+          <Button
+            cta="View design system"
+            link="https://www.figma.com/file/EI5KVwwDI858pVO578ZX7N/galina.to-v2.0?node-id=1410%3A18"
+          />
         </Card>
         <Card>
           <Label text="developing the idea" />
@@ -94,9 +110,15 @@ const galinato = ({ dbs }: { dbs: any }) => {
             objectFit="cover"
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            As always, I translate my designs to code and develop everything
+            myself. Since I was pulling all the data from a database, it took a
+            bit of time to understand the logic, but by doing so it helped me
+            become a better developer.
           </BodyText>
-          <Button cta="CTA" link="" />
+          <Button
+            cta="View source code"
+            link="https://github.com/jaygal0/galina.to"
+          />
         </Card>
       </IndexMain>
     </>

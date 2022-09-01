@@ -12,7 +12,7 @@ const timeline = ({ dbs }: { dbs: any }) => {
       <IndexMain className="timeline">
         <Heading
           title="timeline"
-          text="Instead of boring you with an 'About' page, here's a timeline of some of the events that has happened in my life."
+          text="Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life."
         />
         {data
           .sort((a: any, b: any) => {

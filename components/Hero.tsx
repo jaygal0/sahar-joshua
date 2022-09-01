@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const Container = styled.div`
   display: flex;
@@ -24,11 +25,50 @@ const Title = styled.h1`
   text-transform: capitalize;
   color: ${({ theme }) => theme.color.text};
 `
+const Design = styled.span`
+  transition: color ease-in 0.25s;
+  &:hover {
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    line-height: 90%;
+    text-decoration: underline;
+    color: ${({ theme }) => theme.color.home.logo};
+  }
+`
+const Develop = styled.span`
+  transition: color ease-in 0.25s;
+  &:hover {
+    cursor: pointer;
+    font-family: 'Libre Barcode 39', cursive;
+    line-height: 50%;
+    text-decoration: underline;
+    color: ${({ theme }) => theme.color.unofficeHours.logo};
+  }
+`
+const Solve = styled.span`
+  transition: all ease-in 0.25s;
+  &:hover {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: ${({ theme }) => theme.color.home.logo};
+    color: white;
+  }
+`
 const Hero = () => {
   return (
     <Container>
       <Subtitle>Hi, I'm Joshua Galinato</Subtitle>
-      <Title>I design, develop &amp; solve problems</Title>
+      <Title>
+        I{' '}
+        <Link href="/projects">
+          <Design>design, </Design>
+        </Link>
+        <br />
+        <Link href="/projects">
+          <Develop>develop </Develop>
+        </Link>
+        <br />
+        &amp; <Solve>solve problems</Solve>
+      </Title>
     </Container>
   )
 }

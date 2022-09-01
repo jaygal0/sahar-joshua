@@ -35,10 +35,15 @@ export const IndexMain = styled.main`
 export const ExternalLink = styled.a`
   text-decoration: underline;
   letter-spacing: 0.5px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 export const BodyText = styled.p`
   font-size: ${({ theme }) => theme.type.size.body.md};
   color: ${({ theme }) => theme.color.text};
+  line-height: ${({ theme }) => theme.type.height.lg};
 `
 export const TechStack = styled.p`
   font-size: ${({ theme }) => theme.type.size.body.lg};

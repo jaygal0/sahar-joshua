@@ -15,7 +15,8 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": [, "components/Face.js"
+  "include": [
+    "components/Face.js",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

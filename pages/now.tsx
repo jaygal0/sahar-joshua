@@ -53,7 +53,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
           <Label text="location" />
           {data
             .filter((item: any) => {
-              if (item.category == 'location' && !item.curren) {
+              if (item.category == 'location' && !item.current) {
                 return item
               }
             })

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import styled from 'styled-components'
 
@@ -28,44 +28,58 @@ const Label = styled.div`
 `
 
 const Age = () => {
-  // To figure out my age
   let a = moment(new Date())
   let b = moment([1989, 6, 30])
 
-  let years = a.diff(b, 'year')
-  b.add(years, 'years')
+  var diffDuration = moment.duration(a.diff(b))
 
-  let months = a.diff(b, 'months')
-  b.add(months, 'months')
+  const [years, setYears] = useState<number>(0)
+  const [months, setMonths] = useState<number>(0)
+  const [days, setDays] = useState<number>(0)
+  const [hours, setHours] = useState<number>(0)
+  const [minutes, setMinutes] = useState<number>(0)
+  const [seconds, setSeconds] = useState<number>(0)
 
-  let days = a.diff(b, 'days')
+  useEffect(() => {
+    const countdown = setInterval(() => {
+      setYears(diffDuration.years())
+      setMonths(diffDuration.months())
+      setDays(diffDuration.days())
+      setHours(diffDuration.hours())
+      setMinutes(diffDuration.minutes())
+      setSeconds(diffDuration.seconds())
+    }, 1000)
+    return () => clearInterval(countdown)
+  })
+
+  function addLeadingZeros(num: number, totalLength: number) {
+    return String(num).padStart(totalLength, '0')
+  }
 
   return (
     <Container>
       <NumAndLabel>
-        <Num>{years === 0 ? `00` : years < 10 ? `0${years}` : `${years}`}</Num>
+        <Num>{addLeadingZeros(years, 2)}</Num>
         <Label>years</Label>
       </NumAndLabel>
       <NumAndLabel>
-        <Num>
-          {months === 0 ? `00` : months < 10 ? `0${months}` : `${months}`}
-        </Num>
+        <Num>{addLeadingZeros(months, 2)}</Num>
         <Label>months</Label>
       </NumAndLabel>{' '}
       <NumAndLabel>
-        <Num>{days === 0 ? `00` : days < 10 ? `0${days}` : `${days}`}</Num>
+        <Num>{addLeadingZeros(days, 2)}</Num>
         <Label>days</Label>
       </NumAndLabel>{' '}
-      <NumAndLabel className="disabled">
-        <Num>00</Num>
+      <NumAndLabel>
+        <Num>{addLeadingZeros(hours, 2)}</Num>
         <Label>hours</Label>
       </NumAndLabel>{' '}
-      <NumAndLabel className="disabled">
-        <Num>00</Num>
+      <NumAndLabel>
+        <Num>{addLeadingZeros(minutes, 2)}</Num>
         <Label>minutes</Label>
       </NumAndLabel>{' '}
-      <NumAndLabel className="disabled">
-        <Num>00</Num>
+      <NumAndLabel>
+        <Num>{addLeadingZeros(seconds, 2)}</Num>
         <Label>seconds</Label>
       </NumAndLabel>
     </Container>

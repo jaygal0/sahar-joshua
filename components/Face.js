@@ -48,8 +48,9 @@ const Face = () => {
       )
       .fromTo(
         tshirtShadow,
-        { scale: 0, opacity: 0, duration: 3 },
+        { ease: 'slowMo', scale: 0, opacity: 0, duration: 3 },
         {
+          ease: 'slowMo',
           scale: 1,
           opacity: 1,
         }
