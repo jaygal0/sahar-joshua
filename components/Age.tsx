@@ -29,7 +29,7 @@ const Label = styled.div`
 
 const Age = () => {
   let a = moment(new Date())
-  let b = moment([1989, 6, 30])
+  let b = new Date(1989, 6, 30, 15, 15, 0, 0)
 
   var diffDuration = moment.duration(a.diff(b))
 

@@ -14,7 +14,10 @@ export const IndexMain = styled.main`
     background: ${({ theme }) => theme.color.home.background};
     padding-top: 20vh;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
+    overflow: none;
+    height: 100vh;
   }
   &.projects {
     background: ${({ theme }) => theme.color.projects.background};
@@ -51,4 +54,8 @@ export const TechStack = styled.p`
 `
 export const ImageContainer = styled.div`
   width: 100%;
+`
+export const IndexFlexRowContainer = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing.sm};
 `

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Heading from '../../components/Heading'
 import Label from '../../components/Label'
 import Card from '../../components/Card'
@@ -7,15 +7,72 @@ import { BodyText, IndexMain, TechStack } from '../../styles'
 import Button from '../../components/Button'
 import Image from 'next/image'
 import styled from 'styled-components'
+import ButtonClose from '../../components/ButtonClose'
+
+const Lightbox = styled.div`
+  position: relative;
+  width: 0vw;
+  height: 0vh;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  &.isLightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 2.4rem;
+
+    &:hover {
+      cursor: zoom-out;
+    }
+  }
+`
+const LightboxBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.8;
+  z-index: -1;
+`
 
 const galinato = ({ dbs }: { dbs: any }) => {
+  const [lightboxImage, setLightboxImage] = useState<string>('/dummy-image.png')
+  const [isLightbox, setIsLightbox] = useState<Boolean>(false)
   const { data } = dbs
-
   const project = 'galina.to'
+
+  const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    let event = e.target as HTMLImageElement
+    setLightboxImage(event.dataset.set as string)
+    setIsLightbox(!isLightbox)
+  }
 
   return (
     <>
       <Navigation />
+      <Lightbox
+        onClick={() => {
+          setIsLightbox(!isLightbox)
+        }}
+        className={isLightbox && 'isLightbox'}
+      >
+        <Image
+          src={lightboxImage}
+          layout="responsive"
+          width={16}
+          height={9}
+          objectFit="cover"
+        />
+        <ButtonClose />
+        <LightboxBackground />
+      </Lightbox>
       <IndexMain className="now">
         {data.map((item: any) => {
           if (item.title == project) {
@@ -45,11 +102,14 @@ const galinato = ({ dbs }: { dbs: any }) => {
         <Card padding>
           <Label text="defining the problem" />
           <Image
-            src="/dummy-image.png"
+            src="/galinato-figma.jpg"
+            data-set="/galinato-figma.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
+            className="image-hover"
+            onClick={handleClick}
           />
           <BodyText>
             In previous versions of this website, the data, text and images
@@ -64,11 +124,14 @@ const galinato = ({ dbs }: { dbs: any }) => {
         <Card>
           <Label text="getting to work" />
           <Image
-            src="/dummy-image.png"
+            src="/galinato-figma.jpg"
+            data-set="/galinato-figma.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
+            className="image-hover"
+            onClick={handleClick}
           />
           <BodyText>
             Once I sorted out the logic and how I was going to connect this site
@@ -83,11 +146,14 @@ const galinato = ({ dbs }: { dbs: any }) => {
         <Card>
           <Label text="laying out the system" />
           <Image
-            src="/dummy-image.png"
+            src="/galinato-design-system.jpg"
+            data-set="/galinato-design-system.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
+            className="image-hover"
+            onClick={handleClick}
           />
           <BodyText>
             Creating a level of consistency in design requires attention to
@@ -103,11 +169,14 @@ const galinato = ({ dbs }: { dbs: any }) => {
         <Card>
           <Label text="developing the idea" />
           <Image
-            src="/dummy-image.png"
+            src="/galinato-develop.jpg"
+            data-set="/galinato-develop.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
+            className="image-hover"
+            onClick={handleClick}
           />
           <BodyText>
             As always, I translate my designs to code and develop everything

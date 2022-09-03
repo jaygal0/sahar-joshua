@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import IconAge from './IconAge'
+import IconDeath from './IconDeath'
+import IconLocation from './IconLocation'
+import IconProfession from './IconProfession'
+import IconBook from './IconBook'
+import IconChess from './IconChess'
 
-const Div = styled.div`
+const Container = styled.div`
+  position: relative;
   display: block;
   width: 65vw;
   background: white;
@@ -19,9 +26,56 @@ const Div = styled.div`
     gap: 2.4rem;
   }
 `
+const Square = styled.div`
+  &.isIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 56px;
+    width: 56px;
+    background: ${({ theme }) => theme.color.now.background};
+    border: 2px solid black;
+    border-radius: 4px;
+    top: 80px;
+    left: -3%;
+  }
+`
 
-const Card = ({ children, padding }: { children: any; padding?: boolean }) => {
-  return <Div className={padding ? 'increase-gap' : ''}>{children}</Div>
+const Card = ({
+  children,
+  padding,
+  isIcon,
+  age,
+  death,
+  location,
+  profession,
+  book,
+  chess,
+}: {
+  children: any
+  padding?: Boolean
+  isIcon?: Boolean
+  age?: Boolean
+  death?: Boolean
+  location?: Boolean
+  profession?: Boolean
+  book?: Boolean
+  chess?: Boolean
+}) => {
+  return (
+    <Container className={padding ? 'increase-gap' : ''}>
+      {children}
+      <Square className={isIcon ? 'isIcon' : ''}>
+        {age && <IconAge />}
+        {death && <IconDeath />}
+        {location && <IconLocation />}
+        {profession && <IconProfession />}
+        {book && <IconBook />}
+        {chess && <IconChess />}
+      </Square>
+    </Container>
+  )
 }
 
 export default Card

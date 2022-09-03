@@ -8,10 +8,12 @@ const Container = styled.div`
   position: relative;
   width: max-content;
   max-width: 1440px;
-  padding-left: 18rem;
+  padding-left: 12rem;
+  align-items: center;
 `
+
 const ImageWrapper = styled.div`
-  width: 88rem;
+  width: 100%;
   top: 0;
   right: 0;
   transform: translate(-18rem, 5%);

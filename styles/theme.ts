@@ -18,10 +18,12 @@ export default {
   color: {
     text: '#1C1C1C',
     disabled: '#cecece',
+    gray: '#D9D9D9',
     button: {
       primary: {
         background: '#555B6E',
         text: '#FFFFFF',
+        close: '#FF6B6B',
       },
       secondary: {
         background: '#555B6E',

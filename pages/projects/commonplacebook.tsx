@@ -1,22 +1,83 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Heading from '../../components/Heading'
 import Label from '../../components/Label'
 import Card from '../../components/Card'
 import { Navigation } from '../../components/Navigation'
-import { BodyText, IndexMain, TechStack } from '../../styles'
+import {
+  BodyText,
+  IndexMain,
+  TechStack,
+  IndexFlexRowContainer,
+} from '../../styles'
 import Button from '../../components/Button'
 import Image from 'next/image'
 import styled from 'styled-components'
+import ButtonClose from '../../components/ButtonClose'
+
+const Lightbox = styled.div`
+  position: relative;
+  width: 0vw;
+  height: 0vh;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  &.isLightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 2.4rem;
+
+    &:hover {
+      cursor: zoom-out;
+    }
+  }
+`
+const LightboxBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.8;
+  z-index: -1;
+`
 
 const commonplacebook = ({ dbs }: { dbs: any }) => {
+  const [lightboxImage, setLightboxImage] = useState<string>('/dummy-image.png')
+  const [isLightbox, setIsLightbox] = useState<Boolean>(false)
   const { data } = dbs
-
   const project = 'commonplacebook'
 
+  const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    let event = e.target as HTMLImageElement
+    setLightboxImage(event.dataset.set as string)
+    setIsLightbox(!isLightbox)
+  }
   return (
     <>
       <Navigation />
       <IndexMain className="now">
+        <Lightbox
+          onClick={() => {
+            setIsLightbox(!isLightbox)
+          }}
+          className={isLightbox && 'isLightbox'}
+        >
+          <Image
+            src={lightboxImage}
+            layout="responsive"
+            width={16}
+            height={9}
+            objectFit="cover"
+          />
+          <ButtonClose />
+          <LightboxBackground />
+        </Lightbox>
         {data.map((item: any) => {
           if (item.title == project) {
             return (
@@ -45,58 +106,89 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
         <Card padding>
           <Label text="defining the problem" />
           <Image
-            src="/dummy-image.png"
+            src="/galinato-figma.jpg"
+            data-set="/galinato-figma.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
+            className="image-hover"
+            onClick={handleClick}
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            I mostly read books on my Kindle and I often highlight phrases that
+            are worth remembering. My issue was that I had a lot of highlights
+            that I didn't know what to do with them, nor did I have a system to
+            review them all. That's why I went to the drawing board to figure
+            out if I could solve my problem.
           </BodyText>
-          <Button cta="CTA" link="" />
         </Card>
         <Card>
           <Label text="getting to work" />
           <Image
-            src="/dummy-image.png"
+            src="/cpb-figma.jpg"
+            data-set="/cpb-figma.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
+            className="image-hover"
+            onClick={handleClick}
+            alt="A screenshot of the Commonplacebook Figma file"
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            Once I figured out the overall concept as well as the logic, I went
+            straight to Figma to design the app.
           </BodyText>
-          <Button cta="CTA" link="" />
+          <Button
+            cta="View Figma File"
+            link="https://www.figma.com/file/Y4CJlNg4H0oH5h31bFfjFW/Commonplace-book?node-id=1814%3A844"
+          />
         </Card>
         <Card>
           <Label text="laying out the system" />
           <Image
-            src="/dummy-image.png"
+            src="/cpb-design-systems.jpg"
+            data-set="/cpb-design-systems.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
+            className="image-hover"
+            onClick={handleClick}
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            Creating a level of consistency in design requires attention to
+            detail as well as a strong design language. Just with every project
+            I work on, I try to build on good foundations by making sure a good
+            design system is in place.
           </BodyText>
-          <Button cta="CTA" link="" />
+          <Button
+            cta="View design system"
+            link="https://www.figma.com/file/Y4CJlNg4H0oH5h31bFfjFW/Commonplace-book?node-id=1911%3A3949"
+          />
         </Card>
         <Card>
           <Label text="developing the idea" />
           <Image
-            src="/dummy-image.png"
+            src="/cpb-app.gif"
             layout="responsive"
             width={16}
-            height={9}
+            height={10}
             objectFit="cover"
           />
           <BodyText>
-            This is body text to let you know that I'm the best in the world
+            As always, I translate my designs to code and develop everything
+            myself.
           </BodyText>
-          <Button cta="CTA" link="" />
+          <IndexFlexRowContainer>
+            <Button cta="View app" link="https://cpb-jaygal0.vercel.app" />
+            <Button
+              secondary
+              cta="View source code"
+              link="https://github.com/jaygal0/cpb"
+            />
+          </IndexFlexRowContainer>
         </Card>
       </IndexMain>
     </>

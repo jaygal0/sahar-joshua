@@ -35,11 +35,11 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
               />
             )
           })}
-        <Card>
+        <Card isIcon age>
           <Label text="age" />
           <Age />
         </Card>
-        <Card>
+        <Card isIcon death>
           <Label text="est. time of death" />
           <div>
             A reminder of my mortality. Data taken from{' '}
@@ -49,7 +49,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
           </div>
           <DeathCount />
         </Card>
-        <Card>
+        <Card isIcon location>
           <Label text="location" />
           {data
             .filter((item: any) => {
@@ -78,7 +78,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
             }
           })}
         </Card>
-        <Card>
+        <Card isIcon profession>
           <Label text="profession" />
           {data
             .filter((item: any) => {
@@ -107,7 +107,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
             }
           })}
         </Card>
-        <Card>
+        <Card isIcon book>
           <Label text="reading" />
           {data
             .filter((item: any) => {
@@ -125,7 +125,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
               )
             })}
         </Card>
-        <Card>
+        <Card isIcon chess>
           <Label text="Chess Rating" />
           <NowText main={`Rapid: ${lichess.perfs.rapid.rating}`} chess />
         </Card>
