@@ -32,6 +32,8 @@ const timeline = ({ dbs }: { dbs: any }) => {
                 date={item.date}
                 category={item.category}
                 image={item.image}
+                buttonText={item.buttonText}
+                buttonLink={item.buttonLink}
               />
             )
           })}

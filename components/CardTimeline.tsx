@@ -2,6 +2,7 @@ import moment from 'moment'
 import Image from 'next/image'
 import { useState } from 'react'
 import styled from 'styled-components'
+import Button from './Button'
 
 const Container = styled.div`
   display: flex;
@@ -14,10 +15,8 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
 
-  &.hasImage {
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
   }
 `
 const Date = styled.div`
@@ -68,17 +67,18 @@ const Card = styled.div`
   border-radius: 8.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0;
   margin-bottom: 4rem;
   font-size: ${({ theme }) => theme.type.size.body.md};
   flex-grow: 1;
   height: min-content;
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.5s;
   box-shadow: 0px 0px 3px #c6d0e1;
   top: 0;
   left: 0;
 
-  &.hasImage {
+  &.isClicked {
+    gap: ${({ theme }) => theme.spacing.md};
     &:hover {
       cursor: pointer;
       box-shadow: 15px 15px 0 -3px #c6d0e1;
@@ -90,14 +90,27 @@ const Card = styled.div`
 const Heading = styled.h2`
   font-family: 'DM Sans', sans-serif;
   font-size: ${({ theme }) => theme.type.size.title.md};
+  margin: 0;
 `
 const Desc = styled.p`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.md};
   font-size: ${({ theme }) => theme.type.size.body.lg};
+  line-height: ${({ theme }) => theme.type.height.md};
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  height: 0;
+
+  &.isClicked {
+    height: 100%;
+    opacity: 1;
+  }
 `
 const ImageWrapper = styled.div`
   width: 0%;
   opacity: 0;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.5s;
 
   &.isClicked {
     width: 100%;
@@ -111,7 +124,7 @@ const Expand = styled.button`
   background: none;
   border: none;
   opacity: 0;
-  transition: opacity ease-in-out 0.3s;
+  transition: opacity ease-in-out 0.5s;
   width: 2rem;
 
   &.hover {
@@ -127,6 +140,8 @@ const Timeline = ({
   date,
   category,
   image,
+  buttonText,
+  buttonLink,
 }: {
   start?: Boolean
   heading: string
@@ -134,6 +149,8 @@ const Timeline = ({
   date: string
   category: string
   image?: string
+  buttonText?: string
+  buttonLink?: string
 }) => {
   const [isHovered, setIsHovered] = useState<Boolean>(false)
   const [isClicked, setIsClicked] = useState<Boolean>(false)
@@ -149,30 +166,38 @@ const Timeline = ({
       onClick={() => {
         setIsClicked(!isClicked)
       }}
-      className={image && 'hasImage'}
     >
       <Date>
         <DateWrapper>
           <Image
-            // TODO: Need to make sure that I sort out the logic here with all the different icons that need to be used
-            src={category == '/work.svg' ? '' : '/placeholder-timeline.svg'}
-            width={32}
-            height={32}
+            src={
+              category == 'career'
+                ? '/work.svg'
+                : category == 'education'
+                ? '/education.svg'
+                : '/placeholder-timeline.svg'
+            }
+            width={48}
+            height={48}
           />
           <DatesWrapper>
-            <Month>{moment(date).format('MMMM')}</Month>
+            <Month>{moment(date).format('MMM')}</Month>
             <Year>{moment(date).format('YYYY')}</Year>
           </DatesWrapper>
         </DateWrapper>
       </Date>
       <DashedLine className={start && 'start'} />
-      <Card className={image && 'hasImage'}>
+      <Card className={isClicked && 'isClicked'}>
         <Heading>{heading}</Heading>
-        <Desc>{desc}</Desc>
+        <Desc className={isClicked && 'isClicked'}>
+          {desc}
+          {buttonText && <Button cta={buttonText} link={buttonLink} />}
+        </Desc>
+
         {image ? (
           <ImageWrapper className={isClicked && 'isClicked'}>
             <Image
-              src={`/${image}`}
+              src={`${image}`}
               layout="responsive"
               width={16}
               height={9}
@@ -181,7 +206,7 @@ const Timeline = ({
           </ImageWrapper>
         ) : null}
       </Card>
-      <Expand className={isHovered && image && 'hover'}>
+      <Expand className={isHovered && 'hover'}>
         {isClicked ? 'collapse' : 'expand'}
       </Expand>
     </Container>

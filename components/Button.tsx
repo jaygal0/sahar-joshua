@@ -46,7 +46,7 @@ const Button = ({
   secondary,
 }: {
   cta: string
-  link: string
+  link?: string
   flex?: Boolean
   secondary?: Boolean
 }) => {
