@@ -16,6 +16,12 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.xs};
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -36,6 +42,10 @@ const DashedLine = styled.div`
   left: 70px;
   z-index: -1;
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    display: none;
+  }
+
   &.start {
     height: 50%;
     top: 50%;
@@ -47,12 +57,21 @@ const DateWrapper = styled.div`
   gap: ${({ theme }) => theme.spacing.sm};
   align-items: center;
   padding: ${({ theme }) => theme.spacing.md};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
 `
 const DatesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xs};
   width: 70px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    flex-direction: row;
+    align-items: center;
+  }
 `
 const Month = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.lg};
@@ -60,6 +79,10 @@ const Month = styled.div`
 `
 const Year = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.md};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.body.lg};
+  }
 `
 const Card = styled.div`
   background: ${({ theme }) => theme.color.timeline.box};
@@ -78,6 +101,12 @@ const Card = styled.div`
   top: 0;
   left: 0;
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    margin-bottom: 1.2rem;
+    border-radius: 4.8rem;
+    padding: 5.6rem;
+  }
+
   &.isClicked {
     gap: ${({ theme }) => theme.spacing.md};
     &:hover {
@@ -92,6 +121,10 @@ const Heading = styled.h2`
   font-family: 'DM Sans', sans-serif;
   font-size: ${({ theme }) => theme.type.size.title.md};
   margin: 0;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.title.sm};
+  }
 `
 const Desc = styled.p`
   display: flex;

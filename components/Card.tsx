@@ -22,6 +22,12 @@ const Container = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.md};
   max-width: 986px;
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    width: calc(100vw - 4rem);
+    padding: 4.8rem;
+    border-radius: 3.2rem;
+  }
+
   &.increase-gap {
     gap: 2.4rem;
   }
@@ -39,6 +45,13 @@ const Square = styled.div`
     border-radius: 4px;
     top: 80px;
     left: -3%;
+
+    @media screen and (max-width: 426px) {
+      height: 48px;
+      width: 48px;
+      top: 48px;
+      left: -4%;
+    }
   }
 `
 

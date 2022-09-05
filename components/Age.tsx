@@ -6,16 +6,31 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `
 const NumAndLabel = styled.div`
+  display: flex;
+  flex-direction: column;
   font-family: 'Share Tech Mono', monospace;
-  &.disabled {
-    opacity: 0.1;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 `
 const Num = styled.div`
   font-size: ${({ theme }) => theme.type.size.display.sm};
   line-height: ${({ theme }) => theme.type.height.sm};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.title.lg};
+    margin-right: 1.6rem;
+  }
 `
 const Label = styled.div`
   font-family: 'DM Sans', sans-serif;
@@ -25,6 +40,11 @@ const Label = styled.div`
   text-align: center;
   text-transform: capitalize;
   letter-spacing: 0.5px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.body.lg};
+    margin-right: 1.6rem;
+  }
 `
 
 const Age = () => {

@@ -14,12 +14,20 @@ const Container = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.md};
   max-width: 986px;
   min-height: 543px;
-  margin-bottom: 8.8rem;
+  margin-bottom: 7.2rem;
   position: relative;
   transition: all ease-in-out 0.2s;
   box-shadow: 15px 15px 0 -3px #c6d0e1;
   top: -7px;
   left: -7px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    width: calc(100vw - 4rem);
+    height: 14px;
+    border-radius: 3.2rem;
+    min-height: 30vh;
+    margin-bottom: 4.8rem;
+  }
 
   &:hover {
     cursor: pointer;
@@ -35,6 +43,11 @@ const Container = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   padding: 7%;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    width: 100vw;
+    height: 20vw;
+  }
 `
 
 const CardProject = ({

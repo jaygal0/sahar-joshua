@@ -13,6 +13,11 @@ const Container = styled.div`
   padding-bottom: 8.8rem;
   margin-bottom: 6.4rem;
   max-width: 986px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    width: 100vw;
+    padding-bottom: 2.4rem;
+  }
 `
 const Title = styled.h1`
   width: 90%;
@@ -22,11 +27,19 @@ const Title = styled.h1`
   margin-bottom: 0.8rem;
   text-transform: capitalize;
   letter-spacing: 0.5px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.title.sm};
+  }
 `
 const Text = styled.p`
   width: 90%;
   font-size: ${({ theme }) => theme.type.size.title.sm};
   line-height: ${({ theme }) => theme.type.height.lg};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.body.lg};
+  }
 `
 const LastUpdated = styled.p`
   width: 90%;

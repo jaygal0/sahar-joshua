@@ -30,6 +30,12 @@ const Breadcrumbs = styled.div`
   font-weight: ${({ theme }) => theme.type.weight.normal};
   color: ${({ theme }) => theme.color.text};
   text-transform: capitalize;
+
+  &.third-level {
+    @media screen and (max-width: 426px) {
+      display: none;
+    }
+  }
 `
 const Menu = styled.button`
   outline: none;
@@ -53,6 +59,10 @@ const Now = styled.div`
   position: fixed;
   bottom: 2.4rem;
   left: 2.4rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    display: none;
+  }
 `
 const UnofficeHours = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.sm};
@@ -61,6 +71,10 @@ const UnofficeHours = styled.div`
   position: fixed;
   bottom: 2.4rem;
   right: 2.4rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    display: none;
+  }
 `
 
 interface Div {
@@ -92,10 +106,21 @@ const SlideOutMenu = styled.div<Div>`
   &.active {
     transform: translateY(-0);
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.title.md};
+  }
 `
 const ColorDiv = styled.div`
   &:hover {
     cursor: pointer;
+  }
+  &.responsive {
+    display: none;
+
+    @media screen and (max-width: 426px) {
+      display: block;
+    }
   }
 `
 const Wrapper = styled.div`
@@ -170,7 +195,7 @@ export const Navigation = () => {
               <Link href="/projects">{projects}</Link>
             </Breadcrumbs>
             <Divider>/</Divider>
-            <Breadcrumbs>
+            <Breadcrumbs className="third-level">
               <Link href={`${router.asPath}`}>
                 {router.asPath
                   .replace(/[|&;$%@"<>()+,/]/g, '')
@@ -283,6 +308,12 @@ export const Navigation = () => {
               Contact
             </ColorDiv>
           </Link>{' '}
+          <Link href="/now">
+            <ColorDiv className="responsive">Now</ColorDiv>
+          </Link>
+          <Link href="/unoffice-hours">
+            <ColorDiv className="responsive">UnOffice hours</ColorDiv>
+          </Link>
           {/* <Link href="/blog">
             <ColorDiv
               onMouseEnter={() => {

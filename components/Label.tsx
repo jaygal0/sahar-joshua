@@ -7,6 +7,10 @@ const Heading = styled.h2`
   font-weight: ${({ theme }) => theme.type.weight.normal};
   text-transform: capitalize;
   width: 100%;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.title.sm};
+  }
 `
 
 const Label = ({ text }: { text: string }) => {

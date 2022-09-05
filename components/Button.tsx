@@ -36,6 +36,10 @@ const ALink = styled.a`
   &.flex-start {
     align-self: flex-start;
     margin-left: 3.2rem;
+
+    @media screen and (max-width: 426px) {
+      margin-left: 2.4rem;
+    }
   }
 `
 

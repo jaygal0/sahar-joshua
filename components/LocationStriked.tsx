@@ -7,6 +7,10 @@ const Container = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.lg};
   text-transform: capitalize;
   text-decoration: line-through;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.title.sm};
+  }
 `
 
 const LocationStriked = ({

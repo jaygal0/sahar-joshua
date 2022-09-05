@@ -10,6 +10,10 @@ export const IndexMain = styled.main`
   padding-top: 35vh;
   padding-bottom: 13.6rem;
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    padding-top: 20vh;
+  }
+
   &.home {
     background: ${({ theme }) => theme.color.home.background};
     padding-top: 20vh;
@@ -58,4 +62,8 @@ export const ImageContainer = styled.div`
 export const IndexFlexRowContainer = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.sm};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    flex-direction: column;
+  }
 `

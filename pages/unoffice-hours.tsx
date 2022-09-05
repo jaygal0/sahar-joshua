@@ -15,6 +15,10 @@ const Container = styled.div`
   justify-content: center;
   padding-bottom: 10.4rem;
   max-width: 986px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    width: 100vw;
+  }
 `
 const Title = styled.h1`
   width: 90%;
@@ -24,6 +28,10 @@ const Title = styled.h1`
   margin-bottom: 0.8rem;
   text-transform: capitalize;
   letter-spacing: 0.5px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.title.sm};
+  }
 `
 const Text = styled.p`
   width: 90%;
@@ -31,6 +39,10 @@ const Text = styled.p`
   line-height: ${({ theme }) => theme.type.height.lg};
   margin-bottom: 3.2rem;
   font-weight: ${({ theme }) => theme.type.weight.normal};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.body.lg};
+  }
 
   &.margin-bottom {
     margin-bottom: 1.6rem;
@@ -51,6 +63,10 @@ const List = styled.li`
   margin-left: 2.4rem;
   line-height: ${({ theme }) => theme.type.height.lg};
   width: max-content;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+    font-size: ${({ theme }) => theme.type.size.body.lg};
+  }
 
   &.link {
     :hover {
