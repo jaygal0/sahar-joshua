@@ -22,7 +22,7 @@ const Container = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.md};
   max-width: 986px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: calc(100vw - 4rem);
     padding: 4.8rem;
     border-radius: 3.2rem;

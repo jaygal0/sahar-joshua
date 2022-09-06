@@ -43,6 +43,10 @@ export const ExternalLink = styled.a`
   text-decoration: underline;
   letter-spacing: 0.5px;
 
+  &.no-underline {
+    text-decoration: none;
+  }
+
   &:hover {
     cursor: pointer;
   }

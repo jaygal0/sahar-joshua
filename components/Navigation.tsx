@@ -32,7 +32,7 @@ const Breadcrumbs = styled.div`
   text-transform: capitalize;
 
   &.third-level {
-    @media screen and (max-width: 426px) {
+    @media screen and (max-width: 1024px) {
       display: none;
     }
   }
@@ -60,7 +60,7 @@ const Now = styled.div`
   bottom: 2.4rem;
   left: 2.4rem;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     display: none;
   }
 `
@@ -72,7 +72,7 @@ const UnofficeHours = styled.div`
   bottom: 2.4rem;
   right: 2.4rem;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     display: none;
   }
 `
@@ -107,7 +107,7 @@ const SlideOutMenu = styled.div<Div>`
     transform: translateY(-0);
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.md};
   }
 `
@@ -118,7 +118,7 @@ const ColorDiv = styled.div`
   &.responsive {
     display: none;
 
-    @media screen and (max-width: 426px) {
+    @media screen and (max-width: 1024px) {
       display: block;
     }
   }

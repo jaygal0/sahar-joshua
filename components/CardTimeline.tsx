@@ -16,7 +16,7 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     align-items: flex-start;
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing.xs};
@@ -42,7 +42,7 @@ const DashedLine = styled.div`
   left: 70px;
   z-index: -1;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     display: none;
   }
 
@@ -58,7 +58,7 @@ const DateWrapper = styled.div`
   align-items: center;
   padding: ${({ theme }) => theme.spacing.md};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     padding: ${({ theme }) => theme.spacing.sm};
   }
 `
@@ -68,7 +68,7 @@ const DatesWrapper = styled.div`
   gap: ${({ theme }) => theme.spacing.xs};
   width: 70px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     flex-direction: row;
     align-items: center;
   }
@@ -80,7 +80,7 @@ const Month = styled.div`
 const Year = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.md};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.body.lg};
   }
 `
@@ -101,7 +101,7 @@ const Card = styled.div`
   top: 0;
   left: 0;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     margin-bottom: 1.2rem;
     border-radius: 4.8rem;
     padding: 5.6rem;
@@ -122,7 +122,7 @@ const Heading = styled.h2`
   font-size: ${({ theme }) => theme.type.size.title.md};
   margin: 0;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.sm};
   }
 `

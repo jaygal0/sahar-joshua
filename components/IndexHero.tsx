@@ -10,13 +10,38 @@ const Container = styled.div`
   max-width: 1440px;
   padding-left: 12rem;
   align-items: center;
+
+  @media screen and (max-width: 1280px) {
+    padding-left: 15rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    padding-left: 4rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding-left: 0rem;
+    transform: translateY(10vh);
+  }
 `
 
 const ImageWrapper = styled.div`
   width: 100%;
-  top: 0;
-  right: 0;
   transform: translate(-18rem, 5%);
+
+  @media screen and (max-width: 1280px) {
+    transform: translate(-25rem, 5%);
+    width: 30%;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    width: 30%;
+    transform: translate(-56rem, 5%);
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    position: absolute;
+    transform: translate(0);
+    top: -70%;
+    left: 1.6rem;
+    width: 55%;
+  }
 `
 
 const IndexHero = () => {

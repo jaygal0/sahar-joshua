@@ -8,7 +8,7 @@ const Heading = styled.h2`
   text-transform: capitalize;
   width: 100%;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.sm};
   }
 `

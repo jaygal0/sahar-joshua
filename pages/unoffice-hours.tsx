@@ -4,7 +4,6 @@ import { Navigation } from '../components/Navigation'
 import { ExternalLink, IndexMain } from '../styles'
 import Button from '../components/Button'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const Container = styled.div`
   display: flex;
@@ -16,7 +15,7 @@ const Container = styled.div`
   padding-bottom: 10.4rem;
   max-width: 986px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: 100vw;
   }
 `
@@ -29,7 +28,7 @@ const Title = styled.h1`
   text-transform: capitalize;
   letter-spacing: 0.5px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.sm};
   }
 `
@@ -40,7 +39,7 @@ const Text = styled.p`
   margin-bottom: 3.2rem;
   font-weight: ${({ theme }) => theme.type.weight.normal};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.body.lg};
   }
 
@@ -64,7 +63,7 @@ const List = styled.li`
   line-height: ${({ theme }) => theme.type.height.lg};
   width: max-content;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.body.lg};
   }
 
@@ -97,7 +96,11 @@ const unofficeHours = () => {
             <List>Ways we can work together</List>
             <List>A general catchup</List>
           </ListWrapper>
-          <Button flex link="#" cta="book a 30 minute call" />
+          <Button
+            flex
+            link="https://calendly.com/joshua_galinato/30min"
+            cta="book a 30 minute call"
+          />
           <Secondary>
             Inspired by{' '}
             <ExternalLink href="https://davesmyth.com/" target="_blank">
@@ -109,22 +112,45 @@ const unofficeHours = () => {
             There are other people offering Unoffice Hours:
           </Text>
           <ListWrapper>
-            <Link href="">
+            <ExternalLink
+              className="no-underline"
+              href="https://unofficehours.com/prev.html"
+              target="_blank"
+            >
               <List className="link">
                 Previous{' '}
                 <Image src="/external-link.svg" height={16} width={16} />
               </List>
-            </Link>
-            <List className="link">
-              Next <Image src="/external-link.svg" height={16} width={16} />
-            </List>
-            <List className="link">
-              Random <Image src="/external-link.svg" height={16} width={16} />
-            </List>
-            <List className="link">
-              All sites{' '}
-              <Image src="/external-link.svg" height={16} width={16} />
-            </List>
+            </ExternalLink>
+
+            <ExternalLink
+              className="no-underline"
+              href="https://unofficehours.com/next.html"
+              target="_blank"
+            >
+              <List className="link">
+                Next <Image src="/external-link.svg" height={16} width={16} />
+              </List>
+            </ExternalLink>
+            <ExternalLink
+              className="no-underline"
+              href="https://unofficehours.com/random.html"
+              target="_blank"
+            >
+              <List className="link">
+                Random <Image src="/external-link.svg" height={16} width={16} />
+              </List>
+            </ExternalLink>
+            <ExternalLink
+              className="no-underline"
+              href="https://unofficehours.com"
+              target="_blank"
+            >
+              <List className="link">
+                All sites{' '}
+                <Image src="/external-link.svg" height={16} width={16} />
+              </List>
+            </ExternalLink>
           </ListWrapper>
         </Container>
       </IndexMain>

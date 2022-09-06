@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -27,7 +27,7 @@ const Num = styled.div`
   font-size: ${({ theme }) => theme.type.size.display.sm};
   line-height: ${({ theme }) => theme.type.height.sm};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.lg};
     margin-right: 1.6rem;
   }
@@ -41,7 +41,7 @@ const Label = styled.div`
   text-transform: capitalize;
   letter-spacing: 0.5px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.body.lg};
     margin-right: 1.6rem;
   }

@@ -14,7 +14,7 @@ const Container = styled.div`
   margin-bottom: 6.4rem;
   max-width: 986px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: 100vw;
     padding-bottom: 2.4rem;
   }
@@ -28,7 +28,7 @@ const Title = styled.h1`
   text-transform: capitalize;
   letter-spacing: 0.5px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.sm};
   }
 `
@@ -37,7 +37,7 @@ const Text = styled.p`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   line-height: ${({ theme }) => theme.type.height.lg};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.body.lg};
   }
 `

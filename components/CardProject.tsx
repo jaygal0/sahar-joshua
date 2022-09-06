@@ -21,7 +21,7 @@ const Container = styled.div`
   top: -7px;
   left: -7px;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: calc(100vw - 4rem);
     height: 14px;
     border-radius: 3.2rem;
@@ -44,7 +44,7 @@ const ImageContainer = styled.div`
   position: relative;
   padding: 7%;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: 100vw;
     height: 20vw;
   }

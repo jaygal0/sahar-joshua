@@ -76,12 +76,12 @@ export default {
     sm: '',
   },
   breakPoint: {
-    desktop4K: '2561px',
-    desktopLarge: '1441px',
-    desktopSmall: '1024px',
+    desklg: '2561px',
+    deskmd: '1441px',
+    desksm: '1024px',
     tablet: '810px',
-    phoneLarge: '426px',
-    phoneMedium: '376px',
-    phoneSmall: '321px',
+    phonelg: '426px',
+    phonemd: '376px',
+    phonesm: '321px',
   },
 }

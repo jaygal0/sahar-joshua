@@ -12,7 +12,7 @@ const Main = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.lg};
   font-weight: ${({ theme }) => theme.type.weight.bold};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.sm};
   }
 `
@@ -20,7 +20,7 @@ const Secondary = styled.div`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   text-transform: capitalize;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.body.lg};
   }
 `

@@ -8,7 +8,7 @@ const Container = styled.div`
   text-transform: capitalize;
   font-weight: ${({ theme }) => theme.type.weight.bold};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.sm};
   }
 `
