@@ -142,7 +142,7 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
           </BodyText>
           <Button
             cta="View Figma File"
-            link="https://www.figma.com/file/Y4CJlNg4H0oH5h31bFfjFW/Commonplace-book?node-id=1814%3A844"
+            link="https://www.figma.com/file/EKeNzDmhNgZxNGeIbqGKli/Typ_?node-id=1001%3A1739"
           />
         </Card>
         <Card>
@@ -166,7 +166,7 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
           </BodyText>
           <Button
             cta="View design system"
-            link="https://www.figma.com/file/Y4CJlNg4H0oH5h31bFfjFW/Commonplace-book?node-id=1911%3A3949"
+            link="https://www.figma.com/file/EKeNzDmhNgZxNGeIbqGKli/Typ_?node-id=1639%3A2105"
           />
         </Card>
         <Card>
