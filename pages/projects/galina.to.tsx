@@ -69,6 +69,7 @@ const galinato = ({ dbs }: { dbs: any }) => {
           width={16}
           height={9}
           objectFit="cover"
+          alt="lightbox"
         />
         <ButtonClose />
         <LightboxBackground />
@@ -102,14 +103,15 @@ const galinato = ({ dbs }: { dbs: any }) => {
         <Card padding>
           <Label text="defining the problem" />
           <Image
-            src="/galinato-figma.jpg"
-            data-set="/galinato-figma.jpg"
+            src="/galinato-sketches.jpg"
+            data-set="/galinato-sketches.jpg"
             layout="responsive"
-            width={16}
-            height={9}
+            width={4}
+            height={3}
             objectFit="cover"
             className="image-hover"
             onClick={handleClick}
+            alt="sketches"
           />
           <BodyText>
             In previous versions of this website, the data, text and images
@@ -132,6 +134,7 @@ const galinato = ({ dbs }: { dbs: any }) => {
             objectFit="cover"
             className="image-hover"
             onClick={handleClick}
+            alt="figma"
           />
           <BodyText>
             Once I sorted out the logic and how I was going to connect this site
@@ -154,6 +157,7 @@ const galinato = ({ dbs }: { dbs: any }) => {
             objectFit="cover"
             className="image-hover"
             onClick={handleClick}
+            alt="design systems"
           />
           <BodyText>
             Creating a level of consistency in design requires attention to
@@ -177,6 +181,7 @@ const galinato = ({ dbs }: { dbs: any }) => {
             objectFit="cover"
             className="image-hover"
             onClick={handleClick}
+            alt="app"
           />
           <BodyText>
             As always, I translate my designs to code and develop everything

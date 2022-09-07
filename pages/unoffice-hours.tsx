@@ -119,7 +119,12 @@ const unofficeHours = () => {
             >
               <List className="link">
                 Previous{' '}
-                <Image src="/external-link.svg" height={16} width={16} />
+                <Image
+                  src="/external-link.svg"
+                  height={16}
+                  width={16}
+                  alt="external icon"
+                />
               </List>
             </ExternalLink>
 
@@ -129,7 +134,13 @@ const unofficeHours = () => {
               target="_blank"
             >
               <List className="link">
-                Next <Image src="/external-link.svg" height={16} width={16} />
+                Next{' '}
+                <Image
+                  src="/external-link.svg"
+                  height={16}
+                  width={16}
+                  alt="external icon"
+                />
               </List>
             </ExternalLink>
             <ExternalLink
@@ -138,7 +149,13 @@ const unofficeHours = () => {
               target="_blank"
             >
               <List className="link">
-                Random <Image src="/external-link.svg" height={16} width={16} />
+                Random{' '}
+                <Image
+                  src="/external-link.svg"
+                  height={16}
+                  width={16}
+                  alt="external icon"
+                />
               </List>
             </ExternalLink>
             <ExternalLink
@@ -148,7 +165,12 @@ const unofficeHours = () => {
             >
               <List className="link">
                 All sites{' '}
-                <Image src="/external-link.svg" height={16} width={16} />
+                <Image
+                  src="/external-link.svg"
+                  height={16}
+                  width={16}
+                  alt="external icon"
+                />
               </List>
             </ExternalLink>
           </ListWrapper>

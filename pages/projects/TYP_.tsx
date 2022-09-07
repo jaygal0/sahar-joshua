@@ -51,7 +51,7 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
   const [lightboxImage, setLightboxImage] = useState<string>('/dummy-image.png')
   const [isLightbox, setIsLightbox] = useState<Boolean>(false)
   const { data } = dbs
-  const project = 'commonplacebook'
+  const project = 'TYP_'
 
   const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
     let event = e.target as HTMLImageElement
@@ -74,7 +74,7 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
             width={16}
             height={9}
             objectFit="cover"
-            alt="lightbox"
+            alt="lightbox active"
           />
           <ButtonClose />
           <LightboxBackground />
@@ -107,8 +107,8 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
         <Card padding>
           <Label text="defining the problem" />
           <Image
-            src="/cpb-sketches.jpg"
-            data-set="/cpb-sketches.jpg"
+            src="/typ-sketches.jpg"
+            data-set="/typ-sketches.jpg"
             layout="responsive"
             width={4}
             height={3}
@@ -118,18 +118,16 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
             alt="sketches"
           />
           <BodyText>
-            I mostly read books on my Kindle and I often highlight phrases that
-            are worth remembering. My issue was that I had a lot of highlights
-            that I didn't know what to do with them, nor did I have a system to
-            review them all. That's why I went to the drawing board to figure
-            out if I could solve my problem.
+            Since moving to Sweden I needed to find better tools to help me
+            learn the language. Since I couldn't find a decent writing tool I
+            decided to design and build one for myself.
           </BodyText>
         </Card>
         <Card>
           <Label text="getting to work" />
           <Image
-            src="/cpb-figma.jpg"
-            data-set="/cpb-figma.jpg"
+            src="/typ-figma.jpg"
+            data-set="/typ-figma.jpg"
             layout="responsive"
             width={16}
             height={9}
@@ -150,8 +148,8 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
         <Card>
           <Label text="laying out the system" />
           <Image
-            src="/cpb-design-systems.jpg"
-            data-set="/cpb-design-systems.jpg"
+            src="/typ-design-systems.jpg"
+            data-set="/typ-design-systems.jpg"
             layout="responsive"
             width={16}
             height={9}
@@ -174,7 +172,7 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
         <Card>
           <Label text="developing the idea" />
           <Image
-            src="/cpb-app.gif"
+            src="/typ-app.gif"
             layout="responsive"
             width={16}
             height={10}
@@ -183,14 +181,16 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
           />
           <BodyText>
             As always, I translate my designs to code and develop everything
-            myself.
+            myself. Unfortunately, I didn't have enough time to build it exactly
+            like the sketches, but what I've built so far is enough for me to
+            help me with my language learning.
           </BodyText>
           <IndexFlexRowContainer>
-            <Button cta="View app" link="https://cpb-jaygal0.vercel.app" />
+            <Button cta="View app" link="https://typ-eta.vercel.app/" />
             <Button
               secondary
               cta="View source code"
-              link="https://github.com/jaygal0/cpb"
+              link="https://github.com/jaygal0/typ"
             />
           </IndexFlexRowContainer>
         </Card>

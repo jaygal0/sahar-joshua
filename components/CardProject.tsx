@@ -63,7 +63,7 @@ const CardProject = ({
     <Link href={`/projects/${url}`}>
       <Container color={background ? background : '#FFF5F5'}>
         <ImageContainer>
-          <Image src={`/${logo}.svg`} layout="fill" />
+          <Image src={`/${logo}.svg`} layout="fill" alt={logo} />
         </ImageContainer>
       </Container>
     </Link>

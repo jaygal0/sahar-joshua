@@ -213,6 +213,7 @@ const Timeline = ({
             }
             width={48}
             height={48}
+            alt={category}
           />
           <DatesWrapper>
             <Month>{moment(date).format('MMM')}</Month>
@@ -236,6 +237,7 @@ const Timeline = ({
               width={16}
               height={9}
               objectFit="cover"
+              alt={image}
             />
           </ImageWrapper>
         ) : null}
