@@ -42,7 +42,7 @@ const LightboxBackground = styled.div`
   z-index: -1;
 `
 
-const galinato = ({ dbs }: { dbs: any }) => {
+const Galinato = ({ dbs }: { dbs: any }) => {
   const [lightboxImage, setLightboxImage] = useState<string>('/dummy-image.png')
   const [isLightbox, setIsLightbox] = useState<Boolean>(false)
   const { data } = dbs
@@ -199,7 +199,7 @@ const galinato = ({ dbs }: { dbs: any }) => {
   )
 }
 
-export default galinato
+export default Galinato
 
 export async function getServerSideProps(context: any) {
   const site = process.env.WEB_SITE

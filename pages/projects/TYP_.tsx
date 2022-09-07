@@ -47,7 +47,7 @@ const LightboxBackground = styled.div`
   z-index: -1;
 `
 
-const commonplacebook = ({ dbs }: { dbs: any }) => {
+const Typ = ({ dbs }: { dbs: any }) => {
   const [lightboxImage, setLightboxImage] = useState<string>('/dummy-image.png')
   const [isLightbox, setIsLightbox] = useState<Boolean>(false)
   const { data } = dbs
@@ -119,8 +119,8 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
           />
           <BodyText>
             Since moving to Sweden I needed to find better tools to help me
-            learn the language. Since I couldn't find a decent writing tool I
-            decided to design and build one for myself.
+            learn the language. Since I couldn&apos;t find a decent writing tool
+            I decided to design and build one for myself.
           </BodyText>
         </Card>
         <Card>
@@ -181,9 +181,9 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
           />
           <BodyText>
             As always, I translate my designs to code and develop everything
-            myself. Unfortunately, I didn't have enough time to build it exactly
-            like the sketches, but what I've built so far is enough for me to
-            help me with my language learning.
+            myself. Unfortunately, I didn&apos;t have enough time to build it
+            exactly like the sketches, but what I&apos;ve built so far is enough
+            for me to help me with my language learning.
           </BodyText>
           <IndexFlexRowContainer>
             <Button cta="View app" link="https://typ-eta.vercel.app/" />
@@ -199,7 +199,7 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
   )
 }
 
-export default commonplacebook
+export default Typ
 
 export async function getServerSideProps(context: any) {
   const site = process.env.WEB_SITE
