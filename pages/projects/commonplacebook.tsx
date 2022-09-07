@@ -47,7 +47,7 @@ const LightboxBackground = styled.div`
   z-index: -1;
 `
 
-const commonplacebook = ({ dbs }: { dbs: any }) => {
+const Commonplacebook = ({ dbs }: { dbs: any }) => {
   const [lightboxImage, setLightboxImage] = useState<string>('/dummy-image.png')
   const [isLightbox, setIsLightbox] = useState<Boolean>(false)
   const { data } = dbs
@@ -120,9 +120,9 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
           <BodyText>
             I mostly read books on my Kindle and I often highlight phrases that
             are worth remembering. My issue was that I had a lot of highlights
-            that I didn't know what to do with them, nor did I have a system to
-            review them all. That's why I went to the drawing board to figure
-            out if I could solve my problem.
+            that I didn&apos;t know what to do with them, nor did I have a
+            system to review them all. That&apos;s why I went to the drawing
+            board to figure out if I could solve my problem.
           </BodyText>
         </Card>
         <Card>
@@ -199,7 +199,7 @@ const commonplacebook = ({ dbs }: { dbs: any }) => {
   )
 }
 
-export default commonplacebook
+export default Commonplacebook
 
 export async function getServerSideProps(context: any) {
   const site = process.env.WEB_SITE

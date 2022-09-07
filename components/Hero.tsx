@@ -68,7 +68,7 @@ const Solve = styled.span`
 const Hero = () => {
   return (
     <Container>
-      <Subtitle>Hi, I'm Joshua Galinato</Subtitle>
+      <Subtitle>Hi, I&apos;m Joshua Galinato</Subtitle>
       <Title>
         I{' '}
         <Link href="/projects">
