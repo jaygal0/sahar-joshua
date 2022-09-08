@@ -20,6 +20,13 @@ const Subtitle = styled.h2`
   font-weight: ${({ theme }) => theme.type.weight.bold};
   font-family: 'DM Sans', sans-serif;
   color: ${({ theme }) => theme.color.home.subtitle};
+  animation: fadeIn 1.8s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
 `
 const Title = styled.h1`
   width: 90%;
@@ -27,6 +34,13 @@ const Title = styled.h1`
   line-height: ${({ theme }) => theme.type.height.sm};
   text-transform: capitalize;
   color: ${({ theme }) => theme.color.text};
+  animation: fadeIn 1.2s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
 
   @media screen and (max-width: 1280px) {
     font-size: ${({ theme }) => theme.type.size.display.sm};
@@ -44,6 +58,13 @@ const Design = styled.span`
     line-height: 90%;
     text-decoration: underline;
     color: ${({ theme }) => theme.color.home.logo};
+    animation: fadeIn 2s ease-in-out;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+    }
   }
 `
 const Develop = styled.span`
@@ -62,6 +83,13 @@ const Solve = styled.span`
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ theme }) => theme.color.home.logo};
     color: white;
+    animation: fadeIn 1s ease-in-out;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+    }
   }
 `
 const Hero = () => {

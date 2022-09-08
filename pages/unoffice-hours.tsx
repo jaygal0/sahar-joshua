@@ -14,6 +14,13 @@ const Container = styled.div`
   justify-content: center;
   padding-bottom: 10.4rem;
   max-width: 986px;
+  animation: fadeIn 0.7s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: 100vw;

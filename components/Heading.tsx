@@ -13,6 +13,13 @@ const Container = styled.div`
   padding-bottom: 8.8rem;
   margin-bottom: 6.4rem;
   max-width: 986px;
+  animation: fadeIn 1.2s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: 100vw;

@@ -26,6 +26,13 @@ const Container = styled.div`
 const ImageWrapper = styled.div`
   width: 100%;
   transform: translate(-18rem, 5%);
+  animation: fadeIn 0.7s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
 
   @media screen and (max-width: 1280px) {
     transform: translate(-25rem, 5%);
