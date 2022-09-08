@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  /* width: 50vw; */
   height: min-content;
   align-items: center;
   justify-content: center;
