@@ -21,6 +21,19 @@ const Container = styled.div`
   margin-bottom: 4rem;
   font-size: ${({ theme }) => theme.type.size.body.md};
   max-width: 986px;
+  animation: cardFadeIn 2.5s ease-in-out;
+
+  @keyframes cardFadeIn {
+    0% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: calc(100vw - 4rem);

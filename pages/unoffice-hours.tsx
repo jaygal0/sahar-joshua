@@ -14,11 +14,12 @@ const Container = styled.div`
   justify-content: center;
   padding-bottom: 10.4rem;
   max-width: 986px;
-  animation: fadeIn 0.7s ease-in-out;
+  animation: ContainerTransition 1.8s ease-in-out;
 
-  @keyframes fadeIn {
+  @keyframes ContainerTransition {
     from {
       opacity: 0;
+      transform: translateY(8rem);
     }
   }
 

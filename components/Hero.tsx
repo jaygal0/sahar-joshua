@@ -9,6 +9,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 1;
+  animation: heroScaleIn 2s ease-in-out;
+
+  @keyframes heroScaleIn {
+    from  {
+      transform: scale(1.1);
+    }
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: 100vw;

@@ -15,6 +15,19 @@ const Container = styled.div`
   height: min-content;
   position: relative;
   z-index: 1;
+  animation: cardFadeIn 2.5s ease-in-out;
+
+  @keyframes cardFadeIn {
+    0% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     align-items: flex-start;

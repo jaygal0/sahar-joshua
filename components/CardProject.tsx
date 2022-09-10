@@ -20,6 +20,19 @@ const Container = styled.div`
   box-shadow: 15px 15px 0 -3px #c6d0e1;
   top: -7px;
   left: -7px;
+  animation: projectCardFadeIn 2.5s ease-in-out;
+
+  @keyframes projectCardFadeIn {
+    0% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: calc(100vw - 4rem);
