@@ -17,7 +17,7 @@ const NumAndLabel = styled.div`
   flex-direction: column;
   font-family: 'Share Tech Mono', monospace;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     flex-direction: row;
     align-items: center;
     justify-content: center;

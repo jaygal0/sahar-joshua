@@ -19,11 +19,12 @@ const Container = styled.div`
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     padding-left: 0rem;
-    transform: translateY(10vh);
+    position: absolute;
+    bottom: 3.2rem;
   }
 `
 
-const ImageWrapper = styled.div`
+const FaceWrapper = styled.div`
   width: 100%;
   transform: translate(-18rem, 5%);
   animation: fadeIn 0.7s ease-in-out;
@@ -45,9 +46,9 @@ const ImageWrapper = styled.div`
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     position: absolute;
     transform: translate(0);
-    top: -70%;
+    top: -30vh;
     left: 1.6rem;
-    width: 55%;
+    width: 50%;
   }
 `
 
@@ -55,9 +56,9 @@ const IndexHero = () => {
   return (
     <Container>
       <Hero />
-      <ImageWrapper>
+      <FaceWrapper>
         <Face />
-      </ImageWrapper>
+      </FaceWrapper>
     </Container>
   )
 }

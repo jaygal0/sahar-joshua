@@ -41,6 +41,12 @@ const Container = styled.div`
     border-radius: 3.2rem;
   }
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: calc(100vw - 4rem);
+    padding: 2.4rem;
+    border-radius: 2.4rem;
+  }
+
   &.increase-gap {
     gap: 2.4rem;
   }
@@ -60,9 +66,9 @@ const Square = styled.div`
     left: -3%;
 
     @media screen and (max-width: 426px) {
-      height: 48px;
-      width: 48px;
-      top: 48px;
+      height: 40px;
+      width: 40px;
+      top: -16px;
       left: -4%;
     }
   }

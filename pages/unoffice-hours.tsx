@@ -4,6 +4,7 @@ import { Navigation } from '../components/Navigation'
 import { ExternalLink, IndexMain } from '../styles'
 import Button from '../components/Button'
 import Image from 'next/image'
+import Meta from '../components/Meta'
 
 const Container = styled.div`
   display: flex;
@@ -90,6 +91,7 @@ const Secondary = styled.div`
 const unofficeHours = () => {
   return (
     <>
+      <Meta title="Unoffice Hours" />
       <Navigation />
       <IndexMain className="unoffice-hours">
         <Container>

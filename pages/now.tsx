@@ -11,12 +11,14 @@ import NowText from '../components/NowText'
 import ProfessionNow from '../components/ProfessionNow'
 import ProfessionStriked from '../components/ProfessionStriked'
 import { ExternalLink, IndexMain } from '../styles'
+import Meta from '../components/Meta'
 
 const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
   const { data } = dbs
 
   return (
     <>
+      <Meta title="Now" />
       <Navigation />
       <IndexMain className="now">
         {data

@@ -8,6 +8,7 @@ import Button from '../../components/Button'
 import Image from 'next/image'
 import styled from 'styled-components'
 import ButtonClose from '../../components/ButtonClose'
+import Meta from '../../components/Meta'
 
 const Lightbox = styled.div`
   position: relative;
@@ -56,6 +57,7 @@ const Galinato = ({ dbs }: { dbs: any }) => {
 
   return (
     <>
+      <Meta title="Galina.to" />
       <Navigation />
       <Lightbox
         onClick={() => {

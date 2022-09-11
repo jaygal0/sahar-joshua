@@ -67,7 +67,7 @@ export const IndexFlexRowContainer = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.sm};
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     flex-direction: column;
   }
 `

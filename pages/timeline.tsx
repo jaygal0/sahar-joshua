@@ -1,5 +1,6 @@
 import CardTimeLine from '../components/CardTimeline'
 import Heading from '../components/Heading'
+import Meta from '../components/Meta'
 import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
 
@@ -8,6 +9,7 @@ const timeline = ({ dbs }: { dbs: any }) => {
 
   return (
     <>
+      <Meta title="Timeline" />
       <Navigation />
       <IndexMain className="timeline">
         <Heading

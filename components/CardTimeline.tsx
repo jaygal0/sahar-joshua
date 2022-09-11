@@ -35,6 +35,10 @@ const Container = styled.div`
     gap: ${({ theme }) => theme.spacing.xs};
   }
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    margin-bottom: 4rem;
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -85,6 +89,10 @@ const DatesWrapper = styled.div`
     flex-direction: row;
     align-items: center;
   }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    flex-direction: row;
+    align-items: center;
+  }
 `
 const Month = styled.div`
   font-size: ${({ theme }) => theme.type.size.body.lg};
@@ -118,6 +126,11 @@ const Card = styled.div`
     margin-bottom: 1.2rem;
     border-radius: 4.8rem;
     padding: 5.6rem;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding: 2.4rem;
+    border-radius: 2.4rem;
   }
 
   &.isClicked {
@@ -177,6 +190,10 @@ const Expand = styled.button`
   &.hover {
     cursor: pointer;
     opacity: 1;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    display: none;
   }
 `
 

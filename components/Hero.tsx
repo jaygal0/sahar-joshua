@@ -12,12 +12,15 @@ const Container = styled.div`
   animation: heroScaleIn 2s ease-in-out;
 
   @keyframes heroScaleIn {
-    from  {
+    from {
       transform: scale(1.1);
     }
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    width: 100vw;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLg}) {
     width: 100vw;
   }
 `
@@ -65,13 +68,6 @@ const Design = styled.span`
     line-height: 90%;
     text-decoration: underline;
     color: ${({ theme }) => theme.color.home.logo};
-    animation: fadeIn 2s ease-in-out;
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-    }
   }
 `
 const Develop = styled.span`
@@ -90,13 +86,6 @@ const Solve = styled.span`
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${({ theme }) => theme.color.home.logo};
     color: white;
-    animation: fadeIn 1s ease-in-out;
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-    }
   }
 `
 const Hero = () => {
