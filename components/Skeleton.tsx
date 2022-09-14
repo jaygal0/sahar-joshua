@@ -34,25 +34,27 @@ const Title = styled.div`
   background: ${({ theme }) => theme.color.disabled};
   border-radius: 4px;
   margin-bottom: 2.4rem;
+  background: linear-gradient(0.25turn, transparent, #cecece, transparent),
+    linear-gradient(#c8c8c8, #eeeeee), linear-gradient(#c8c8c8, #eeeeee);
+  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+  animation: loading 5s infinite alternate linear;
+  @keyframes loading {
+    to {
+      background-position: 0, 100%;
+    }
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
   }
 `
 const Text = styled.div`
   background: linear-gradient(0.25turn, transparent, #cecece, transparent),
-    linear-gradient(#d9d9d9, #d9d9d9), linear-gradient(#d9d9d9, #d9d9d9);
+    linear-gradient(#d9d9d9, #eeeeee), linear-gradient(#d9d9d9, #eeeeee);
   background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
-  animation: loading 1s alternate infinite;
-  animation: fade 3s alternate infinite;
-  @keyframes fade {
-    to {
-      opacity: 0.8;
-    }
-  }
+  animation: loading 5s infinite alternate linear;
   @keyframes loading {
     to {
       background-position: 0, 100%;
-      opacity: 0;
     }
   }
   &.sm {
