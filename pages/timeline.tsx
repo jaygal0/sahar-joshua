@@ -46,7 +46,7 @@ const timeline = ({ dbs }: { dbs: any }) => {
 
 export default timeline
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
   const site = process.env.WEB_SITE
 
   const res = await fetch(`${site}/api/timeline`)

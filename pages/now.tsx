@@ -138,7 +138,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
 
 export default now
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
   const site = process.env.WEB_SITE
   const res = await fetch(`${site}/api/now`)
   const dbs = await res.json()
