@@ -42,7 +42,7 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
           <Age />
         </Card>
         <Card isIcon death>
-          <Label text="est. time of death" />
+          <Label text="estimated time left to live" />
           <div>
             A reminder of my mortality. Data taken from{' '}
             <ExternalLink href="https://www.death-clock.org/" target="_blank">
@@ -162,5 +162,6 @@ export async function getStaticProps(context: any) {
 
   return {
     props: { dbs, lichess },
+    revalidate: 86400,
   }
 }
