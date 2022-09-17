@@ -108,7 +108,7 @@ const unofficeHours = () => {
           </ListWrapper>
           <Button
             flex
-            link="https://calendly.com/joshua_galinato/30min"
+            link="https://cal.com/galinato/unoffice-hours"
             cta="book a 30 minute call"
           />
           <Secondary>
