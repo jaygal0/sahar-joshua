@@ -162,6 +162,6 @@ export async function getStaticProps(context: any) {
 
   return {
     props: { dbs, lichess },
-    revalidate: 86400,
+    revalidate: 60,
   }
 }
