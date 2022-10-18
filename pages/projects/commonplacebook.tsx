@@ -144,10 +144,6 @@ const Commonplacebook = ({ dbs }: { dbs: any }) => {
             Once I figured out the overall concept as well as the logic, I went
             straight to Figma to design the app.
           </BodyText>
-          <Button
-            cta="View Figma File"
-            link="https://www.figma.com/file/Y4CJlNg4H0oH5h31bFfjFW/Commonplace-book?node-id=1814%3A844"
-          />
         </Card>
         <Card>
           <Label text="laying out the system" />

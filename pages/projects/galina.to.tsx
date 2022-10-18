@@ -143,10 +143,6 @@ const Galinato = ({ dbs }: { dbs: any }) => {
             to a database, it was a matter of redesigning the website to work
             effectively with the different technologies involved.
           </BodyText>
-          <Button
-            cta="View Figma File"
-            link="https://www.figma.com/file/EI5KVwwDI858pVO578ZX7N/galina.to-v2.0?node-id=2409%3A5758"
-          />
         </Card>
         <Card>
           <Label text="laying out the system" />
@@ -169,7 +165,7 @@ const Galinato = ({ dbs }: { dbs: any }) => {
           </BodyText>
           <Button
             cta="View design system"
-            link="https://www.figma.com/file/EI5KVwwDI858pVO578ZX7N/galina.to-v2.0?node-id=1410%3A18"
+            link="https://www.figma.com/file/EI5KVwwDI858pVO578ZX7N/galina.to-v2.0?node-id=2814%3A5561&viewport=1603%2C535%2C0.1"
           />
         </Card>
         <Card>

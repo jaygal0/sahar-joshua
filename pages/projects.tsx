@@ -15,7 +15,7 @@ const projects = ({ dbs }: { dbs: any }) => {
       <IndexMain className="projects">
         <Heading
           title="projects"
-          text="In my spare time I like to design and develop apps that interest me. Whether it's fulfilling a real need or allowing me to be creative, each project has helped me get better at my craft."
+          text="I'm currently the UX Lead Designer at Orbi and in the past I've lead design teams at Volvo and DeLaval. In my spare time the creativity doesn't stop, I like to design and develop apps that interest me. Below are a few examples."
         />
         {data.map((project: any) => {
           return (
