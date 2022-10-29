@@ -129,20 +129,20 @@ export async function getStaticProps(context: any) {
       notfound: true,
     }
   }
-  const resNowText = await fetch(`${site}/api/nowText`)
-  const dbsNowText = await resNowText.json()
-  if (!dbsNowText) {
-    return {
-      notfound: true,
-    }
-  }
-  const resNowReading = await fetch(`${site}/api/nowReading`)
-  const dbsNowReading = await resNowReading.json()
-  if (!dbsNowReading) {
-    return {
-      notfound: true,
-    }
-  }
+  // const resNowText = await fetch(`${site}/api/nowText`)
+  // const dbsNowText = await resNowText.json()
+  // if (!dbsNowText) {
+  //   return {
+  //     notfound: true,
+  //   }
+  // }
+  // const resNowReading = await fetch(`${site}/api/nowReading`)
+  // const dbsNowReading = await resNowReading.json()
+  // if (!dbsNowReading) {
+  //   return {
+  //     notfound: true,
+  //   }
+  // }
   const resChess = await fetch(`https://lichess.org/api/account`, {
     headers: {
       Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
@@ -156,7 +156,7 @@ export async function getStaticProps(context: any) {
   }
 
   return {
-    props: { dbs, dbsNowText, dbsNowReading, lichess },
+    props: { dbs, lichess },
     revalidate: 10,
   }
 }
