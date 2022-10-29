@@ -22,12 +22,12 @@ const now = ({ dbs, dbsNowText, dbsNowReading, lichess }: any) => {
       <Meta title="Now" />
       <Navigation />
       <IndexMain className="now">
-        {/* <Heading
+        <Heading
           key={dbsNowText.data[firstDocument]._id}
           title="What I'm up to now"
           text={dbsNowText.data[firstDocument].text}
           now={dbsNowText.data[firstDocument].date}
-        /> */}
+        />
         <Card isIcon age>
           <Label text="age" />
           <Age />
@@ -102,11 +102,11 @@ const now = ({ dbs, dbsNowText, dbsNowReading, lichess }: any) => {
         </Card>
         <Card isIcon book>
           <Label text="reading" />
-          {/* <NowText
+          <NowText
             key={dbsNowReading.data[firstDocument]._id}
             main={dbsNowReading.data[firstDocument].title}
             secondary={`By ${dbsNowReading.data[firstDocument].author}`}
-          /> */}
+          />
         </Card>
         <Card isIcon chess>
           <Label text="Chess Rating" />
@@ -129,20 +129,20 @@ export async function getStaticProps(context: any) {
       notfound: true,
     }
   }
-  // const resNowText = await fetch(`${site}/api/nowText`)
-  // const dbsNowText = await resNowText.json()
-  // if (!dbsNowText) {
-  //   return {
-  //     notfound: true,
-  //   }
-  // }
-  // const resNowReading = await fetch(`${site}/api/nowReading`)
-  // const dbsNowReading = await resNowReading.json()
-  // if (!dbsNowReading) {
-  //   return {
-  //     notfound: true,
-  //   }
-  // }
+  const resNowText = await fetch(`${site}/api/nowText`)
+  const dbsNowText = await resNowText.json()
+  if (!dbsNowText) {
+    return {
+      notfound: true,
+    }
+  }
+  const resNowReading = await fetch(`${site}/api/nowReading`)
+  const dbsNowReading = await resNowReading.json()
+  if (!dbsNowReading) {
+    return {
+      notfound: true,
+    }
+  }
   const resChess = await fetch(`https://lichess.org/api/account`, {
     headers: {
       Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
@@ -156,7 +156,7 @@ export async function getStaticProps(context: any) {
   }
 
   return {
-    props: { dbs, lichess },
+    props: { dbs, dbsNowText, dbsNowReading, lichess },
     revalidate: 10,
   }
 }
