@@ -13,30 +13,21 @@ import ProfessionStriked from '../components/ProfessionStriked'
 import { ExternalLink, IndexMain } from '../styles'
 import Meta from '../components/Meta'
 
-const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
+const now = ({ dbs, dbsNowText, dbsNowReading, lichess }: any) => {
   const { data } = dbs
+  const firstDocument = 0
 
   return (
     <>
       <Meta title="Now" />
       <Navigation />
       <IndexMain className="now">
-        {data
-          .filter((item: any) => {
-            if (item.category == 'now') {
-              return item
-            }
-          })
-          .map((item: any) => {
-            return (
-              <Heading
-                key={item._id}
-                title="What I'm up to now"
-                text={item.text}
-                now={item.dateAdded}
-              />
-            )
-          })}
+        <Heading
+          key={dbsNowText.data[firstDocument]._id}
+          title="What I'm up to now"
+          text={dbsNowText.data[firstDocument].text}
+          now={dbsNowText.data[firstDocument].date}
+        />
         <Card isIcon age>
           <Label text="age" />
           <Age />
@@ -111,21 +102,11 @@ const now = ({ dbs, lichess }: { dbs: any; lichess: any }) => {
         </Card>
         <Card isIcon book>
           <Label text="reading" />
-          {data
-            .filter((item: any) => {
-              if (item.category == 'reading') {
-                return item
-              }
-            })
-            .map((item: any) => {
-              return (
-                <NowText
-                  key={item._id}
-                  main={item.title}
-                  secondary={`By ${item.author}`}
-                />
-              )
-            })}
+          <NowText
+            key={dbsNowReading.data[firstDocument]._id}
+            main={dbsNowReading.data[firstDocument].title}
+            secondary={`By ${dbsNowReading.data[firstDocument].author}`}
+          />
         </Card>
         <Card isIcon chess>
           <Label text="Chess Rating" />
@@ -140,6 +121,7 @@ export default now
 
 export async function getStaticProps(context: any) {
   const site = process.env.WEB_SITE
+
   const res = await fetch(`${site}/api/now`)
   const dbs = await res.json()
   if (!dbs) {
@@ -147,7 +129,20 @@ export async function getStaticProps(context: any) {
       notfound: true,
     }
   }
-
+  const resNowText = await fetch(`${site}/api/nowText`)
+  const dbsNowText = await resNowText.json()
+  if (!dbsNowText) {
+    return {
+      notfound: true,
+    }
+  }
+  const resNowReading = await fetch(`${site}/api/nowReading`)
+  const dbsNowReading = await resNowReading.json()
+  if (!dbsNowReading) {
+    return {
+      notfound: true,
+    }
+  }
   const resChess = await fetch(`https://lichess.org/api/account`, {
     headers: {
       Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
@@ -161,7 +156,7 @@ export async function getStaticProps(context: any) {
   }
 
   return {
-    props: { dbs, lichess },
-    revalidate: 60,
+    props: { dbs, dbsNowText, dbsNowReading, lichess },
+    revalidate: 10,
   }
 }
