@@ -14,24 +14,13 @@ import { ExternalLink, IndexMain } from '../styles'
 import Meta from '../components/Meta'
 
 const now = ({
-  dbs,
   dbsNowText,
   dbsNowReading,
   dbsNowCareer,
   dbsNowLocation,
   lichess,
 }: any) => {
-  const { data } = dbs
   const firstDocument = 0
-
-  const [hydrated, setHydrated] = useState(false)
-  useEffect(() => {
-    setHydrated(true)
-  }, [])
-  if (!hydrated) {
-    // Returns null on first render, so the client and server match
-    return null
-  }
 
   return (
     <>
@@ -59,7 +48,6 @@ const now = ({
           <DeathCount />
         </Card>
         <Card isIcon location>
-          {console.log(dbsNowLocation)}
           <Label text="location" />
           {dbsNowLocation.data.map((location: any) => {
             if (
@@ -127,13 +115,6 @@ export default now
 export async function getStaticProps(context: any) {
   const site = process.env.WEB_SITE
 
-  const res = await fetch(`${site}/api/now`)
-  const dbs = await res.json()
-  if (!dbs) {
-    return {
-      notfound: true,
-    }
-  }
   const resNowText = await fetch(`${site}/api/nowText`)
   const dbsNowText = await resNowText.json()
   if (!dbsNowText) {
@@ -176,7 +157,6 @@ export async function getStaticProps(context: any) {
 
   return {
     props: {
-      dbs,
       dbsNowText,
       dbsNowReading,
       dbsNowCareer,
