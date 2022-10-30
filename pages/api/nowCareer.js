@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         const data = await db1
           .collection('nowCareer')
           .find()
-          .sort({ date: -1 })
+          .sort({ date: 1 })
           .toArray()
 
         res.status(200).json({ success: true, data: data })

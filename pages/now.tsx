@@ -24,6 +24,15 @@ const now = ({
   const { data } = dbs
   const firstDocument = 0
 
+  const [hydrated, setHydrated] = useState(false)
+  useEffect(() => {
+    setHydrated(true)
+  }, [])
+  if (!hydrated) {
+    // Returns null on first render, so the client and server match
+    return null
+  }
+
   return (
     <>
       <Meta title="Now" />
@@ -49,49 +58,52 @@ const now = ({
           </div>
           <DeathCount />
         </Card>
-        {/* <Card isIcon location>
+        <Card isIcon location>
+          {console.log(dbsNowLocation)}
           <Label text="location" />
-          {dbsNowLocation != dbsNowLocation[0] && (
-            <LocationStriked
-              key={dbsNowLocation.data._id}
-              city={dbsNowLocation.data.city}
-              country={dbsNowLocation.data.country}
-            />
-          )}
-          <LocationNow
-            key={dbsNowLocation.data._id}
-            city={dbsNowLocation.data.city}
-            country={dbsNowLocation.data.country}
-          />
-        </Card> */}
-        <Card isIcon profession>
-          <Label text="profession" />
-          {data
-            .filter((item: any) => {
-              if (item.category == 'profession' && !item.current) {
-                return item
-              }
-            })
-            .map((item: any) => {
+          {dbsNowLocation.data.map((location: any) => {
+            if (
+              location.city !=
+              dbsNowLocation.data[dbsNowLocation.data.length - 1].city
+            ) {
               return (
-                <ProfessionStriked
-                  key={item._id}
-                  job={item.job}
-                  company={item.company}
-                />
-              )
-            })}
-          {data.map((item: any) => {
-            if (item.category == 'profession' && item.current) {
-              return (
-                <ProfessionNow
-                  key={item._id}
-                  job={item.job}
-                  company={item.company}
+                <LocationStriked
+                  key={location._id}
+                  city={location.city}
+                  country={location.country}
                 />
               )
             }
           })}
+          <LocationNow
+            key={dbsNowLocation.data[dbsNowLocation.data.length - 1]._id}
+            city={dbsNowLocation.data[dbsNowLocation.data.length - 1].city}
+            country={
+              dbsNowLocation.data[dbsNowLocation.data.length - 1].country
+            }
+          />
+        </Card>
+        <Card isIcon profession>
+          <Label text="career" />
+          {dbsNowCareer.data.map((career: any) => {
+            if (
+              career.role !=
+              dbsNowCareer.data[dbsNowCareer.data.length - 1].role
+            ) {
+              return (
+                <ProfessionStriked
+                  key={career._id}
+                  job={career.role}
+                  company={career.company}
+                />
+              )
+            }
+          })}
+          <ProfessionNow
+            key={dbsNowCareer.data[dbsNowCareer.data.length - 1]._id}
+            job={dbsNowCareer.data[dbsNowCareer.data.length - 1].role}
+            company={dbsNowCareer.data[dbsNowCareer.data.length - 1].company}
+          />
         </Card>
         <Card isIcon book>
           <Label text="reading" />
@@ -143,13 +155,13 @@ export async function getStaticProps(context: any) {
       notfound: true,
     }
   }
-  // const resNowLocation = await fetch(`${site}/api/nowLocation`)
-  // const dbsNowLocation = await resNowLocation.json()
-  // if (!dbsNowReading) {
-  //   return {
-  //     notfound: true,
-  //   }
-  // }
+  const resNowLocation = await fetch(`${site}/api/nowLocation`)
+  const dbsNowLocation = await resNowLocation.json()
+  if (!dbsNowReading) {
+    return {
+      notfound: true,
+    }
+  }
   const resChess = await fetch(`https://lichess.org/api/account`, {
     headers: {
       Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
@@ -168,6 +180,7 @@ export async function getStaticProps(context: any) {
       dbsNowText,
       dbsNowReading,
       dbsNowCareer,
+      dbsNowLocation,
       lichess,
     },
     revalidate: 10,
