@@ -49,7 +49,7 @@ const now = ({
           </div>
           <DeathCount />
         </Card>
-        <Card isIcon location>
+        {/* <Card isIcon location>
           <Label text="location" />
           {dbsNowLocation != dbsNowLocation[0] && (
             <LocationStriked
@@ -63,7 +63,7 @@ const now = ({
             city={dbsNowLocation.data.city}
             country={dbsNowLocation.data.country}
           />
-        </Card>
+        </Card> */}
         <Card isIcon profession>
           <Label text="profession" />
           {data
