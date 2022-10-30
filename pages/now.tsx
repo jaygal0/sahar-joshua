@@ -13,7 +13,14 @@ import ProfessionStriked from '../components/ProfessionStriked'
 import { ExternalLink, IndexMain } from '../styles'
 import Meta from '../components/Meta'
 
-const now = ({ dbs, dbsNowText, dbsNowReading, lichess }: any) => {
+const now = ({
+  dbs,
+  dbsNowText,
+  dbsNowReading,
+  dbsNowCareer,
+  dbsNowLocation,
+  lichess,
+}: any) => {
   const { data } = dbs
   const firstDocument = 0
 
@@ -44,32 +51,18 @@ const now = ({ dbs, dbsNowText, dbsNowReading, lichess }: any) => {
         </Card>
         <Card isIcon location>
           <Label text="location" />
-          {data
-            .filter((item: any) => {
-              if (item.category == 'location' && !item.current) {
-                return item
-              }
-            })
-            .map((item: any) => {
-              return (
-                <LocationStriked
-                  key={item._id}
-                  city={item.city}
-                  country={item.country}
-                />
-              )
-            })}
-          {data.map((item: any) => {
-            if (item.category == 'location' && item.current) {
-              return (
-                <LocationNow
-                  key={item._id}
-                  city={item.city}
-                  country={item.country}
-                />
-              )
-            }
-          })}
+          {dbsNowLocation != dbsNowLocation[0] && (
+            <LocationStriked
+              key={dbsNowLocation.data._id}
+              city={dbsNowLocation.data.city}
+              country={dbsNowLocation.data.country}
+            />
+          )}
+          <LocationNow
+            key={dbsNowLocation.data._id}
+            city={dbsNowLocation.data.city}
+            country={dbsNowLocation.data.country}
+          />
         </Card>
         <Card isIcon profession>
           <Label text="profession" />
@@ -143,6 +136,20 @@ export async function getStaticProps(context: any) {
       notfound: true,
     }
   }
+  const resNowCareer = await fetch(`${site}/api/nowCareer`)
+  const dbsNowCareer = await resNowCareer.json()
+  if (!dbsNowReading) {
+    return {
+      notfound: true,
+    }
+  }
+  // const resNowLocation = await fetch(`${site}/api/nowLocation`)
+  // const dbsNowLocation = await resNowLocation.json()
+  // if (!dbsNowReading) {
+  //   return {
+  //     notfound: true,
+  //   }
+  // }
   const resChess = await fetch(`https://lichess.org/api/account`, {
     headers: {
       Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
@@ -156,7 +163,13 @@ export async function getStaticProps(context: any) {
   }
 
   return {
-    props: { dbs, dbsNowText, dbsNowReading, lichess },
+    props: {
+      dbs,
+      dbsNowText,
+      dbsNowReading,
+      dbsNowCareer,
+      lichess,
+    },
     revalidate: 10,
   }
 }
