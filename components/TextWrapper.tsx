@@ -61,7 +61,7 @@ const Invite = styled.p`
 export const TextWrapper = () => {
   return (
     <Wrapper>
-      <Happening>It's finally happening!</Happening>
+      <Happening>It&apos;s finally happening!</Happening>
       <Hope>We hope you can join us to celebrate our wedding!</Hope>
       <Save>please save the date</Save>
       <ContentWrapper>
