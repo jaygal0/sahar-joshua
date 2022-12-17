@@ -15,14 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": [
-    "components/Face.js",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/api/now.js",
-    "components/Face.js",
-    "components/CardTimeline.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

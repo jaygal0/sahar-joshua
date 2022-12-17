@@ -6,9 +6,11 @@ body {
   font-size: 62.5%;
   padding: 0;
   margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  cursor: url('/cursor.svg'),auto;
+  font-family: linotype-didot, serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
 #__next {
   position: relative;
   overflow-x: clip;
@@ -26,7 +28,9 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Krona One', sans-serif;
+  font-family: linotype-didot, serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .image-hover {

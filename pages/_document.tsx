@@ -34,9 +34,9 @@ export default class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            content="Joshua Galinato's little corner of the internet"
+            content="Sahar & Joshua are getting married!"
           />
-          <link rel="icon" href="/galina.to.svg" />
+          <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -44,9 +44,10 @@ export default class MyDocument extends Document {
             crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Krona+One&family=Share+Tech+Mono&family=Libre+Barcode+39&display=swap"
+            href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap"
             rel="stylesheet"
           />
+          <link rel="stylesheet" href="https://use.typekit.net/wrb6vjy.css" />
         </Head>
         <body>
           <Main />

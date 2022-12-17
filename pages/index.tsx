@@ -1,16 +1,28 @@
 import type { NextPage } from 'next'
-import IndexHero from '../components/IndexHero'
-import { Navigation } from '../components/Navigation'
 import { IndexMain } from '../styles'
-import Meta from '../components/Meta'
+import styled from 'styled-components'
+import { TextWrapper } from '../components/TextWrapper'
+import { Polaroid } from '../components/Polaroid'
+
+const Wrapper = styled.div`
+  display: flex;
+  max-width: 1504px;
+  padding: 0 12rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6.4rem;
+  margin: 0 auto;
+`
 
 const Home: NextPage = () => {
   return (
     <>
-      <Meta />
-      <Navigation />
-      <IndexMain className="home">
-        <IndexHero />
+      <IndexMain>
+        <Wrapper>
+          <Polaroid />
+          <TextWrapper />
+        </Wrapper>
       </IndexMain>
     </>
   )
