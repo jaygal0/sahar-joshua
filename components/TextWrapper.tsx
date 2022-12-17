@@ -48,10 +48,11 @@ const Save = styled.h1`
   font-size: ${({ theme }) => theme.type.size.b};
   text-transform: uppercase;
   letter-spacing: 0.09em;
+  line-height: ${({ theme }) => theme.type.height.lg};
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     font-size: ${({ theme }) => theme.type.size.c};
-    width: 100%;
+    width: 90%;
   }
 `
 
