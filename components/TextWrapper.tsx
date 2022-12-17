@@ -7,11 +7,17 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 100px;
+  height: 100%;
   color: black;
   gap: 4.8rem;
   text-align: center;
   animation: fadeIn 5s ease-in-out;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
+    width: 100%;
+    gap: 3.2rem;
+    padding: 0 1.6rem 6.4rem 1.6rem;
+  }
 
   @keyframes fadeIn {
     0% {
@@ -33,11 +39,20 @@ const Hope = styled.h2`
   font-style: italic;
   width: 60%;
   letter-spacing: 0.02em;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
+    width: 100%;
+  }
 `
 const Save = styled.h1`
   font-size: ${({ theme }) => theme.type.size.b};
   text-transform: uppercase;
   letter-spacing: 0.09em;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    font-size: ${({ theme }) => theme.type.size.c};
+    width: 100%;
+  }
 `
 
 const ContentWrapper = styled.div`

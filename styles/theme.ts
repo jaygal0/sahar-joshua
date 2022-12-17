@@ -31,7 +31,7 @@ export default {
     deskmd: '1441px',
     desksm: '1024px',
     tablet: '810px',
-    phonelg: '428px',
+    phonelg: '480px',
     phonemd: '376px',
     phonesm: '321px',
   },

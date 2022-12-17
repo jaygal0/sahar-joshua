@@ -13,6 +13,18 @@ const Wrapper = styled.div`
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.12);
   animation: fadeIn 0.3s ease-in-out;
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
+    width: 60%;
+    padding: 1.2rem 1.2rem;
+    gap: 1.6rem;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: 100%;
+    padding: 1.2rem 1.2rem;
+    gap: 1.6rem;
+  }
+
   @keyframes fadeIn {
     0% {
       opacity: 0;
