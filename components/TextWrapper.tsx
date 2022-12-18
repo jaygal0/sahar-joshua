@@ -1,31 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 100%;
-  color: black;
-  gap: 4.8rem;
+  color: ${({ theme }) => theme.color.black};
+  gap: 3.2rem;
   text-align: center;
   opacity: 0;
-  animation: infoFadeIn 3s ease-in-out 3.5s forwards;
+  animation: infoFadeIn 4s ease-in-out 6s forwards;
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
+    position: static;
     width: 100%;
-    gap: 3.2rem;
-    padding: 0 1.6rem 6.4rem 1.6rem;
+    padding-bottom: 4.8rem;
   }
 
   @keyframes infoFadeIn {
     0% {
-      opacity: 0;
+      opacity: 0%;
     }
     100% {
-      opacity: 1;
+      opacity: 100%;
     }
   }
 `
@@ -76,8 +79,26 @@ const Invite = styled.p`
   letter-spacing: 0.05em;
 `
 export const TextWrapper = () => {
+  // initialize timeLeft with the seconds prop
+  const [timeLeft, setTimeLeft] = useState(10)
+
+  useEffect(() => {
+    // exit early when we reach 0
+    if (!timeLeft) return
+
+    // save intervalId to clear the interval when the
+    // component re-renders
+    const intervalId = setInterval(() => {
+      setTimeLeft(timeLeft - 1)
+    }, 1000)
+
+    // clear interval on re-render to avoid memory leaks
+    return () => clearInterval(intervalId)
+    // add timeLeft as a dependency to re-rerun the effect
+    // when we update it
+  }, [timeLeft])
   return (
-    <Wrapper>
+    <Wrapper className={timeLeft <= 5 ? 'test' : ''}>
       <Happening>It&apos;s finally happening!</Happening>
       <Hope>We hope you can join us to celebrate our wedding!</Hope>
       <Save>please save the date</Save>
