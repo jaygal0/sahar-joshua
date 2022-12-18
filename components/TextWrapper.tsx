@@ -11,7 +11,8 @@ const Wrapper = styled.div`
   color: black;
   gap: 4.8rem;
   text-align: center;
-  animation: fadeIn 5s ease-in-out;
+  opacity: 0;
+  animation: infoFadeIn 3s ease-in-out 3.5s forwards;
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
     width: 100%;
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
     padding: 0 1.6rem 6.4rem 1.6rem;
   }
 
-  @keyframes fadeIn {
+  @keyframes infoFadeIn {
     0% {
       opacity: 0;
     }
