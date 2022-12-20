@@ -29,8 +29,8 @@ export default {
   breakPoint: {
     desklg: '2561px',
     deskmd: '1441px',
-    desksm: '1024px',
-    tablet: '810px',
+    desksm: '1025px',
+    tablet: '820px',
     phonelg: '480px',
     phonemd: '376px',
     phonesm: '321px',
