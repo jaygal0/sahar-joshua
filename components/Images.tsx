@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   width: 100vw;
   max-width: 2440px;
   z-index: 2;
-  animation: fadeOut 2s ease-in 5s forwards;
+  animation: fadeOut 2s ease-out 5s forwards;
 
   @keyframes fadeOut {
     from {

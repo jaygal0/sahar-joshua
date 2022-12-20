@@ -42,10 +42,7 @@ const ImageWrapper = styled.div`
   padding-top: 100%;
   position: relative;
   background: #eff1f4;
-
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
-    animation: animateImageMobile 7s ease-in-out forwards;
-  }
+  overflow: hidden;
 `
 const TextWrapper = styled.div`
   display: flex;
