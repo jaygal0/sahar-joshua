@@ -1,6 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+import image1 from '../public/image-1.jpg'
+import image2 from '../public/image-15.jpg'
+import image3 from '../public/image-3.jpg'
+import image4 from '../public/image-27.jpg'
+import image5 from '../public/image-5.jpg'
+import image6 from '../public/image-6.jpg'
+import image7 from '../public/image-7.jpg'
+import image8 from '../public/image-4.jpg'
+import image9 from '../public/image-9.jpg'
+import image10 from '../public/image-10.jpg'
+import image11 from '../public/image-11.jpg'
 
 const Wrapper = styled.div`
   position: absolute;
@@ -163,57 +174,135 @@ export const Images = () => {
     <Wrapper>
       <PolaroidWrapper className="image-1">
         <ImageWrapper>
-          <Image src="/image-1.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image1}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-2">
         <ImageWrapper>
-          <Image src="/image-2.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image2}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-3">
         <ImageWrapper>
-          <Image src="/image-3.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image3}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-4">
         <ImageWrapper>
-          <Image src="/image-4.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image4}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-5">
         <ImageWrapper>
-          <Image src="/image-5.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image5}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-6">
         <ImageWrapper>
-          <Image src="/image-6.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image6}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-7">
         <ImageWrapper>
-          <Image src="/image-7.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image7}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-8">
         <ImageWrapper>
-          <Image src="/image-8.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image8}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-9">
         <ImageWrapper>
-          <Image src="/image-9.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image9}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="0px -25px"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-10">
         <ImageWrapper>
-          <Image src="/image-10.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image10}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
       <PolaroidWrapper className="image-11">
         <ImageWrapper>
-          <Image src="/image-11.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src={image11}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            priority
+            alt="image of joshua and siara"
+          />
         </ImageWrapper>
       </PolaroidWrapper>
     </Wrapper>
