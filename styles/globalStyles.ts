@@ -32,5 +32,23 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-style: normal;
 }
+
+h1 {
+font-size: 3.6rem;
+margin-bottom: 2.4rem;
+}
+
+h2 {
+font-size: 2.7rem;
+}
+  
+h3 {
+font-size: 2.1rem;
+}
+p {
+font-size: 1.6rem;
+line-height: 1.7;
+margin-bottom: 2.4rem;
+}
 `
 export default GlobalStyle

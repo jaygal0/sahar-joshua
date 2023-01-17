@@ -12,6 +12,10 @@ export const IndexMain = styled.main`
   justify-content: center;
   overflow: hidden;
 
+  &.column {
+    flex-direction: column;
+  }
+
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
     height: 100%;
     padding-top: 2.4rem;
