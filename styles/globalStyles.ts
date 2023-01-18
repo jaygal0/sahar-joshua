@@ -23,8 +23,10 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  font-size: 1.6rem;
   color: #1C1C1C;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 font-size: 3.6rem;
-margin-bottom: 2.4rem;
+margin-bottom: .8rem;
 }
 
 h2 {
@@ -48,7 +50,6 @@ font-size: 2.1rem;
 p {
 font-size: 1.6rem;
 line-height: 1.7;
-margin-bottom: 2.4rem;
 }
 `
 export default GlobalStyle
