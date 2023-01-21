@@ -7,10 +7,28 @@ const Wrapper = styled.div`
   gap: 3.2rem;
   flex-grow: 1;
   align-content: stretch;
-  padding: 6.4rem;
+  padding: 4.8rem;
   border: 1px #333 solid;
   width: 40%;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding: 3.2rem;
+    flex-direction: column;
+    width: 100%;
+  }
 `
+const ImageContainer = styled.div`
+  position: relative;
+
+  &.padding {
+    padding-top: 2.4rem;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: 20%;
+  }
+`
+
 const Heading = styled.h2`
   margin-bottom: 1.6rem;
 `
@@ -24,7 +42,9 @@ const Address = styled.a`
 const Text = styled.p`
   margin-bottom: 0.8rem;
 `
-const TextWrapper = styled.div``
+const TextWrapper = styled.div`
+  width: 90%;
+`
 
 export const Card = ({
   heading,
@@ -34,6 +54,7 @@ export const Card = ({
   line1,
   line2,
   icon,
+  padding,
 }: {
   heading?: string
   location?: string
@@ -41,11 +62,20 @@ export const Card = ({
   addressLink?: string
   line1?: string
   line2?: string
+  padding?: Boolean
   icon: string
 }) => {
   return (
     <Wrapper>
-      <Image src={icon ? icon : 'image-1.jpg'} width={32} height={32} />
+      {padding ? (
+        <ImageContainer className="padding">
+          <Image src={icon ? icon : 'image-1.jpg'} width={64} height={64} />
+        </ImageContainer>
+      ) : (
+        <ImageContainer>
+          <Image src={icon ? icon : 'image-1.jpg'} width={64} height={64} />
+        </ImageContainer>
+      )}
       <TextWrapper>
         <Heading>{heading} </Heading>
         {location && <Location>{location}</Location>}
