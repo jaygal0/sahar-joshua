@@ -69,11 +69,21 @@ export const Card = ({
     <Wrapper>
       {padding ? (
         <ImageContainer className="padding">
-          <Image src={icon ? icon : 'image-1.jpg'} width={64} height={64} />
+          <Image
+            src={icon ? icon : 'image-1.jpg'}
+            width={64}
+            height={64}
+            alt="icon"
+          />
         </ImageContainer>
       ) : (
         <ImageContainer>
-          <Image src={icon ? icon : 'image-1.jpg'} width={64} height={64} />
+          <Image
+            src={icon ? icon : 'image-1.jpg'}
+            width={64}
+            height={64}
+            alt="icon"
+          />
         </ImageContainer>
       )}
       <TextWrapper>

@@ -67,7 +67,12 @@ export const Polaroid = () => {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image src="/image-22.jpg" layout="fill" objectFit="cover" />
+        <Image
+          src="/image-22.jpg"
+          layout="fill"
+          objectFit="cover"
+          alt="image of Sahar & Josh"
+        />
       </ImageWrapper>
       <TextWrapper>
         <Names>sahar &amp; joshua</Names>

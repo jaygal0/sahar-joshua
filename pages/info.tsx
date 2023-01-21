@@ -178,21 +178,22 @@ const info = () => {
         <TextWrapper>
           <h3>Additional activities</h3>
           <p>
-            We'd love to spend time with you both before and after the wedding.
-            Of course, there's no pressure if you can't make it!
+            We&apos;d love to spend time with you both before and after the
+            wedding. Of course, there&apos;s no pressure if you can&apos;t make
+            it!
           </p>
         </TextWrapper>
         <CardWrapper>
           <Card
             heading="TBA"
             line1="Date: 20th July 2023"
-            line2="More information will be posted soon"
+            line2="More information will be posted soon."
             icon="/bbq.svg"
           />{' '}
           <Card
             heading="TBA"
             line1="Date: 23rd July 2023"
-            line2="More information will be posted soon"
+            line2="More information will be posted soon."
             icon="/water.svg"
           />{' '}
         </CardWrapper>
