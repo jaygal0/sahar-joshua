@@ -87,7 +87,7 @@ const info = () => {
           />{' '}
           <Card
             heading="Gifts"
-            line1="The most important thing to is that you are able to celebrate our wedding day with us. However, if you wish to give a gift, we will gratefully accept a contribution towards our honeymoon."
+            line1="The most important thing is that you are able to celebrate our wedding day with us. However, if you wish to give a gift, we will gratefully accept a contribution towards our honeymoon."
             icon="/gift.svg"
           />{' '}
           <Card
@@ -176,7 +176,7 @@ const info = () => {
           />{' '}
         </CardWrapper>
         <TextWrapper>
-          <h3>Additional activies</h3>
+          <h3>Additional activities</h3>
           <p>
             We'd love to spend time with you both before and after the wedding.
             Of course, there's no pressure if you can't make it!
@@ -186,7 +186,7 @@ const info = () => {
           <Card
             heading="TBA"
             line1="Date: 20th July 2023"
-            line2="More information will be posted "
+            line2="More information will be posted soon"
             icon="/bbq.svg"
           />{' '}
           <Card
