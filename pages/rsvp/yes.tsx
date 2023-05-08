@@ -20,6 +20,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.md};
+  width: 40vw;
 `
 const FormContainer = styled.div`
   display: flex;
@@ -44,13 +45,6 @@ const FormContainer = styled.div`
       scale: 1.05;
     }
   }
-`
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.md};
-  align-items: center;
-  margin-top: ${({ theme }) => theme.spacing.lg};
 `
 const Input = styled.input`
   padding: ${({ theme }) => theme.spacing.sm};
@@ -95,53 +89,14 @@ const info = () => {
             placeholder="e.g. Joshua Galinato"
           />
         </FormContainer>
-        <Container>
-          <h3>Select your meal</h3>
-          <RadioWrapper>
-            <FormContainer className="radioBox">
-              <Input
-                type="radio"
-                name="menuOption"
-                value="menu 1"
-                id="menu 1"
-              />
-              <RadioLabel className="radio" htmlFor="menu 1">
-                {' '}
-                Menu 1 <p>this is a sentence about the food</p>
-              </RadioLabel>
-            </FormContainer>
-            <FormContainer className="radioBox">
-              <Input
-                type="radio"
-                name="menuOption"
-                value="menu 2"
-                id="menu 2"
-              />
-              <RadioLabel className="radio" htmlFor="menu 2">
-                {' '}
-                Menu 2<p>this is a sentence about the food</p>
-              </RadioLabel>
-            </FormContainer>
-            <FormContainer className="radioBox">
-              <Input
-                type="radio"
-                name="menuOption"
-                value="menu 3"
-                id="menu 3"
-              />
-              <RadioLabel className="radio" htmlFor="menu 3">
-                Menu 3 <p>this is a sentence about the food</p>
-              </RadioLabel>
-            </FormContainer>
-          </RadioWrapper>
-          <GenericLabel
-            htmlFor=""
-            placeholder="Just so we don&amp;t have any issues on the day, please be specific as possible."
-          >
-            Do you have any allergies that we should know about?
-          </GenericLabel>
-          <TextArea />
-        </Container>
+        <GenericLabel
+          htmlFor=""
+          placeholder="Just so we don&amp;t have any issues on the day, please be specific as possible."
+        >
+          Do you have any food preferences or allergies that we should know
+          about?
+        </GenericLabel>
+        <TextArea />
         <Button label="Submit" url="/rsvp/submit-another" />
       </Form>
     </Wrapper>
