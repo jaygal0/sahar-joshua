@@ -48,3 +48,10 @@ export const IndexWrapper = styled.div`
     height: 100%;
   }
 `
+export const FlexWrapper = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing.xl};
+`
+export const GenericLabel = styled.label`
+  font-size: ${({ theme }) => theme.type.size.c};
+`

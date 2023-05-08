@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
+import { Button } from './Button'
 
 const Wrapper = styled.div`
   display: flex;
@@ -94,11 +96,6 @@ const Location = styled.p`
     font-size: ${({ theme }) => theme.type.size.d};
   }
 `
-const Invite = styled.p`
-  font-size: ${({ theme }) => theme.type.size.d};
-  font-style: italic;
-  letter-spacing: 0.05em;
-`
 export const TextWrapper = () => {
   return (
     <Wrapper>
@@ -109,7 +106,8 @@ export const TextWrapper = () => {
         <Date>22nd July 2023</Date>
         <Location>Gothenburg, Sweden</Location>
       </ContentWrapper>
-      <Invite>Invitation to follow</Invite>
+      <Button label="View more information" url="/info" />
+      <Button label="RSVP" url="/rsvp" />
     </Wrapper>
   )
 }
