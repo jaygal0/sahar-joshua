@@ -54,4 +54,5 @@ export const FlexWrapper = styled.div`
 `
 export const GenericLabel = styled.label`
   font-size: ${({ theme }) => theme.type.size.c};
+  line-height: ${({ theme }) => theme.type.height.lg};
 `

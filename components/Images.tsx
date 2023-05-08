@@ -24,9 +24,11 @@ const Wrapper = styled.div`
   @keyframes fadeOut {
     from {
       opacity: 1;
+      z-index: 99;
     }
     to {
       opacity: 0;
+      z-index: -1;
     }
   }
 `

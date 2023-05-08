@@ -59,14 +59,6 @@ const Input = styled.input`
     color: ${({ theme }) => theme.color.white};
   }
 `
-const RadioWrapper = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing.md};
-  margin: 0 0 ${({ theme }) => theme.spacing.md} 0;
-`
-const RadioLabel = styled.label`
-  font-size: ${({ theme }) => theme.type.size.b};
-`
 const TextArea = styled.textarea`
   width: 100%;
   height: 200px;
@@ -97,7 +89,8 @@ const info = () => {
           about?
         </GenericLabel>
         <TextArea />
-        <Button label="Submit" url="/rsvp/submit-another" />
+        <Button label="Submit" url="/rsvp/confirm-yes" />
+        <Button secondary label="Submit another" url="/rsvp/submit-another" />
       </Form>
     </Wrapper>
   )

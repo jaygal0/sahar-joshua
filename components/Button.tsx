@@ -16,14 +16,33 @@ const Btn = styled.button`
     color: ${({ theme }) => theme.color.white};
     border-radius: 0.8rem;
   }
+
+  &.secondary {
+    background: ${({ theme }) => theme.color.black};
+    color: ${({ theme }) => theme.color.white};
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.7);
+      border-radius: 0.8rem;
+    }
+  }
 `
 
-export const Button = ({ label, url }: { label: string; url?: string }) => {
+export const Button = ({
+  label,
+  url,
+  secondary,
+}: {
+  label: string
+  url?: string
+  secondary?: Boolean
+}) => {
   return (
     <>
       {url ? (
         <Link href={url}>
-          <Btn>{label}</Btn>
+          <Btn className={secondary && 'secondary'}>{label}</Btn>
         </Link>
       ) : (
         <Btn>{label}</Btn>

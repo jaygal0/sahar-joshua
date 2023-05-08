@@ -4,6 +4,7 @@ import { IndexMain, IndexWrapper } from '../styles'
 import { TextWrapper } from '../components/TextWrapper'
 import { Polaroid } from '../components/Polaroid'
 import { Images } from '../components/Images'
+import Nav from '../components/Nav'
 
 const Home: NextPage = () => {
   // initialize timeLeft with the seconds prop
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
   }, [timeLeft])
   return (
     <>
+      <Nav />
       <IndexMain className={timeLeft <= 3 ? 'scrollLock' : ''}>
         <Images />
         <IndexWrapper>
