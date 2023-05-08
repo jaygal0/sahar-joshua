@@ -17,6 +17,20 @@ const Btn = styled.button`
     border-radius: 0.8rem;
   }
 
+  &.home {
+    opacity: 0;
+    animation: buttonFadeIn 2s ease-in-out 7s forwards;
+
+    @keyframes buttonFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
   &.secondary {
     background: ${({ theme }) => theme.color.black};
     color: ${({ theme }) => theme.color.white};
@@ -33,16 +47,22 @@ export const Button = ({
   label,
   url,
   secondary,
+  home,
 }: {
   label: string
   url?: string
   secondary?: Boolean
+  home?: Boolean
 }) => {
   return (
     <>
       {url ? (
         <Link href={url}>
-          <Btn className={secondary && 'secondary'}>{label}</Btn>
+          <Btn
+            className={secondary ? 'secondary' : home ? 'home secondary' : ''}
+          >
+            {label}
+          </Btn>
         </Link>
       ) : (
         <Btn>{label}</Btn>

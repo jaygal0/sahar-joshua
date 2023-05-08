@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FlexWrapper } from '../../styles'
 import { Button } from '../../components/Button'
 
 const Wrapper = styled.div`
@@ -28,6 +27,7 @@ const info = () => {
         Thanks for the info! <br /> <br />
         We're so excited to be celebrating our special day with you.
       </Message>
+      <Button secondary url="/info" label="View information" />
     </Wrapper>
   )
 }

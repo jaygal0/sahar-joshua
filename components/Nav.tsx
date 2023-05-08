@@ -7,13 +7,21 @@ const Navbar = styled.nav`
   top: 0;
   left: 0;
   width: 100vw;
+  padding: ${({ theme }) => theme.spacing.xl};
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
 `
 
-const Nav = () => {
+const Nav = ({ info }: { info?: Boolean }) => {
   return (
-    <nav>
-      <Button secondary label="RSVP" url="/rsvp" />
-    </nav>
+    <Navbar>
+      {info ? (
+        <Button secondary label="RSVP" url="/rsvp" />
+      ) : (
+        <Button home label="RSVP" url="/rsvp" />
+      )}
+    </Navbar>
   )
 }
 

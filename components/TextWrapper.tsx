@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 import { Button } from './Button'
 
 const Wrapper = styled.div`

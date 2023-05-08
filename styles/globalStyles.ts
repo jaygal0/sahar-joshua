@@ -51,5 +51,8 @@ p {
 font-size: 1.6rem;
 line-height: 1.7;
 }
+button {
+  font-family: linotype-didot, serif;
+}
 `
 export default GlobalStyle
