@@ -51,6 +51,10 @@ export const IndexWrapper = styled.div`
 export const FlexWrapper = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.xl};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonemd}) {
+    flex-direction: column;
+  }
 `
 export const GenericLabel = styled.label`
   font-size: ${({ theme }) => theme.type.size.c};

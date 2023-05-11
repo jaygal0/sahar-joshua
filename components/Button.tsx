@@ -10,6 +10,10 @@ const Btn = styled.button`
   transition: all ease-in-out 0.4s;
   border-radius: 0;
 
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    font-size: ${({ theme }) => theme.type.size.d};
+  }
+
   &:hover {
     cursor: pointer;
     background: ${({ theme }) => theme.color.black};

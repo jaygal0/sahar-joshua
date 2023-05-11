@@ -14,11 +14,20 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xl};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
 `
 const Message = styled.h1`
   width: 50vw;
   line-height: ${({ theme }) => theme.type.height.lg};
   text-align: center;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: 100%;
+    font-size: ${({ theme }) => theme.type.size.c};
+  }
 `
 
 const info = () => {
@@ -28,6 +37,8 @@ const info = () => {
         You're information has been submitted. Hopefully, we'll get to spend
         time with you sometime in the near future!
       </Message>
+      <Button url="/rsvp/no" label="Submit another" />
+      <Button secondary url="/" label="Go home" />
     </Wrapper>
   )
 }

@@ -11,6 +11,12 @@ const Navbar = styled.nav`
   display: flex;
   justify-content: flex-end;
   z-index: 100;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    position: static;
+    background: ${({ theme }) => theme.color.background};
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
 `
 
 const Nav = ({ info }: { info?: Boolean }) => {

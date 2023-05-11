@@ -13,11 +13,20 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xl};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
 `
 const Message = styled.h1`
   width: 50vw;
   line-height: ${({ theme }) => theme.type.height.lg};
   text-align: center;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: 100%;
+    font-size: ${({ theme }) => theme.type.size.c};
+  }
 `
 
 const info = () => {
@@ -27,7 +36,8 @@ const info = () => {
         Thanks for the info! <br /> <br />
         We're so excited to be celebrating our special day with you.
       </Message>
-      <Button secondary url="/info" label="View information" />
+      <Button url="/rsvp/yes" label="Submit another" />
+      <Button secondary url="/" label="Go home" />
     </Wrapper>
   )
 }

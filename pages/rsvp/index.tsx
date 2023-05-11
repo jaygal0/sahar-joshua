@@ -14,12 +14,20 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.xl};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
+`
+
+const Heading = styled.h1`
+  text-align: center;
 `
 
 const info = () => {
   return (
     <Wrapper>
-      <h1>Are you attending the wedding?</h1>
+      <Heading>Are you attending the wedding?</Heading>
       <FlexWrapper>
         <Button label="Yes" url="/rsvp/yes" />
         <Button label="No" url="/rsvp/no" />
