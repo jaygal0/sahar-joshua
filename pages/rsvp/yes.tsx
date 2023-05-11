@@ -88,7 +88,7 @@ const TextArea = styled.textarea`
   font-family: Arial, Helvetica, sans-serif;
 `
 
-const info = () => {
+const Yes = () => {
   const [isPending, setIsPending] = useState<Boolean>(false)
   const router = useRouter()
   const [data, setData] = useState({
@@ -167,4 +167,4 @@ const info = () => {
   )
 }
 
-export default info
+export default Yes

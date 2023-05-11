@@ -34,8 +34,8 @@ const info = () => {
   return (
     <Wrapper>
       <Message>
-        You're information has been submitted. Hopefully, we'll get to spend
-        time with you sometime in the near future!
+        You&apos;re information has been submitted. Hopefully, we&apos;ll get to
+        spend time with you sometime in the near future!
       </Message>
       <Button url="/rsvp/no" label="Submit another" />
       <Button secondary url="/" label="Go home" />

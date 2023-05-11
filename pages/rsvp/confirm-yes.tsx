@@ -34,7 +34,7 @@ const info = () => {
     <Wrapper>
       <Message>
         Thanks for the info! <br /> <br />
-        We're so excited to be celebrating our special day with you.
+        We&apos;re so excited to be celebrating our special day with you.
       </Message>
       <Button url="/rsvp/yes" label="Submit another" />
       <Button secondary url="/" label="Go home" />

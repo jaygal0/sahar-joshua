@@ -100,7 +100,7 @@ const TextArea = styled.textarea`
   font-family: Arial, Helvetica, sans-serif;
 `
 
-const info = () => {
+const No = () => {
   const [isPending, setIsPending] = useState<Boolean>(false)
   const router = useRouter()
   const [data, setData] = useState({
@@ -142,7 +142,7 @@ const info = () => {
       {!isPending ? (
         <Wrapper>
           <Heading>
-            It's a shame that you can't make it, but we understand!
+            It&apos;s a shame that you can't make it, but we understand!
           </Heading>
           <Text>Please fill in the form so we can update our information.</Text>
 
@@ -182,4 +182,4 @@ const info = () => {
   )
 }
 
-export default info
+export default No
