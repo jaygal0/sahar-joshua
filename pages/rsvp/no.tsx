@@ -142,7 +142,7 @@ const No = () => {
       {!isPending ? (
         <Wrapper>
           <Heading>
-            It&apos;s a shame that you can't make it, but we understand!
+            It&apos;s a shame that you can&apos;t make it, but we understand!
           </Heading>
           <Text>Please fill in the form so we can update our information.</Text>
 
