@@ -60,3 +60,15 @@ export const GenericLabel = styled.label`
   font-size: ${({ theme }) => theme.type.size.c};
   line-height: ${({ theme }) => theme.type.height.lg};
 `
+
+export const Spacer = styled.div`
+  &.lg {
+    height: 5.6rem;
+  }
+  &.md {
+    height: 3.2rem;
+  }
+  &.sm {
+    height: 1.6rem;
+  }
+`

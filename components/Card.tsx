@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
+import { Button } from './Button'
 
 const Wrapper = styled.div`
   display: flex;
@@ -45,6 +46,9 @@ const Text = styled.p`
 const TextWrapper = styled.div`
   width: 90%;
 `
+const Spacer = styled.div`
+  height: 2.4rem;
+`
 
 export const Card = ({
   heading,
@@ -55,6 +59,7 @@ export const Card = ({
   line2,
   icon,
   padding,
+  btn,
 }: {
   heading?: string
   location?: string
@@ -64,6 +69,7 @@ export const Card = ({
   line2?: string
   padding?: Boolean
   icon: string
+  btn?: Boolean
 }) => {
   return (
     <Wrapper>
@@ -96,6 +102,12 @@ export const Card = ({
         )}
         <Text>{line1}</Text>
         {line2 && <Text>{line2}</Text>}
+        {btn && (
+          <>
+            <Spacer />
+            <Button label="Contribute" url="/contribute" />
+          </>
+        )}
       </TextWrapper>
     </Wrapper>
   )

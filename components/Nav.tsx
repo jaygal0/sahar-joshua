@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button } from './Button'
+import { FlexWrapper } from '../styles'
 
 const Navbar = styled.nav`
   position: fixed;
@@ -11,6 +12,8 @@ const Navbar = styled.nav`
   display: flex;
   justify-content: flex-end;
   z-index: 100;
+  background: rgba(250, 247, 242, 0.9);
+  backdrop-filter: blur(4px);
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     position: static;
@@ -23,7 +26,10 @@ const Nav = ({ info }: { info?: Boolean }) => {
   return (
     <Navbar>
       {info ? (
-        <Button secondary label="RSVP" url="/rsvp" />
+        <FlexWrapper>
+          <Button label="Contribute" url="/contribute" />
+          <Button secondary label="RSVP" url="/rsvp" />
+        </FlexWrapper>
       ) : (
         <Button home label="RSVP" url="/rsvp" />
       )}

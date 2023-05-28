@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import theme from './theme'
 
 const GlobalStyle = createGlobalStyle`
 html,
@@ -41,14 +42,14 @@ margin-bottom: .8rem;
 }
 
 h2 {
-font-size: 2.7rem;
+font-size: ${theme.type.size.a};
 }
   
 h3 {
-font-size: 2.1rem;
+font-size: ${theme.type.size.b};
 }
 p {
-font-size: 1.6rem;
+font-size: ${theme.type.size.c};
 line-height: 1.7;
 }
 button {

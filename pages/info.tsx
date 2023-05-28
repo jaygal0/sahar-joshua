@@ -92,6 +92,7 @@ const info = () => {
               heading="Gifts"
               line1="The most important thing is that you are able to celebrate our wedding day with us. However, if you wish to give a gift, we will gratefully accept a contribution towards our honeymoon."
               icon="/gift.svg"
+              btn
             />{' '}
             <Card
               heading="Adults only"
