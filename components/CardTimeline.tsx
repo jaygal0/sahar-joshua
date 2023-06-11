@@ -125,7 +125,7 @@ export const CardTimeline: React.FC<T> = ({
         {location && (
           <>
             <p>Location:</p>
-            <a href={link} target="_blank">
+            <a href={link} target="_blank" rel="noreferrer">
               <Location>{location}</Location>
             </a>
           </>
