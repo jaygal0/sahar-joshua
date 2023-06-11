@@ -79,7 +79,6 @@ export const IndexLinks = ({ lang }: { lang?: string }) => {
                 layout="fill"
                 objectFit="cover"
                 alt="Sahar & Josh"
-                placeholder="blur"
               />
             </ImageWrapper>
           </ImageBackground>
@@ -113,7 +112,6 @@ export const IndexLinks = ({ lang }: { lang?: string }) => {
                 layout="fill"
                 objectFit="cover"
                 alt="Sahar & Josh"
-                placeholder="blur"
               />
             </ImageWrapper>
           </ImageBackground>

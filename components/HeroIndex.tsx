@@ -186,7 +186,6 @@ export const HeroIndex = ({ lang }: { lang?: string }) => {
                 objectFit="cover"
                 priority
                 alt="Images of Sahar & Josh together over the years"
-                placeholder="blur"
               />
             </ImageWrapper>
             {count == 1 ? (
@@ -267,7 +266,6 @@ export const HeroIndex = ({ lang }: { lang?: string }) => {
                 objectFit="cover"
                 priority
                 alt="Images of Sahar & Josh together over the years"
-                placeholder="blur"
               />
             </ImageWrapper>
             {count == 1 ? (

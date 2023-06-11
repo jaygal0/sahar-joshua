@@ -116,13 +116,7 @@ export const CardTimeline: React.FC<T> = ({
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image
-          src={icon}
-          layout="fill"
-          objectFit="cover"
-          alt="icon"
-          placeholder="blur"
-        />
+        <Image src={icon} layout="fill" objectFit="cover" alt="icon" />
       </ImageWrapper>
       <Time>{time}</Time>
       <TextWrapper>

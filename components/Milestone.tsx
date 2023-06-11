@@ -155,13 +155,7 @@ export const Milestone: React.FC<T> = ({
             <Container>
               <ImageWrapper className={isMsReached ? 'active' : ''}>
                 {check && <MilestoneReached>mål uppnådd!</MilestoneReached>}
-                <Image
-                  src={image}
-                  layout="fill"
-                  objectFit="cover"
-                  alt=""
-                  placeholder="blur"
-                />
+                <Image src={image} layout="fill" objectFit="cover" alt="" />
                 <Text>{title}</Text>
               </ImageWrapper>
               <TextWrapper>
@@ -183,23 +177,11 @@ export const Milestone: React.FC<T> = ({
             <Container>
               <ImageWrapper className={isMsReached && !isZero ? 'active' : ''}>
                 {check && <MilestoneReached>mål uppnådd!</MilestoneReached>}
-                <Image
-                  src={image}
-                  layout="fill"
-                  objectFit="cover"
-                  alt=""
-                  placeholder="blur"
-                />
+                <Image src={image} layout="fill" objectFit="cover" alt="" />
                 <Text>{title}</Text>
                 {!isMsReached && <Background />}
                 {!isMsReached && (
-                  <Image
-                    src="/lock.svg"
-                    width={48}
-                    height={48}
-                    alt=""
-                    placeholder="blur"
-                  />
+                  <Image src="/lock.svg" width={48} height={48} alt="" />
                 )}
               </ImageWrapper>
               <TextWrapper>
@@ -228,13 +210,7 @@ export const Milestone: React.FC<T> = ({
                 {check && (
                   <MilestoneReached>Milestone reached!</MilestoneReached>
                 )}
-                <Image
-                  src={image}
-                  layout="fill"
-                  objectFit="cover"
-                  alt=""
-                  placeholder="blur"
-                />
+                <Image src={image} layout="fill" objectFit="cover" alt="" />
                 <Text>{title}</Text>
               </ImageWrapper>
               <TextWrapper>
@@ -258,22 +234,11 @@ export const Milestone: React.FC<T> = ({
                 {check && (
                   <MilestoneReached>Milestone reached!</MilestoneReached>
                 )}
-                <Image
-                  src={image}
-                  layout="fill"
-                  objectFit="cover"
-                  alt=""
-                  placeholder="blur"
-                />
+                <Image src={image} layout="fill" objectFit="cover" alt="" />
                 <Text>{title}</Text>
                 {!isMsReached && <Background />}
                 {!isMsReached && (
-                  <Image
-                    src="/lock.svg"
-                    width={48}
-                    height={48}
-                    placeholder="blur"
-                  />
+                  <Image src="/lock.svg" width={48} height={48} />
                 )}
               </ImageWrapper>
               <TextWrapper>

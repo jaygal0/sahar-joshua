@@ -79,7 +79,6 @@ export const Activity: React.FC<T> = ({
               layout="fill"
               objectFit="cover"
               alt="activity image"
-              placeholder="blur"
             />
           </ImageWrapper>
           <Heading>{heading}</Heading>
@@ -104,7 +103,6 @@ export const Activity: React.FC<T> = ({
               layout="fill"
               objectFit="cover"
               alt="activity image"
-              placeholder="blur"
             />
           </ImageWrapper>
           <Heading>{heading}</Heading>

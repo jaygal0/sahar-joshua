@@ -189,7 +189,6 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 layout="fill"
                 objectFit="contain"
                 alt="swish option"
-                placeholder="blur"
               />
             </Btn>
             <Btn
@@ -205,7 +204,6 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 layout="fill"
                 objectFit="contain"
                 alt="monzo option"
-                placeholder="blur"
               />
             </Btn>
             <Btn
@@ -221,20 +219,13 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 layout="fill"
                 objectFit="contain"
                 alt="paypal option"
-                placeholder="blur"
               />
             </Btn>
           </Wrapper>
           {isSwish && (
             <Modal>
               <FlexWrapper>
-                <Image
-                  src="/swish-qr.svg"
-                  alt=""
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                />
+                <Image src="/swish-qr.svg" alt="" width={300} height={300} />
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -247,13 +238,7 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isMonzo && (
             <Modal>
               <FlexWrapper>
-                <Image
-                  src="/monzo-qr.svg"
-                  alt=""
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                />
+                <Image src="/monzo-qr.svg" alt="" width={300} height={300} />
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -273,13 +258,7 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isPaypal && (
             <Modal>
               <FlexWrapper>
-                <Image
-                  src="/paypal-qr.svg"
-                  alt=""
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                />
+                <Image src="/paypal-qr.svg" alt="" width={300} height={300} />
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -314,7 +293,6 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 layout="fill"
                 objectFit="contain"
                 alt="swish option"
-                placeholder="blur"
               />
             </Btn>
             <Btn
@@ -330,7 +308,6 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 layout="fill"
                 objectFit="contain"
                 alt="monzo option"
-                placeholder="blur"
               />
             </Btn>
             <Btn
@@ -346,20 +323,13 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 layout="fill"
                 objectFit="contain"
                 alt="paypal option"
-                placeholder="blur"
               />
             </Btn>
           </Wrapper>
           {isSwish && (
             <Modal>
               <FlexWrapper>
-                <Image
-                  src="/swish-qr.svg"
-                  alt=""
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                />
+                <Image src="/swish-qr.svg" alt="" width={300} height={300} />
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -372,13 +342,7 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isMonzo && (
             <Modal>
               <FlexWrapper>
-                <Image
-                  src="/monzo-qr.svg"
-                  alt=""
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                />
+                <Image src="/monzo-qr.svg" alt="" width={300} height={300} />
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -398,13 +362,7 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isPaypal && (
             <Modal>
               <FlexWrapper>
-                <Image
-                  src="/paypal-qr.svg"
-                  alt=""
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                />
+                <Image src="/paypal-qr.svg" alt="" width={300} height={300} />
                 <Divider>
                   <Or>or</Or>
                 </Divider>

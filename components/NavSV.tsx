@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     justify-content: center;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonesm}) {
-    gap: 2.4rem;
+    gap: 0.8rem;
     flex-wrap: wrap;
   }
 `
