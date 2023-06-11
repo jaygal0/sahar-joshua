@@ -74,7 +74,12 @@ export const IndexLinks = ({ lang }: { lang?: string }) => {
           </TitlesWrapper>
           <ImageBackground>
             <ImageWrapper>
-              <Image src="/image-9.jpg" layout="fill" objectFit="cover" />
+              <Image
+                src="/image-9.jpg"
+                layout="fill"
+                objectFit="cover"
+                alt="Sahar & Josh"
+              />
             </ImageWrapper>
           </ImageBackground>
         </WrapperTwo>
@@ -102,7 +107,12 @@ export const IndexLinks = ({ lang }: { lang?: string }) => {
           </TitlesWrapper>
           <ImageBackground>
             <ImageWrapper>
-              <Image src="/image-9.jpg" layout="fill" objectFit="cover" />
+              <Image
+                src="/image-9.jpg"
+                layout="fill"
+                objectFit="cover"
+                alt="Sahar & Josh"
+              />
             </ImageWrapper>
           </ImageBackground>
         </WrapperTwo>

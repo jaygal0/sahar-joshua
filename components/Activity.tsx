@@ -74,7 +74,12 @@ export const Activity: React.FC<T> = ({
       {sv ? (
         <Wrapper>
           <ImageWrapper>
-            <Image src={image} layout="fill" objectFit="cover" />
+            <Image
+              src={image}
+              layout="fill"
+              objectFit="cover"
+              alt="activity image"
+            />
           </ImageWrapper>
           <Heading>{heading}</Heading>
           <Desc>{desc}</Desc>
@@ -93,7 +98,12 @@ export const Activity: React.FC<T> = ({
       ) : (
         <Wrapper>
           <ImageWrapper>
-            <Image src={image} layout="fill" objectFit="cover" />
+            <Image
+              src={image}
+              layout="fill"
+              objectFit="cover"
+              alt="activity image"
+            />
           </ImageWrapper>
           <Heading>{heading}</Heading>
           <Desc>{desc}</Desc>

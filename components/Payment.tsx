@@ -244,7 +244,11 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 </Divider>
                 <Text>
                   Klicka på{' '}
-                  <a href="https://monzo.me/joshuagalinato" target="_blank">
+                  <a
+                    href="https://monzo.me/joshuagalinato"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <MonzoLink>monzo.me/joshuagalinato</MonzoLink>
                   </a>
                 </Text>
@@ -263,6 +267,7 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                   <a
                     href="https://paypal.me/joshuagalinato1?country.x=SE&locale.x=en_US"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <MonzoLink>paypal.me/joshuagalinato1</MonzoLink>
                   </a>
@@ -343,7 +348,11 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                 </Divider>
                 <Text>
                   Click on{' '}
-                  <a href="https://monzo.me/joshuagalinato" target="_blank">
+                  <a
+                    href="https://monzo.me/joshuagalinato"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <MonzoLink>monzo.me/joshuagalinato</MonzoLink>
                   </a>
                 </Text>
@@ -362,6 +371,7 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                   <a
                     href="https://paypal.me/joshuagalinato1?country.x=SE&locale.x=en_US"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <MonzoLink>paypal.me/joshuagalinato1</MonzoLink>
                   </a>

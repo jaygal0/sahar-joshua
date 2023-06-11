@@ -5,7 +5,6 @@ import { Button } from '../../components/Button'
 import { GenericLabel } from '../../styles'
 import Nav from '../../components/Nav'
 import { Activity } from '../../components/Activity'
-import { log } from 'console'
 import { Hero } from '../../components/Hero'
 
 const Wrapper = styled.div`
@@ -263,7 +262,7 @@ const Activities = () => {
                 </Form>
               ) : (
                 <Confirmation>
-                  Thanks for submitting! We'll be in touch soon!
+                  Thanks for submitting! We&apos;ll be in touch soon!
                 </Confirmation>
               )}
             </Container>

@@ -79,7 +79,7 @@ export const IndexLink: React.FC<T> = ({ link, title, desc, image }) => {
           <p>{desc}</p>
         </Container>
         <ImageWrapper className={isHover ? 'hover' : ''}>
-          <Image src={image} width={80} height={40} />
+          <Image src={image} width={80} height={40} alt="icon" />
         </ImageWrapper>
       </TitleWrapper>
     </Link>
