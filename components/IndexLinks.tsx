@@ -75,7 +75,7 @@ export const IndexLinks = ({ lang }: { lang?: string }) => {
           <ImageBackground>
             <ImageWrapper>
               <Image
-                src="/image-9.jpg"
+                src="/image-2022.jpg"
                 layout="fill"
                 objectFit="cover"
                 alt="Sahar & Josh"
@@ -108,7 +108,7 @@ export const IndexLinks = ({ lang }: { lang?: string }) => {
           <ImageBackground>
             <ImageWrapper>
               <Image
-                src="/image-9.jpg"
+                src="/image-2022.jpg"
                 layout="fill"
                 objectFit="cover"
                 alt="Sahar & Josh"
