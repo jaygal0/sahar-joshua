@@ -86,11 +86,6 @@ const Modal = styled.div`
     height: min-content;
   }
 `
-const ModalHeading = styled.h2`
-  width: 100%;
-  text-align: center;
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
-`
 const Divider = styled.div`
   height: 200px;
   width: 1px;
@@ -104,23 +99,64 @@ const Divider = styled.div`
     width: 200px;
   }
 `
-const Heading = styled.p`
-  font-size: ${({ theme }) => theme.type.size.b};
-  width: 100%;
+const Heading = styled.h2`
   text-align: center;
+  font-size: 5.6rem;
+  margin-bottom: 2.4rem;
+  font-style: italic;
+  font-weight: 200;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 3.2rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    font-size: 2.4rem;
+  }
 `
-const Text = styled.p`
-  font-size: ${({ theme }) => theme.type.size.c};
+const Text = styled.div`
   width: 50%;
   text-align: center;
+  font-size: 5.6rem;
+  font-weight: 200;
+  line-height: 1.4;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 3.2rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    font-size: 2.4rem;
+  }
 
   & span {
-    font-size: ${({ theme }) => theme.type.size.a};
+    font-size: 5.6rem;
     display: block;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+      font-size: 3.2rem;
+    }
+    @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+      font-size: 2.4rem;
+    }
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     width: 100%;
+  }
+`
+
+const MonzoLink = styled.p`
+  font-size: 4rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 3.2rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    font-size: 2.4rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    font-size: 2.4rem;
   }
 `
 const Or = styled.p`
@@ -128,101 +164,213 @@ const Or = styled.p`
   background: white;
   padding: 0.8rem;
 `
-export const Payment = () => {
+
+export const Payment = ({ sv }: { sv?: Boolean }) => {
   const [isSwish, setIsSwish] = useState<Boolean>(true)
   const [isPaypal, setIsPaypal] = useState<Boolean>(false)
   const [isMonzo, setIsMonzo] = useState<Boolean>(false)
 
   return (
-    <Container>
-      <Heading>Select an option to contribute</Heading>
-      <Wrapper>
-        <Btn
-          onClick={() => {
-            setIsSwish(true)
-            setIsPaypal(false)
-            setIsMonzo(false)
-          }}
-          className={isSwish ? 'active' : ''}
-        >
-          <Image
-            src="/swish.svg"
-            layout="fill"
-            objectFit="contain"
-            alt="swish option"
-          />
-        </Btn>
-        <Btn
-          onClick={() => {
-            setIsSwish(false)
-            setIsPaypal(false)
-            setIsMonzo(true)
-          }}
-          className={isMonzo ? 'active' : ''}
-        >
-          <Image
-            src="/monzo2.png"
-            layout="fill"
-            objectFit="contain"
-            alt="monzo option"
-          />
-        </Btn>
-        <Btn
-          onClick={() => {
-            setIsSwish(false)
-            setIsPaypal(true)
-            setIsMonzo(false)
-          }}
-          className={isPaypal ? 'active' : ''}
-        >
-          <Image
-            src="/paypal.png"
-            layout="fill"
-            objectFit="contain"
-            alt="paypal option"
-          />
-        </Btn>
-      </Wrapper>
-      {isSwish && (
-        <Modal>
-          <FlexWrapper>
-            <Image src="/swish.png" alt="" width={300} height={300} />
-            <Divider>
-              <Or>or</Or>
-            </Divider>
-            <Text>
-              Enter <span>0733565578</span> as the recipient.
-            </Text>
-          </FlexWrapper>
-        </Modal>
+    <>
+      {sv ? (
+        <Container>
+          <Heading>Välj ett alternativ för att bidra</Heading>
+          <Wrapper>
+            <Btn
+              onClick={() => {
+                setIsSwish(true)
+                setIsPaypal(false)
+                setIsMonzo(false)
+              }}
+              className={isSwish ? 'active' : ''}
+            >
+              <Image
+                src="/swish.svg"
+                layout="fill"
+                objectFit="contain"
+                alt="swish option"
+              />
+            </Btn>
+            <Btn
+              onClick={() => {
+                setIsSwish(false)
+                setIsPaypal(false)
+                setIsMonzo(true)
+              }}
+              className={isMonzo ? 'active' : ''}
+            >
+              <Image
+                src="/monzo2.png"
+                layout="fill"
+                objectFit="contain"
+                alt="monzo option"
+              />
+            </Btn>
+            <Btn
+              onClick={() => {
+                setIsSwish(false)
+                setIsPaypal(true)
+                setIsMonzo(false)
+              }}
+              className={isPaypal ? 'active' : ''}
+            >
+              <Image
+                src="/paypal.png"
+                layout="fill"
+                objectFit="contain"
+                alt="paypal option"
+              />
+            </Btn>
+          </Wrapper>
+          {isSwish && (
+            <Modal>
+              <FlexWrapper>
+                <Image src="/swish-qr.svg" alt="" width={300} height={300} />
+                <Divider>
+                  <Or>or</Or>
+                </Divider>
+                <Text>
+                  Skriv <span>0733565578</span> som mottagare.
+                </Text>
+              </FlexWrapper>
+            </Modal>
+          )}
+          {isMonzo && (
+            <Modal>
+              <FlexWrapper>
+                <Image src="/monzo-qr.svg" alt="" width={300} height={300} />
+                <Divider>
+                  <Or>or</Or>
+                </Divider>
+                <Text>
+                  Klicka på{' '}
+                  <a href="https://monzo.me/joshuagalinato" target="_blank">
+                    <MonzoLink>monzo.me/joshuagalinato</MonzoLink>
+                  </a>
+                </Text>
+              </FlexWrapper>
+            </Modal>
+          )}
+          {isPaypal && (
+            <Modal>
+              <FlexWrapper>
+                <Image src="/paypal-qr.svg" alt="" width={300} height={300} />
+                <Divider>
+                  <Or>or</Or>
+                </Divider>
+                <Text>
+                  Klicka på{' '}
+                  <a
+                    href="https://paypal.me/joshuagalinato1?country.x=SE&locale.x=en_US"
+                    target="_blank"
+                  >
+                    <MonzoLink>paypal.me/joshuagalinato1</MonzoLink>
+                  </a>
+                </Text>
+              </FlexWrapper>
+            </Modal>
+          )}
+        </Container>
+      ) : (
+        <Container>
+          <Heading>Select an option to contribute</Heading>
+          <Wrapper>
+            <Btn
+              onClick={() => {
+                setIsSwish(true)
+                setIsPaypal(false)
+                setIsMonzo(false)
+              }}
+              className={isSwish ? 'active' : ''}
+            >
+              <Image
+                src="/swish.svg"
+                layout="fill"
+                objectFit="contain"
+                alt="swish option"
+              />
+            </Btn>
+            <Btn
+              onClick={() => {
+                setIsSwish(false)
+                setIsPaypal(false)
+                setIsMonzo(true)
+              }}
+              className={isMonzo ? 'active' : ''}
+            >
+              <Image
+                src="/monzo2.png"
+                layout="fill"
+                objectFit="contain"
+                alt="monzo option"
+              />
+            </Btn>
+            <Btn
+              onClick={() => {
+                setIsSwish(false)
+                setIsPaypal(true)
+                setIsMonzo(false)
+              }}
+              className={isPaypal ? 'active' : ''}
+            >
+              <Image
+                src="/paypal.png"
+                layout="fill"
+                objectFit="contain"
+                alt="paypal option"
+              />
+            </Btn>
+          </Wrapper>
+          {isSwish && (
+            <Modal>
+              <FlexWrapper>
+                <Image src="/swish-qr.svg" alt="" width={300} height={300} />
+                <Divider>
+                  <Or>or</Or>
+                </Divider>
+                <Text>
+                  Enter <span>0733565578</span> as the recipient.
+                </Text>
+              </FlexWrapper>
+            </Modal>
+          )}
+          {isMonzo && (
+            <Modal>
+              <FlexWrapper>
+                <Image src="/monzo-qr.svg" alt="" width={300} height={300} />
+                <Divider>
+                  <Or>or</Or>
+                </Divider>
+                <Text>
+                  Click on{' '}
+                  <a href="https://monzo.me/joshuagalinato" target="_blank">
+                    <MonzoLink>monzo.me/joshuagalinato</MonzoLink>
+                  </a>
+                </Text>
+              </FlexWrapper>
+            </Modal>
+          )}
+          {isPaypal && (
+            <Modal>
+              <FlexWrapper>
+                <Image src="/paypal-qr.svg" alt="" width={300} height={300} />
+                <Divider>
+                  <Or>or</Or>
+                </Divider>
+                <Text>
+                  Click on{' '}
+                  <a
+                    href="https://paypal.me/joshuagalinato1?country.x=SE&locale.x=en_US"
+                    target="_blank"
+                  >
+                    <MonzoLink>paypal.me/joshuagalinato1</MonzoLink>
+                  </a>
+                </Text>
+              </FlexWrapper>
+            </Modal>
+          )}
+        </Container>
       )}
-      {isMonzo && (
-        <Modal>
-          <FlexWrapper>
-            <Image src="/monzoqr.jpeg" alt="" width={300} height={300} />
-            <Divider>
-              <Or>or</Or>
-            </Divider>
-            <Text>
-              Sort code: <span>04-00-04</span>
-              Account No.: <span>43860381</span>
-            </Text>
-          </FlexWrapper>
-        </Modal>
-      )}
-      {isPaypal && (
-        <Modal>
-          <FlexWrapper>
-            <Image src="/swish.png" alt="" width={300} height={300} />
-            <Divider>
-              <Or>or</Or>
-            </Divider>
-            <Text>
-              Enter <span>0733565578</span> as the recipient.
-            </Text>
-          </FlexWrapper>
-        </Modal>
-      )}
-    </Container>
+    </>
   )
 }

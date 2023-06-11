@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { Button } from '../../components/Button'
@@ -101,6 +101,9 @@ const Yes = () => {
   const handleChange = (e: any) => {
     setData({ ...data, [e.target.name]: e.target.value })
   }
+  useEffect(() => {
+    console.log('test')
+  }, [handleChange])
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()

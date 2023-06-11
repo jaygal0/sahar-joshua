@@ -48,7 +48,7 @@ const CardWrapper = styled.div`
 const info = () => {
   return (
     <>
-      <Nav info />
+      <Nav />
       <Wrapper>
         <TextContainer>
           <h1>Wedding Details</h1>

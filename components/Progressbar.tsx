@@ -11,13 +11,24 @@ const Wrapper = styled.div`
   margin: 2.4rem 0;
 `
 const Goal = styled.h3`
-  font-size: 5.6rem;
+  font-size: 8rem;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 5.6rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: 4.8rem;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     font-size: ${({ theme }) => theme.type.size.a};
+  }
+`
+const FundedOf = styled.span`
+  font-size: 3.2rem;
+  opacity: 0.8;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 2.4rem;
   }
 `
 const CounterWrapper = styled.div`
@@ -41,17 +52,26 @@ const Counter = styled.div<T>`
       : 'lightgreen'};
   padding: 1.2rem;
   text-align: end;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    min-width: min-content;
+  }
 `
 
-const FundedOf = styled.span`
-  font-size: ${({ theme }) => theme.type.size.c};
-  opacity: 0.9;
-`
 const Update = styled.h3`
-  font-size: ${({ theme }) => theme.type.size.d};
+  font-size: 3.2rem;
+  font-weight: 200;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 2.4rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    font-size: 1.6rem;
+  }
 `
 
 interface T {
+  sv?: Boolean
   percentage: number
   goal?: number
   current?: number
@@ -59,21 +79,41 @@ interface T {
 }
 
 export const Progressbar: React.FC<T> = ({
+  sv,
   percentage,
   goal,
   current,
   updated,
 }) => {
   return (
-    <Wrapper>
-      <Goal>
-        {current?.toLocaleString()} kr{' '}
-        <FundedOf>funded of {goal?.toLocaleString()} kr</FundedOf>
-      </Goal>
-      <CounterWrapper>
-        <Counter percentage={percentage}>{`${percentage.toFixed(0)}%`}</Counter>
-      </CounterWrapper>
-      <Update>Last updated on: {updated}</Update>
-    </Wrapper>
+    <>
+      {sv ? (
+        <Wrapper>
+          <Goal>
+            {current?.toLocaleString()} kr{' '}
+            <FundedOf>av {goal?.toLocaleString()} kr</FundedOf>
+          </Goal>
+          <CounterWrapper>
+            <Counter percentage={percentage}>{`${percentage.toFixed(
+              0
+            )}%`}</Counter>
+          </CounterWrapper>
+          <Update>Senast uppdaterad den: {updated}</Update>
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <Goal>
+            {current?.toLocaleString()} kr{' '}
+            <FundedOf>out of {goal?.toLocaleString()} kr</FundedOf>
+          </Goal>
+          <CounterWrapper>
+            <Counter percentage={percentage}>{`${percentage.toFixed(
+              0
+            )}%`}</Counter>
+          </CounterWrapper>
+          <Update>Last updated on: {updated}</Update>
+        </Wrapper>
+      )}
+    </>
   )
 }

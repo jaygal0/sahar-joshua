@@ -8,31 +8,37 @@ const Wrapper = styled.div`
   margin: 8rem 0;
 `
 const Heading = styled.h2`
-  font-size: ${({ theme }) => theme.type.size.a};
+  font-size: 5.6rem;
   margin-bottom: 0.8rem;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
-    font-size: ${({ theme }) => theme.type.size.b};
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 3.2rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    font-size: 2.4rem;
   }
 `
 const MileStoneWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: ${({ theme }) => theme.spacing.md} 0;
+  gap: 2.4rem;
 `
 interface T {
+  sv?: Boolean
   ms1: number
   ms2: number
   ms3: number
   ms4: number
   ms5: number
-  ms6: number
+  ms6?: number
   sumall: number
 }
 
 export const Milestones: React.FC<T> = ({
+  sv,
   ms1,
   ms2,
   ms3,
@@ -71,9 +77,9 @@ export const Milestones: React.FC<T> = ({
     if (sumall >= ms1 + ms2 + ms3 + ms4 + ms5) {
       setIsMilestone5(true)
     }
-    if (sumall >= ms1 + ms2 + ms3 + ms4 + ms5 + ms6) {
-      setIsMilestone6(true)
-    }
+    // if (sumall >= ms1 + ms2 + ms3 + ms4 + ms5 + ms6) {
+    //   setIsMilestone6(true)
+    // }
 
     /////////////////
 
@@ -105,67 +111,75 @@ export const Milestones: React.FC<T> = ({
     ) {
       setIsReachedMs5(true)
     }
-    if (ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall > ms6) {
-      setIsReachedMs6(false)
-    } else if (
-      ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall <=
-      ms1 + ms2 + ms3 + ms4 + ms5 + ms6
-    ) {
-      setIsReachedMs6(true)
-    }
+    // if (ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall > ms6) {
+    //   setIsReachedMs6(false)
+    // } else if (
+    //   ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall <=
+    //   ms1 + ms2 + ms3 + ms4 + ms5 + ms6
+    // ) {
+    //   setIsReachedMs6(true)
+    // }
   }, [])
 
   return (
-    <Wrapper>
-      <Heading>Every contribution helps unlock a milestone</Heading>
-      <MileStoneWrapper>
-        <Milestone
-          title="#1 Flight to Japan"
-          amount={ms1}
-          image="/flights.jpg"
-          check={isMilestone1}
-          isMsReached={isReachedMs1}
-          msCalc={ms1 - sumall}
-          isZero={ms1 - sumall <= 0}
-          isFirst
-        />
-        <Milestone
-          title="#2 One week in Kyoto"
-          amount={ms2}
-          image="/kyoto.jpg"
-          check={isMilestone2}
-          isMsReached={isReachedMs2}
-          msCalc={ms1 + ms2 - sumall}
-          isZero={ms1 + ms2 - sumall <= 0}
-        />
-        <Milestone
-          title=" #3 One week in Kobe"
-          amount={ms3}
-          image="/kobe.jpg"
-          check={isMilestone3}
-          isMsReached={isReachedMs3}
-          msCalc={ms1 + ms2 + ms3 - sumall}
-          isZero={ms1 + ms2 + ms3 - sumall <= 0}
-        />
-        <Milestone
-          title="#4 Two weeks in Tokyo"
-          amount={ms4}
-          image="/tokyo.jpg"
-          check={isMilestone4}
-          isMsReached={isReachedMs4}
-          msCalc={ms1 + ms2 + ms3 + ms4 - sumall}
-          isZero={ms1 + ms2 + ms3 + ms4 - sumall <= 0}
-        />
-        <Milestone
-          title="#5 One week in Seoul"
-          amount={ms5}
-          image="/seoul.jpg"
-          check={isMilestone5}
-          isMsReached={isReachedMs5}
-          msCalc={ms1 + ms2 + ms3 + ms4 + ms5 - sumall}
-          isZero={ms1 + ms2 + ms3 + ms4 + ms5 - sumall <= 0}
-        />
-        <Milestone
+    <>
+      {sv ? (
+        <Wrapper>
+          <Heading>Varje bidrag hjälper till att låsa upp en milstolpe</Heading>
+          <MileStoneWrapper>
+            <Milestone
+              sv
+              title="#1 Flyg till Japan"
+              amount={ms1}
+              image="/flights.jpg"
+              check={isMilestone1}
+              isMsReached={isReachedMs1}
+              msCalc={ms1 - sumall}
+              isZero={ms1 - sumall <= 0}
+              isFirst
+            />
+
+            <Milestone
+              sv
+              title="#2 En vecka i Kyoto, Japan"
+              amount={ms2}
+              image="/kyoto.jpg"
+              check={isMilestone2}
+              isMsReached={isReachedMs2}
+              msCalc={ms1 + ms2 - sumall}
+              isZero={ms1 + ms2 - sumall <= 0}
+            />
+            <Milestone
+              sv
+              title=" #3 En vecka i Osaka, Japan"
+              amount={ms3}
+              image="http://www.anaexperienceclass.com/wp-content/uploads/2019/05/shutterstock_434007868-1800x1200.jpg"
+              check={isMilestone3}
+              isMsReached={isReachedMs3}
+              msCalc={ms1 + ms2 + ms3 - sumall}
+              isZero={ms1 + ms2 + ms3 - sumall <= 0}
+            />
+            <Milestone
+              sv
+              title="#4 En vecka i Tokyo, Japan"
+              amount={ms4}
+              image="/tokyo.jpg"
+              check={isMilestone4}
+              isMsReached={isReachedMs4}
+              msCalc={ms1 + ms2 + ms3 + ms4 - sumall}
+              isZero={ms1 + ms2 + ms3 + ms4 - sumall <= 0}
+            />
+            <Milestone
+              sv
+              title="#5 En vecka i Seoul, Korea"
+              amount={ms5}
+              image="/seoul.jpg"
+              check={isMilestone5}
+              isMsReached={isReachedMs5}
+              msCalc={ms1 + ms2 + ms3 + ms4 + ms5 - sumall}
+              isZero={ms1 + ms2 + ms3 + ms4 + ms5 - sumall <= 0}
+            />
+            {/* <Milestone
           title="#6 ???"
           amount={ms6}
           image="/image-1.jpg"
@@ -173,8 +187,76 @@ export const Milestones: React.FC<T> = ({
           isMsReached={isReachedMs6}
           msCalc={ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall}
           isZero={ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall <= 0}
-        />
-      </MileStoneWrapper>
-    </Wrapper>
+        /> */}
+          </MileStoneWrapper>
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <Heading>Every contribution helps unlock a milestone</Heading>
+          <MileStoneWrapper>
+            <Milestone
+              en
+              title="#1 Flight to Japan"
+              amount={ms1}
+              image="/flights.jpg"
+              check={isMilestone1}
+              isMsReached={isReachedMs1}
+              msCalc={ms1 - sumall}
+              isZero={ms1 - sumall <= 0}
+              isFirst
+            />
+            <Milestone
+              en
+              title="#2 One week in Kyoto, Japan"
+              amount={ms2}
+              image="/kyoto.jpg"
+              check={isMilestone2}
+              isMsReached={isReachedMs2}
+              msCalc={ms1 + ms2 - sumall}
+              isZero={ms1 + ms2 - sumall <= 0}
+            />
+            <Milestone
+              en
+              title=" #3 One week in Osaka, Japan"
+              amount={ms3}
+              image="http://www.anaexperienceclass.com/wp-content/uploads/2019/05/shutterstock_434007868-1800x1200.jpg"
+              check={isMilestone3}
+              isMsReached={isReachedMs3}
+              msCalc={ms1 + ms2 + ms3 - sumall}
+              isZero={ms1 + ms2 + ms3 - sumall <= 0}
+            />
+            <Milestone
+              en
+              title="#4 One week in Tokyo, Japan"
+              amount={ms4}
+              image="/tokyo.jpg"
+              check={isMilestone4}
+              isMsReached={isReachedMs4}
+              msCalc={ms1 + ms2 + ms3 + ms4 - sumall}
+              isZero={ms1 + ms2 + ms3 + ms4 - sumall <= 0}
+            />
+            <Milestone
+              en
+              title="#5 One week in Seoul, Korea"
+              amount={ms5}
+              image="/seoul.jpg"
+              check={isMilestone5}
+              isMsReached={isReachedMs5}
+              msCalc={ms1 + ms2 + ms3 + ms4 + ms5 - sumall}
+              isZero={ms1 + ms2 + ms3 + ms4 + ms5 - sumall <= 0}
+            />
+            {/* <Milestone
+          title="#6 ???"
+          amount={ms6}
+          image="/image-1.jpg"
+          check={isMilestone6}
+          isMsReached={isReachedMs6}
+          msCalc={ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall}
+          isZero={ms1 + ms2 + ms3 + ms4 + ms5 + ms6 - sumall <= 0}
+        /> */}
+          </MileStoneWrapper>
+        </Wrapper>
+      )}
+    </>
   )
 }

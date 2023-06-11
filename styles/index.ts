@@ -1,5 +1,27 @@
 import styled from 'styled-components'
 
+export const IndexContainer = styled.div``
+export const Main = styled.div`
+  background: ${({ theme }) => theme.color.white};
+  padding: 6.4rem 18.8rem;
+  width: 100%;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desklg}) {
+    padding: 2.4rem 18.8rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    padding: 2.4rem 5.6rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.tablet}) {
+    padding: 2.4rem 5.6rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding: 6.4rem 1.6rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    padding: 7.2rem 1.6rem;
+  }
+`
 export const IndexMain = styled.main`
   position: relative;
   min-height: 100vh;
@@ -57,8 +79,16 @@ export const FlexWrapper = styled.div`
   }
 `
 export const GenericLabel = styled.label`
-  font-size: ${({ theme }) => theme.type.size.c};
+  font-size: 3.2rem;
   line-height: ${({ theme }) => theme.type.height.lg};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
+    font-size: 2.4rem;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
+    font-size: 1.6rem;
+  }
 `
 
 export const Spacer = styled.div`

@@ -125,7 +125,7 @@ const Nav = ({ alt }: { alt?: Boolean }) => {
     <header>
       {alt ? (
         <Navbar className={isScroll ? 'main' : 'alt'}>
-          <Link href="/en">
+          <Link href="/sv">
             <LogoWrapper>
               {isScroll ? (
                 <Image
@@ -140,34 +140,34 @@ const Nav = ({ alt }: { alt?: Boolean }) => {
                   src="/heart-white.svg"
                   layout="fill"
                   objectFit="cover"
-                  priority
                   alt="heart-logo"
+                  priority
                 />
               )}
             </LogoWrapper>
           </Link>
           <Wrapper>
-            <Link href="/en">
-              <Page className={current == '/en' ? 'main' : ''}>Home</Page>
+            <Link href="/sv">
+              <Page className={current == '/sv' ? 'main' : ''}>Hem</Page>
             </Link>
-            <Link href="/en/schedule">
-              <Page className={current == '/en/schedule' ? 'main' : ''}>
-                Schedule
+            <Link href="/sv/schedule">
+              <Page className={current == '/sv/schedule' ? 'main' : ''}>
+                Schema
               </Page>
             </Link>
-            <Link href="/en/activities">
-              <Page className={current == '/en/activities' ? 'main' : ''}>
-                Activities
+            <Link href="/sv/activities">
+              <Page className={current == '/sv/activities' ? 'main' : ''}>
+                Aktiviteter
               </Page>
             </Link>
-            <Link href="/en/gift">
-              <Page className={current == '/en/gift' ? 'main' : ''}>Gift</Page>
+            <Link href="/sv/gift">
+              <Page className={current == '/sv/gift' ? 'main' : ''}>Gåva</Page>
             </Link>
           </Wrapper>
         </Navbar>
       ) : (
         <Navbar className={isScroll ? 'mainScroll' : 'main'}>
-          <Link href="/en">
+          <Link href="/sv">
             <LogoWrapper>
               {isScroll ? (
                 <Image
@@ -189,21 +189,21 @@ const Nav = ({ alt }: { alt?: Boolean }) => {
             </LogoWrapper>
           </Link>
           <Wrapper>
-            <Link href="/en">
-              <Page className={current == '/en' ? 'main' : ''}>Home</Page>
+            <Link href="/sv">
+              <Page className={current == '/sv' ? 'main' : ''}>Hem</Page>
             </Link>
-            <Link href="/en/schedule">
-              <Page className={current == '/en/schedule' ? 'main' : ''}>
-                Schedule
+            <Link href="/sv/schedule">
+              <Page className={current == '/sv/schedule' ? 'main' : ''}>
+                Schema
               </Page>
             </Link>
-            <Link href="/en/activities">
-              <Page className={current == '/en/activities' ? 'main' : ''}>
-                Activities
+            <Link href="/sv/activities">
+              <Page className={current == '/sv/activities' ? 'main' : ''}>
+                Aktiviteter
               </Page>
             </Link>
-            <Link href="/en/gift">
-              <Page className={current == '/en/gift' ? 'main' : ''}>Gift</Page>
+            <Link href="/sv/gift">
+              <Page className={current == '/sv/gift' ? 'main' : ''}>Gåva</Page>
             </Link>
           </Wrapper>
         </Navbar>

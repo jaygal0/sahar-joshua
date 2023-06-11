@@ -45,6 +45,18 @@ const Btn = styled.button`
       border-radius: 0.8rem;
     }
   }
+  &.alt {
+    background: ${({ theme }) => theme.color.transparent};
+    color: ${({ theme }) => theme.color.white};
+    border: ${({ theme }) => theme.color.white} 1px solid;
+
+    &:hover {
+      cursor: pointer;
+      background: ${({ theme }) => theme.color.white};
+      color: ${({ theme }) => theme.color.black};
+      border-radius: 0.8rem;
+    }
+  }
 `
 
 export const Button = ({
@@ -52,18 +64,28 @@ export const Button = ({
   url,
   secondary,
   home,
+  alt,
 }: {
   label: string
   url?: string
   secondary?: Boolean
   home?: Boolean
+  alt?: Boolean
 }) => {
   return (
     <>
       {url ? (
         <Link href={url}>
           <Btn
-            className={secondary ? 'secondary' : home ? 'home secondary' : ''}
+            className={
+              secondary
+                ? 'secondary'
+                : home
+                ? 'home secondary'
+                : alt
+                ? 'alt'
+                : ''
+            }
           >
             {label}
           </Btn>
