@@ -267,14 +267,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isMonzo && (
             <Modal>
               <FlexWrapper>
-                <SwishQR>
+                <QRWrapper>
                   <Image
                     src="/monzo-qr.svg"
                     alt=""
                     layout="fill"
                     objectFit="cover"
                   />
-                </SwishQR>
+                </QRWrapper>
                 <Divider>
                   <Or>or</Or>
                 </Divider>
