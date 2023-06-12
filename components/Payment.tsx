@@ -247,14 +247,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isSwish && (
             <Modal>
               <FlexWrapper>
-                <QRWrapper>
+                <SwishQR>
                   <Image
                     src="/swish-qr.svg"
                     alt=""
                     layout="fill"
                     objectFit="cover"
                   />
-                </QRWrapper>
+                </SwishQR>
                 <Divider>
                   <Or>or</Or>
                 </Divider>
