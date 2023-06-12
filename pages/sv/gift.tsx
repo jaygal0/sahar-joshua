@@ -48,7 +48,7 @@ const info = () => {
       <Nav alt />
       <main>
         <Hero
-          heading="Smekmånadsönskningar"
+          heading="Smekmånad"
           desc="Din närvaro betyder mest, men om du vill bidra, hjälp oss att skapa oförglömliga minnen i Japan."
           background="/japan1.jpg"
           img="/image-7.jpg"
