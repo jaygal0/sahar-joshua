@@ -55,12 +55,15 @@ const Wrapper = styled.div`
     justify-content: space-around;
     gap: 4.8rem;
   }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    gap: 3.2rem;
+  }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonemd}) {
     width: 100%;
     justify-content: center;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonesm}) {
-    gap: 0.8rem;
+    gap: 1.6rem;
     flex-wrap: wrap;
   }
 `
