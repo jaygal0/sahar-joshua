@@ -69,6 +69,28 @@ const FlexWrapper = styled.div`
     flex-direction: column;
   }
 `
+const QRWrapper = styled.div`
+  width: 300px;
+  height: 300px;
+  position: relative;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+  }
+`
+const SwishQR = styled.div`
+  width: 300px;
+  height: 300px;
+  position: relative;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: 150%;
+    padding-bottom: 100%;
+    position: relative;
+  }
+`
 
 const Modal = styled.div`
   display: flex;
@@ -225,7 +247,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isSwish && (
             <Modal>
               <FlexWrapper>
-                <Image src="/swish-qr.svg" alt="" width={300} height={300} />
+                <QRWrapper>
+                  <Image
+                    src="/swish-qr.svg"
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </QRWrapper>
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -238,7 +267,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isMonzo && (
             <Modal>
               <FlexWrapper>
-                <Image src="/monzo-qr.svg" alt="" width={300} height={300} />
+                <SwishQR>
+                  <Image
+                    src="/monzo-qr.svg"
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </SwishQR>
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -258,7 +294,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isPaypal && (
             <Modal>
               <FlexWrapper>
-                <Image src="/paypal-qr.svg" alt="" width={300} height={300} />
+                <QRWrapper>
+                  <Image
+                    src="/paypal-qr.svg"
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </QRWrapper>
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -329,7 +372,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isSwish && (
             <Modal>
               <FlexWrapper>
-                <Image src="/swish-qr.svg" alt="" width={300} height={300} />
+                <SwishQR>
+                  <Image
+                    src="/swish-qr.svg"
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </SwishQR>
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -342,7 +392,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isMonzo && (
             <Modal>
               <FlexWrapper>
-                <Image src="/monzo-qr.svg" alt="" width={300} height={300} />
+                <QRWrapper>
+                  <Image
+                    src="/monzo-qr.svg"
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </QRWrapper>
                 <Divider>
                   <Or>or</Or>
                 </Divider>
@@ -362,7 +419,14 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
           {isPaypal && (
             <Modal>
               <FlexWrapper>
-                <Image src="/paypal-qr.svg" alt="" width={300} height={300} />
+                <QRWrapper>
+                  <Image
+                    src="/paypal-qr.svg"
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </QRWrapper>
                 <Divider>
                   <Or>or</Or>
                 </Divider>

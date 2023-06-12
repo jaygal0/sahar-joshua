@@ -128,10 +128,19 @@ const Timestamp = styled.p`
     @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
       font-size: 6.4rem;
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+      font-size: 5.6rem;
+      margin-left: 1.6rem;
+    }
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
     font-size: 4.8rem;
+    bottom: 0rem;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    font-size: 4rem;
     bottom: 0rem;
   }
 `

@@ -37,6 +37,7 @@ const Navbar = styled.nav`
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     flex-direction: column;
     padding: ${({ theme }) => theme.spacing.sm} 5.6rem;
+    gap: 1.6rem;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonemd}) {
     padding: ${({ theme }) => theme.spacing.sm} 1.6rem;
@@ -69,6 +70,10 @@ const LogoWrapper = styled.div`
   height: 64px;
   &:hover {
     cursor: pointer;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    width: 40px;
+    height: 40px;
   }
 `
 const Page = styled.div`
