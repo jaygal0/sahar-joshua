@@ -13,4 +13,11 @@ export default [
     merchant: 'swish',
     anonymous: true,
   },
+  {
+    name: 'Adil Khan',
+    amount: 2000,
+    timestamp: '2023-06-16',
+    merchant: 'swish',
+    anonymous: true,
+  },
 ]
