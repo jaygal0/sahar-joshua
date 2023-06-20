@@ -33,9 +33,16 @@ export default [
   },
   {
     heading: 'Cake',
-    description: 'Indulge in cake sharing sweet moments together.',
+    description: 'Indulge in cake, sharing sweet moments together.',
     time: '22:00',
     icon: '/cake.svg',
+  },
+  {
+    heading: 'First dance',
+    description:
+      'Join the newlyweds for their unforgettable first dance, marking the beginning of their married life.',
+    time: '22:15',
+    icon: '/first-dance.svg',
   },
   {
     heading: 'Dance the night away',
