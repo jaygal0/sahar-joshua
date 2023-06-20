@@ -11,7 +11,7 @@ export default [
   {
     heading: 'Cocktail hour',
     description:
-      'An opportunity to mingle after the ceremony, play games and drink some bubbles.',
+      'An opportunity to mingle after the ceremony and drink some bubbles.',
     time: '17:00',
     icon: '/cocktail.svg',
   },
@@ -28,21 +28,20 @@ export default [
     heading: 'Dinner is served',
     description:
       'Enjoy a delicious dinner that caters to all diets as we celebrate our wedding together.',
-    time: '19:00',
+    time: '19:30',
     icon: '/dinner.svg',
   },
   {
-    heading: 'Cake and Speeches',
-    description:
-      'Indulge in cake and heartfelt speeches, a delightful combination to enjoy during our celebration.',
-    time: '20:30',
+    heading: 'Cake',
+    description: 'Indulge in cake sharing sweet moments together.',
+    time: '22:00',
     icon: '/cake.svg',
   },
   {
     heading: 'Dance the night away',
     description:
       'Get ready to dance the night away until the early morning, celebrating love and joy on the lively dance floor.',
-    time: '21:30',
+    time: '22:30',
     icon: '/music.svg',
   },
   // {
