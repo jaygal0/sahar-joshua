@@ -9,17 +9,10 @@ export default [
     link: 'https://goo.gl/maps/JX1k5cVwqFZALTfXA',
   },
   {
-    heading: 'Cocktail hour',
-    description:
-      'An opportunity to mingle after the ceremony and drink some bubbles.',
-    time: '17:00',
-    icon: '/cocktail.svg',
-  },
-  {
     heading: 'Appetizers',
     description:
       'After the ceremony, join us at our next destination, where the celebration continues with delightful appetizers to tantalize your taste buds.',
-    time: '18:00',
+    time: '17:30',
     icon: '/appetizers.svg',
     location: 'Grand Plaza Säve Flygplatsväg 26, 423 73 Säve',
     link: 'https://goo.gl/maps/xFCAibWm3oHufxj78',

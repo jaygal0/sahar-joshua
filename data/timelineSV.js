@@ -9,16 +9,10 @@ export default [
     link: 'https://goo.gl/maps/JX1k5cVwqFZALTfXA',
   },
   {
-    heading: 'Brudskål',
-    description: 'Lite mingel efter ceremonin med brudskål.',
-    time: '17:00',
-    icon: '/cocktail.svg',
-  },
-  {
     heading: 'Förrätt',
     description:
       'Följ med oss till vår nästa destination dar firandet fortsätter med lite förrätter.',
-    time: '18:00',
+    time: '17:30',
     icon: '/appetizers.svg',
     location: 'Grand Plaza Säve Flygplatsväg 26, 423 73 Säve',
     link: 'https://goo.gl/maps/xFCAibWm3oHufxj78',
@@ -27,15 +21,21 @@ export default [
     heading: 'Middagen är serverad',
     description:
       'Njut av den goda middagen som är anpassad för alla individer medans vi firar vårt brollop tillsammans.',
-    time: '19:00',
+    time: '19:30',
     icon: '/dinner.svg',
   },
   {
-    heading: 'Tårta och Tal',
-    description:
-      'Unna dig med tårta och hjärtliga tal, en underbar kombination att njuta av under vår festlighet.',
-    time: '20:30',
+    heading: 'Tårta',
+    description: 'Njut av tårta och dela söta stunder tillsammans.',
+    time: '22:00',
     icon: '/cake.svg',
+  },
+  {
+    heading: 'Första dansen',
+    description:
+      'Gå med i de nygifta för deras oförglömliga första dans, som markerar början på deras gifta liv.',
+    time: '22:15',
+    icon: '/first-dance.svg',
   },
   {
     heading: 'Dansa hela natten',
