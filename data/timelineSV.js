@@ -41,7 +41,7 @@ export default [
     heading: 'Dansa hela natten',
     description:
       'Gör dig redo att dansa natten lång ända tills tidigt på morgonen. Fira kärlek och glädje på det livliga dansgolvet.',
-    time: '21:30',
+    time: '22:30',
     icon: '/music.svg',
   },
   // {
