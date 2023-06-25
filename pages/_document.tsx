@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="description" content="Sahar ♥ Joshua" />
+          <meta name="description" content="But Tigs is the real bae" />
           <link rel="icon" href="/favicon.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
