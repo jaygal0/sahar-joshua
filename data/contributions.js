@@ -34,4 +34,25 @@ export default [
     merchant: 'swish',
     anonymous: true,
   },
+  {
+    name: 'Ali Abdollahpour',
+    amount: 1500,
+    timestamp: '2023-06-28',
+    merchant: 'swish',
+    anonymous: true,
+  },
+  {
+    name: 'Anna-Kari Hajati',
+    amount: 5000,
+    timestamp: '2023-06-28',
+    merchant: 'swish',
+    anonymous: true,
+  },
+  {
+    name: 'Hannah Galinato',
+    amount: 1950,
+    timestamp: '2023-06-28',
+    merchant: 'paypal',
+    anonymous: true,
+  },
 ]
