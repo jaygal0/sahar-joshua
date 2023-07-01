@@ -55,4 +55,11 @@ export default [
     merchant: 'paypal',
     anonymous: true,
   },
+  {
+    name: 'Leo & Andrea Galinato',
+    amount: 6800,
+    timestamp: '2023-07-01',
+    merchant: 'monzo',
+    anonymous: true,
+  },
 ]
