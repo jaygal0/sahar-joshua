@@ -62,4 +62,11 @@ export default [
     merchant: 'monzo',
     anonymous: true,
   },
+  {
+    name: 'Anatolia Alterado',
+    amount: 13700,
+    timestamp: '2023-07-04',
+    merchant: 'monzo',
+    anonymous: true,
+  },
 ]
