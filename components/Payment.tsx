@@ -78,6 +78,7 @@ const QRWrapper = styled.div`
     width: 100%;
     padding-bottom: 100%;
     position: relative;
+    display: none;
   }
 `
 const SwishQR = styled.div`
@@ -89,6 +90,7 @@ const SwishQR = styled.div`
     width: 150%;
     padding-bottom: 100%;
     position: relative;
+    display: none;
   }
 `
 
@@ -119,6 +121,7 @@ const Divider = styled.div`
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     height: 1px;
     width: 200px;
+    display: none;
   }
 `
 const Heading = styled.h2`
@@ -143,7 +146,7 @@ const Text = styled.div`
   line-height: 1.4;
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: 2.4rem;
@@ -168,23 +171,37 @@ const Text = styled.div`
   }
 `
 
-const MonzoLink = styled.p`
-  font-size: 4rem;
+const MonzoLink = styled.button`
+  padding: 2.4rem;
+  background: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.white};
+  outline: none;
+  border: none;
+  border-radius: 3.2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.deskmd}) {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: 2.4rem;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
+    line-height: 120%;
   }
 `
 const Or = styled.p`
   font-size: ${({ theme }) => theme.type.size.b};
   background: white;
   padding: 0.8rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+    display: none;
+  }
 `
 
 export const Payment = ({ sv }: { sv?: Boolean }) => {
@@ -279,13 +296,12 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                   <Or>or</Or>
                 </Divider>
                 <Text>
-                  Klicka på{' '}
                   <a
                     href="https://monzo.me/joshuagalinato"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <MonzoLink>monzo.me/joshuagalinato</MonzoLink>
+                    <MonzoLink>Klicka här</MonzoLink>
                   </a>
                 </Text>
               </FlexWrapper>
@@ -306,13 +322,12 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                   <Or>or</Or>
                 </Divider>
                 <Text>
-                  Klicka på{' '}
                   <a
                     href="https://paypal.me/joshuagalinato1?country.x=SE&locale.x=en_US"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <MonzoLink>paypal.me/joshuagalinato1</MonzoLink>
+                    <MonzoLink>Klicka här</MonzoLink>
                   </a>
                 </Text>
               </FlexWrapper>
@@ -404,13 +419,12 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                   <Or>or</Or>
                 </Divider>
                 <Text>
-                  Click on{' '}
                   <a
                     href="https://monzo.me/joshuagalinato"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <MonzoLink>monzo.me/joshuagalinato</MonzoLink>
+                    <MonzoLink>Click here to contribute</MonzoLink>
                   </a>
                 </Text>
               </FlexWrapper>
@@ -431,13 +445,12 @@ export const Payment = ({ sv }: { sv?: Boolean }) => {
                   <Or>or</Or>
                 </Divider>
                 <Text>
-                  Click on{' '}
                   <a
                     href="https://paypal.me/joshuagalinato1?country.x=SE&locale.x=en_US"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <MonzoLink>paypal.me/joshuagalinato1</MonzoLink>
+                    <MonzoLink>Click here to contribute</MonzoLink>
                   </a>
                 </Text>
               </FlexWrapper>
