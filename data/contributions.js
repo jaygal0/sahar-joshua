@@ -69,4 +69,11 @@ export default [
     merchant: 'monzo',
     anonymous: true,
   },
+  {
+    name: 'Gabriella Berthagen',
+    amount: 1500,
+    timestamp: '2023-07-16',
+    merchant: 'swish',
+    anonymous: true,
+  },
 ]
