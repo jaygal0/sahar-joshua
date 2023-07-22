@@ -118,4 +118,11 @@ export default [
     merchant: 'Paypal',
     anonymous: true,
   },
+  {
+    name: 'Arash',
+    amount: 10000,
+    timestamp: '2023-07-21',
+    merchant: 'Swish',
+    anonymous: true,
+  },
 ]
